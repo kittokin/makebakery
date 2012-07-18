@@ -4,7 +4,12 @@ m4_dnl  Macros defined here will be available to all files interpreted by m4.
 
 m4_define(`TITLE',
 m4_dnl  Set the title of this page.
-`m4_define(`__TITLE', $1)')
+`m4_define(`__TITLE', `$1')')
+
+m4_define(`TOOL',
+`m4_define(`__TOOLS_LIST', m4_defn(`__TOOLS_LIST') `<li>'$1`</li>')<span class="tool">$1</span>')
+m4_define(`PART',
+`m4_define(`__PARTS_LIST', m4_defn(`__PARTS_LIST') `<li>'$1`</li>')<span class="part">$1</span>')
 
 m4_dnl  Configuration of the site
 m4_dnl  ----------------------------------------------------------------------

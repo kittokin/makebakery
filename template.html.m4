@@ -22,6 +22,9 @@ m4_ifdef(`__ROOT',, `m4_define(`__ROOT', `.')')
 	  img#logo {
 	  	float: right;
 	  }
+	  .tool { font-weight: bold; color: green; }
+	  .part { font-weight: bold; color: orange; }
+
     </style>
     <link href="__ROOT/_/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -63,6 +66,12 @@ m4_ifdef(`__ROOT',, `m4_define(`__ROOT', `.')')
     <div class="container">
 	<img id="logo" src="__ROOT/savo.png">
 	<h1>__TITLE</h1>
+
+	<h3>Parts list:</h3>
+	<ul>__PARTS_LIST</ul>
+
+	<h3>Required Tools list:</h3>
+	<ul>__TOOLS_LIST</ul>
 
 m4_dnl
 m4_divert(3)m4_dnl  --- Content will be placed here ---
