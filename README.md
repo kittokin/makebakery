@@ -54,3 +54,30 @@ And produce the following structure:
 	dst/
 	|-- index.html
 	`-- style.css
+
+# Directory layout
+
+This repository contains the following:
+
+    .
+    |-- build/                      # The default locaiton for rendered HTML (not in version control)
+    |-- demo-src/                   # Source files for an example website
+    |-- etc/                        # Includeable or "plugin" files
+    |-- macros.m4                   # M4 macros made available to every M4 file
+    |-- Makefile                    # GNU Makefile, defines how to transform source files into HTML
+    |-- README.md
+    `-- template.html.m4            # An HTML template that will wrap all content
+
+# License
+
+The `demo-src` part of this repository includes unmodified copies of:
+
+- [HTML5 reset](http://html5reset.org/), License: BSD
+- [Modernizr](http://modernizr.com/), License: MIT
+- [jQuery](http://jquery.org), License: MIT
+
+These resources, of course, retain their original license.
+
+The parts of this repository that I wrote are released under the terms of the [GNU Affero General Public License](http://www.gnu.org/licenses/agpl-3.0.html) verison 3 or later.
+
+If these terms don't meet your needs, just contact me.
