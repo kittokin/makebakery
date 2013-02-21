@@ -15,4 +15,6 @@ m4_dnl      m4_define(`__ROOT', `/~user')
 m4_dnl  Your Google analytics code:
 m4_dnl      m4_define(`__GACODE', `UA-XXXXXX-XX')
 
+m4_include(`etc/color_math_macros.m4')
+
 m4_dnl vim: et: commentstring=m4_dnl\ %s:comments=\:#,\:#m4_dnl
