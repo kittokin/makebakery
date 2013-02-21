@@ -1,12 +1,12 @@
-# Copies files from src/ to dst/. Any .html files are
+# Copies files from demo/ to build/. Any .html files are
 # interpreted by GNU m4 and wrapped in a the GNU m4
 # template. Common m4 macros may be stored in a macros
 # file.
 
 MACROS   := macros.m4
 TEMPLATE := template.html.m4
-SRC      := src
-DST      := dst
+SRC      := demo-src
+DST      := build
 
 # Build a list of all the files that should exist when the
 # baking is done. We do this by getting a list of all the
