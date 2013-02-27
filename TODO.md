@@ -11,3 +11,4 @@
 - Makefile target for various means of deployment
 - Various demo sites to quickly bootstrap a site. Themes?
 - Demo site using bootstrap
+- Employ m4 frozen state files for speed
