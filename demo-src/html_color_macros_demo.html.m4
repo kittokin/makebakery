@@ -1,4 +1,4 @@
-TITLE( HTML Colors Demonstration )
+TITLE(HTML Colors Demonstration)
 
 m4_dnl We're working a lot with HTML colors and the # symbol, so disable the
 m4_dnl comment character behavior for the rest of this file.
