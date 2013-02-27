@@ -1,0 +1,21 @@
+[
+m4_dnl Store CWD somewhere because we need to change the quoting char and that
+m4_dnl messes up the macro.
+m4_define(mycwd, CWD)m4_dnl
+m4_changequote({{,}})m4_dnl 
+m4_esyscmd({{
+cd }}mycwd{{
+find -name "*.html" | while read filename; do
+    title="`sed -n "s/^\s*<title>\([^<]*\)<\/title>/\1/p" "$filename"`"
+    mtime="`date -u -r "$filename" "+%s000"`"
+    # TODO: extract created data from file metadata
+    cat <<- EOF
+    {
+        "path": "$filename",
+        "modified": $mtime,
+        "title": "$title"
+    }
+EOF
+done
+}})m4_dnl
+]

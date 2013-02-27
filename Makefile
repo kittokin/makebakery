@@ -12,36 +12,49 @@ DST      := build
 # baking is done. We do this by getting a list of all the
 # source files and rewriting pathnames and file suffixes as
 # necessary.
-targets  := $(shell find $(SRC) -type f)
-targets  := $(targets:$(SRC)/%=$(DST)/%)
-targets  := $(targets:.m4=)
-targets  := $(filter-out %.inc %.swp,$(targets))
-targets  := $(targets:.md=.html)
+#
+# "pages" is the subset of these files which are pieces of
+# content while "targets" include also files which collate
+# or enumerate other pages (blog rollups, sitemaps, etc.)
+files := $(shell find $(SRC) -type f)
+files := $(files:$(SRC)/%=$(DST)/%)
+files := $(files:.m4=)
+files := $(filter-out %.inc %.swp %.index,$(files))
+files := $(files:.md=.html)
+targets := $(files)
+targets := $(targets) $(DST)/pages.json
 
 all: $(targets)
 
+# First, all source files will be copied verbatim to the
+# destination. I use the ubiquitous unix 'install' tool
+# here because it creates any needed paths automatically.
+# When Make is done compiling it will delete those copies.
+$(DST)/%: $(SRC)/%
+	install -m 644 -D $< $@
+
 # Any files named '*.html.m4' will be interpreted by M4
 # with the macros available, wrapped in the HTML template,
-# and saved without the '.m4' extension. A later rule
-# copies this to the destination, and Make is smart enough
-# to delete the intermediate file.
-$(SRC)/%.html: $(SRC)/%.html.m4 $(MACROS) $(TEMPLATE)
+# and saved without the '.m4' extension. 
+$(DST)/%.html: $(DST)/%.html.m4 $(MACROS) $(TEMPLATE)
 	m4 -P $(MACROS) $< $(TEMPLATE) > $@
 
 include etc/pandoc.mk
 
+# Any files named '*.index' will depend on the rest of the
+# pages having been processed before being processed
+# themselves. In this way you can create automatic indices,
+# sitemaps, etc. No processing occurs here, we just remove
+# the extension.
+$(DST)/%: $(DST)/%.index $(files)
+	cp $< $@
+
 # Any other files named '*.m4' will be interpreted by M4
 # with the macros available, saved without the '.m4'
 # extension, but will not be wrapped in the HTML template.
-$(SRC)/%: $(SRC)/%.m4 $(MACROS)
+# This lets you use M4 within .css, .js, etc.
+$(DST)/%: $(DST)/%.m4 $(MACROS)
 	m4 -P $(MACROS) $< > $@
-
-# After the files have been compiled by m4, they will be
-# copied verbatim to the destination. I use the ubiquitous
-# unix 'install' tool here because it creates any needed
-# paths automatically.
-$(DST)/%: $(SRC)/%
-	install -m 644 -D $< $@
 
 # By default, GNU Make will skip any source files that have
 # not been modified since the last time they were rendered.

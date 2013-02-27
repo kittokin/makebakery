@@ -4,6 +4,6 @@
 # way to wire it in to run *before* m4. GNU Make is even
 # smart enough to clean up the intermediate file created by
 # this step.
-$(SRC)/%.html.m4: $(SRC)/%.md.m4 $(MACROS) $(TEMPLATE)
+$(DST)/%.html.m4: $(DST)/%.md.m4 $(MACROS) $(TEMPLATE)
 	# Rendering $< to $@ with pandoc
 	pandoc -f markdown -t html -o $@ $<
