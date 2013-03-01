@@ -3,6 +3,7 @@
 # template. Common m4 macros may be stored in a macros
 # file.
 
+M4 		 := m4 -I /usr/share/doc/m4/examples
 MACROS   := macros.m4
 TEMPLATE := template.html.m4
 SRC      := demo-src
@@ -76,7 +77,7 @@ $(DST)/%: $(SRC)/%
 # with the macros available, wrapped in the HTML template,
 # and saved without the '.m4' extension. 
 $(DST)/%.html: $(DST)/%.html.m4 $(MACROS) $(TEMPLATE)
-	m4 -P $(MACROS) $< $(TEMPLATE) > $@
+	$(M4) -P $(MACROS) $< $(TEMPLATE) > $@
 
 include etc/pandoc.mk
 
@@ -94,7 +95,7 @@ $(DST)/%: $(DST)/%.index $(targets)
 # This lets you use M4 within .css, .js, etc. (Just name
 # them blah.css.m4, blah.js.m4, etc.)
 $(DST)/%: $(DST)/%.m4 $(MACROS)
-	m4 -P $(MACROS) $< > $@
+	$(M4) -P $(MACROS) $< > $@
 
 # By default, GNU Make will skip any source files that have
 # not been modified since the last time they were rendered.
