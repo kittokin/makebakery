@@ -13,6 +13,10 @@ m4_dnl  The "no-js" class is for Modernizr.
 <head id="www-sitename-com" data-template-set="html5-reset">
     <meta charset="utf-8">
 
+m4_ifdef(`__DATE_MSEC', `<script type="text/javascript">
+    var created = new Date(__DATE_MSEC);
+    </script>')
+
     m4_dnl  Always force latest IE rendering engine (even in intranet) & Chrome Frame
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -29,9 +33,10 @@ m4_dnl  The "no-js" class is for Modernizr.
     <meta name="Copyright" content="Copyright Your Name Here 2011. All Rights Reserved.">
 
     m4_dnl  Dublin Core Metadata : http://dublincore.org/
-    <meta name="DC.title" content="Project Name">
-    <meta name="DC.subject" content="What you're about.">
-    <meta name="DC.creator" content="Who made this site.">
+    <meta name="DC.title" content="__TITLE">
+    <meta name="DC.subject" content="">
+    <meta name="DC.creator" content="">
+    <meta name="DC.date" content="__DATE_ISO">
     
     m4_dnl  Mobile Viewport Fix
     m4_dnl  j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 

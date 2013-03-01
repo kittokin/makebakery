@@ -1,10 +1,40 @@
 m4_divert(-1)m4_dnl  Keep this line at the beginning of this file.
 
 m4_dnl  Macros defined here will be available to all files interpreted by m4.
+m4_dnl  ----------------------------------------------------------------------
 
-m4_define(`TITLE',
-m4_dnl  Set the title of this page.
-`m4_define(`__TITLE', $1)')
+m4_dnl
+m4_dnl  TITLE(`text'): Set the title of this page.
+m4_dnl
+m4_define(`TITLE', `m4_dnl  
+m4_define(`__TITLE', `$1')')
+
+m4_dnl
+m4_dnl  DATE(`date string'): Set the original creation date of this page. Date
+m4_dnl  format is whatever is parseable by your system's /bin/date.
+m4_dnl
+m4_define(`DATE', `m4_dnl
+m4_dnl  Store verbatim in this variable
+m4_define(`__DATE', `$1')m4_dnl
+m4_dnl  Miliseconds since the epoch (for feeding to javascript Date() object)
+m4_define(`__DATE_MSEC', m4_esyscmd(`date -u --date="$1" "+%s000" | tr -d "\n"'))m4_dnl
+m4_dnl  ISO8601 format recommended by Dublin Core http://www.w3.org/TR/NOTE-datetime
+m4_define(`__DATE_ISO', m4_esyscmd(`date -u --date="$1" "+%Y-%m-%dT%H:%M:%S%:z" | tr -d "\n"'))m4_dnl
+')
+
+m4_include(`etc/color_math_macros.m4')
+
+m4_dnl
+m4_dnl  CWD: 
+m4_dnl
+m4_define(`CWD', `m4_dnl
+m4_dnl  Return the directory containing the calling file
+m4_patsubst(m4___file__, `[^/]*$')')
+
+m4_define(`MY_PATH', `m4_dnl
+m4_dnl  Return the directory containing the calling file, relative to the
+m4_dnl  build-root.
+m4_patsubst(m4_patsubst(m4___file__, `[^/]*$'), `^[^/]*')')
 
 m4_dnl  Configuration of the site
 m4_dnl  ----------------------------------------------------------------------
@@ -14,17 +44,7 @@ m4_dnl  trailing slash:
 m4_dnl      m4_define(`__ROOT', `/~user')
 m4_dnl  Your Google analytics code:
 m4_dnl      m4_define(`__GACODE', `UA-XXXXXX-XX')
-
-m4_include(`etc/color_math_macros.m4')
-
-m4_define(`CWD',
-m4_dnl  Return the directory containing the calling file
-`m4_patsubst(m4___file__, `[^/]*$')')
-
-m4_define(`MY_PATH',
-m4_dnl  Return the directory containing the calling file, relative to the
-m4_dnl  build-root.
-`m4_patsubst(m4_patsubst(m4___file__, `[^/]*$'), `^[^/]*')')
+m4_dnl
 
 m4_divert(2)m4_dnl  Keep this line near the end of the file.
 m4_dnl vim: et: commentstring=m4_dnl\ \ %s:comments=\:#,\:m4_dnl
