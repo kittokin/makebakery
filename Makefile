@@ -3,7 +3,7 @@
 # template. Common m4 macros may be stored in a macros
 # file.
 
-M4 		 := m4 -I /usr/share/doc/m4/examples
+M4 		 := m4 -I etc
 MACROS   := macros.m4
 TEMPLATE := template.html.m4
 SRC      := demo-src
