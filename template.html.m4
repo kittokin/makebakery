@@ -12,10 +12,6 @@ m4_dnl  The "no-js" class is for Modernizr.
 <head id="www-sitename-com" data-template-set="html5-reset">
     <meta charset="utf-8">
 
-m4_ifdef(`__DATE_MSEC', `<script type="text/javascript">
-    var created = new Date(__DATE_MSEC);
-    </script>')
-
     m4_dnl  Always force latest IE rendering engine (even in intranet) & Chrome Frame
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -61,7 +57,10 @@ m4_ifdef(`__DATE_MSEC', `<script type="text/javascript">
     m4_dnl  
     m4_dnl  CSS: screen, mobile & print are all in the same file
     <link rel="stylesheet" href="_/css/style.css">
-    
+ 
+    m4_dnl hook up our atom feed
+    <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+
     m4_dnl  all our JS is at the bottom of the page, except for Modernizr.
     <script src="_/js/modernizr-1.7.min.js"></script>
 </head>
@@ -96,6 +95,12 @@ m4_dnl	The github ribbon, from https://github.com/blog/273-github-ribbons
 m4_dnl  Grab Google CDN's jQuery. fall back to local if necessary
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='_/js/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+m4_dnl  If the original created date for the document is defined, make it
+m4_dnl  available to javascript.
+m4_ifdef(`__DATE_MSEC', `<script type="text/javascript">
+    var created = new Date(__DATE_MSEC);
+    </script>')
 
 m4_dnl  this is where we put our custom functions
 <script src="_/js/functions.js"></script>
