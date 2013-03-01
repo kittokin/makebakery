@@ -3,7 +3,6 @@ m4_divert(1)m4_dnl
 m4_dnl  Prepare some default values. If we have not defined a __TITLE macro in
 m4_dnl  the content, the page title will be "Untitled Page."
 m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
-m4_ifdef(`__ROOT',, `m4_define(`__ROOT', `')')
 <!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
