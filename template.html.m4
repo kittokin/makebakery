@@ -56,6 +56,7 @@ m4_dnl  The "no-js" class is for Modernizr.
     m4_dnl  - Transparency is not recommended (iOS will put a black BG behind the icon)
     m4_dnl  
     m4_dnl  CSS: screen, mobile & print are all in the same file
+    <link rel="stylesheet" href="_/css/html5reset.css">
     <link rel="stylesheet" href="_/css/style.css">
  
     m4_dnl hook up our atom feed
@@ -68,7 +69,7 @@ m4_dnl  The "no-js" class is for Modernizr.
 <body>
 <div class="wrapper">m4_dnl  not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres
     <header>
-        <h1><a href="/">__TITLE</a></h1>
+        <h1><a href="__ROOT/">__SITENAME</a></h1>
         <nav>
             <ol>
                 <li><a href="">Nav Link 1</a></li>
@@ -78,12 +79,14 @@ m4_dnl  The "no-js" class is for Modernizr.
         </nav>
     </header>
     <article>
+        <h1>__TITLE</h1>
 m4_dnl
 m4_divert(3)m4_dnl  --- Content will be placed here ---
 m4_dnl
     </article>
     <aside>
         <h2>Sidebar Content</h2>
+        <p>Optional sidebar content would go here</p>
     </aside>
     <footer>
         <p>Created by <a href="http://datagrok.org">Michael F. Lamb</a></p>
