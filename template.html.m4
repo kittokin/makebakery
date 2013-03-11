@@ -92,12 +92,10 @@ m4_dnl
         <p>Created by <a href="http://datagrok.org">Michael F. Lamb</a></p>
     </footer>
 m4_dnl	The github ribbon, from https://github.com/blog/273-github-ribbons
-    <a href="https://github.com/datagrok/m4-bakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <a href="https://github.com/datagrok/m4-bakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 </div>
 
-m4_dnl  Grab Google CDN's jQuery. fall back to local if necessary
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src='_/js/jquery-1.5.1.min.js'>\x3C/script>")</script>
+<script src="_/js/jquery-1.5.1.min.js"></script>
 
 m4_dnl  If the original created date for the document is defined, make it
 m4_dnl  available to javascript.
