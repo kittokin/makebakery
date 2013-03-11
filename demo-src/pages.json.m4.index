@@ -21,13 +21,16 @@ find -name "*.html" | while read filename; do
     mtime="`date -u -r "$filename" "+%s000"`"
     cat <<- EOF
     {
-        "path": "$filename",
+        "path": "${filename#.}",
         "created": ${ctime:-null},
         "modified": $mtime,
         "title": "$title"
-    }
+    },
 EOF
 done
 }})m4_dnl
+    m4_dnl trailing empty object to avoid having to deal with no trailing comma
+    m4_dnl in last element of an array in javascript
+    {}
 ]
 m4_dnl vim: ft=m4 et: commentstring=m4_dnl\ \ %s:comments=\:#,\:m4_dnl
