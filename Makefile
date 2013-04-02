@@ -1,13 +1,17 @@
-# Copies files from demo/ to build/. Any .html files are
-# interpreted by GNU m4 and wrapped in a the GNU m4
-# template. Common m4 macros may be stored in a macros
+# Copies files from source tree to build location. Any .html
+# files are interpreted by GNU m4 and wrapped in a the GNU
+# m4 template. Common m4 macros may be stored in a macros
 # file.
 
-M4 		 := m4 -I etc -P
+M4 	     := m4 -I etc -P
 MACROS   := macros.m4
 TEMPLATE := template.html.m4
 SRC      := demo-src
 DST      := build
+
+BASEPATH    := $(shell readlink $(DST) || echo $(DST))
+BASEURL	    :=
+
 
 # Build a list of all the files that should exist when the
 # baking is done. We do this by getting a list of all the
@@ -95,7 +99,7 @@ $(DST)/%: $(DST)/%.index $(targets)
 # This lets you use M4 within .css, .js, etc. (Just name
 # them blah.css.m4, blah.js.m4, etc.)
 $(DST)/%: $(DST)/%.m4 $(MACROS)
-	$(M4) $(MACROS) $< > $@
+	$(M4) -DBASEPATH="$(BASEPATH)" -DBASEURL="$(BASEURL)" $(MACROS) $< > $@
 
 # By default, GNU Make will skip any source files that have
 # not been modified since the last time they were rendered.
@@ -103,7 +107,8 @@ $(DST)/%: $(DST)/%.m4 $(MACROS)
 # complete rebuild. I do a 'mv' then 'rm' to reduce the
 # chances of running an 'rm -rf /'.
 clean:
-	mv $(DST) .old_dst
-	rm -rf .old_dst
+	mv $(BASEPATH) $(BASEPATH).old
+	rm -r $(BASEPATH).old
+	mkdir $(BASEPATH)
 
 # vim: tw=59 :
