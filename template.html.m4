@@ -52,7 +52,7 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="__ROOT/">__SITENAME</a>
+          <a class="brand" href="/__ROOT">__SITENAME</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>

@@ -7,7 +7,7 @@ M4 	     := m4 -I etc -P
 MACROS   := macros.m4
 TEMPLATE := template.html.m4
 SRC      := demo-src
-DST      := build
+DST      := build/m4-bakery
 
 BASEPATH    := $(shell readlink $(DST) || echo $(DST))
 BASEURL	    :=
