@@ -16,6 +16,16 @@ m4_define(`_panel3',_ColorAverage(_bgcolor,`00ff00'))
 macros to blend these together for the "overlapping" bits.
 </p>
 
+<!--
+
+If you've just used "view source" and are wondering where the mathematics are
+happening, have a look at the file etc/color_math_macros.m4 in the source
+repository: https://github.com/datagrok/m4-bakery
+
+All the color calculations happen when you run "make."
+
+-->
+
 <table cellpadding=8 cellspacing=0 border=0>
 <tr>
 <td style="background-color: #_bgcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -56,4 +66,5 @@ macros to blend these together for the "overlapping" bits.
 
 <p>Of course, this demo is showing this project's age. In the modern, civilized
 world, one might use color math in their CSS templates rather than build
-colored tables.</p>
+colored tables. Which one could totally do with m4-bakery, by creating files
+named something.css.m4.</p>
