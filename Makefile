@@ -41,7 +41,7 @@ BASEURL	    :=
 # - remove all .m4 suffixes
 # - transform all .md suffixes into .html
 # - split all the makred indices into their own variable
-targets := $(shell find $(SRC) -type f)
+targets := $(shell find -L $(SRC)/ -not \( -name '.git' -prune \) -type f)
 targets := $(filter-out %.inc %.swp,$(targets))
 targets := $(targets:$(SRC)/%=$(DST)/%)
 targets := $(filter-out %.index,$(targets)) $(addprefix I/,$(filter %.index,$(targets)))
