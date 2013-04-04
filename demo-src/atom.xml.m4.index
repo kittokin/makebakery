@@ -21,16 +21,16 @@ m4_changequote({{,}})m4_dnl
 m4_esyscmd({{
 cd }}mycwd{{
 find -name "*.html" | while read filename; do
-    title="`sed -n "s/^\s*<title>\([^<]*\)<\/title>/\1/p" "$filename"`"
-    ctime="`sed -n "s/^\s*var created = new Date(\([^)]*\));/\1/p" "$filename"`"
-    mtime="`date -u -r "$filename" "+%s000"`"
+    title="$( sed -n 's/^\s*<title>\([^<]*\)<\/title>/\1/p' "$filename" )"
+    ctime="$( sed -n 's/^\s*var created = new Date(\([^)]*\));/\1/p' "$filename" )"
+    mtime="$( date -u -r "$filename" "+%s000" )"
     cat <<- EOF
     <entry>
         <title type="html"><![CDATA[$title]]></title>
         <link href="__SITEHOST/__ROOT/$filename"/>
         <updated>$mtime</updated>
         <id>__SITEHOST/__ROOT/$filename</id>
-        m4_ifdef(`__BODY', `
+        m4_ifdef(\`__BODY', \`
         <content type="html"><![CDATA[<p>__BODY</p>]]></content>
         ')
     </entry>
