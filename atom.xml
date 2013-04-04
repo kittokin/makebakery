@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[datagrok/m4-bakery]]></title>
+  <link href="/m4-bakery//atom.xml" rel="self"/>
+  <link href="/m4-bakery//"/>
+  <updated>2013-04-04T00:00:00+00:00</updated>
+  <id>http://datagrok.github.com/m4-bakery//</id>
+  <author>
+    <name><![CDATA[__AUTHOR]]></name>
+    <email><![CDATA[__EMAIL]]></email>
+  </author>
+  <generator uri="https://github.com/datagrok/m4-bakery">m4-bakery</generator>
+    <entry>
+        <title type="html"><![CDATA[Untitled Page]]></title>
+        <link href="http://datagrok.github.com/m4-bakery//./blog/second.html"/>
+        <updated>1365056217000</updated>
+        <id>http://datagrok.github.com/m4-bakery//./blog/second.html</id>
+        
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Untitled Page]]></title>
+        <link href="http://datagrok.github.com/m4-bakery//./blog/first.html"/>
+        <updated>1365056217000</updated>
+        <id>http://datagrok.github.com/m4-bakery//./blog/first.html</id>
+        
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GNU Make and M4 Website Bakery]]></title>
+        <link href="http://datagrok.github.com/m4-bakery//./index.html"/>
+        <updated>1365056217000</updated>
+        <id>http://datagrok.github.com/m4-bakery//./index.html</id>
+        
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An example webpage]]></title>
+        <link href="http://datagrok.github.com/m4-bakery//./example_page.html"/>
+        <updated>1365056217000</updated>
+        <id>http://datagrok.github.com/m4-bakery//./example_page.html</id>
+        
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HTML Colors Demonstration]]></title>
+        <link href="http://datagrok.github.com/m4-bakery//./html_color_macros_demo.html"/>
+        <updated>1365056217000</updated>
+        <id>http://datagrok.github.com/m4-bakery//./html_color_macros_demo.html</id>
+        
+    </entry>
+</feed>

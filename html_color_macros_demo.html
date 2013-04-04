@@ -1,0 +1,161 @@
+<!doctype html>
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Colors Demonstration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="HTML Colors Demonstration">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="author" content="Your Name Here">
+    <meta name="Copyright" content="Copyright Your Name Here 2011. All Rights Reserved.">
+
+        <meta name="DC.title" content="HTML Colors Demonstration">
+    <meta name="DC.subject" content="">
+    <meta name="DC.creator" content="">
+    <meta name="DC.date" content="__DATE_ISO">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="_/css/bootstrap.min.css">
+    <link rel="stylesheet" href="_/css/style.css">
+    <link rel="stylesheet" href="_/css/bootstrap-responsive.min.css">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="_/img/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="_/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="_/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="_/img/apple-touch-icon-57-precomposed.png">
+
+        <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/m4-bakery/">datagrok/m4-bakery</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <h1>HTML Colors Demonstration</h1>
+
+
+
+
+
+
+
+
+
+<p>This table is built with the specification of three colors:
+<span style="background-color: #7fb2ff">Panel 1</span>
+<span style="background-color: #ffcc7f">Panel 2</span>
+<span style="background-color: #7fff7f">Panel 3</span>. We use color math
+macros to blend these together for the "overlapping" bits.
+</p>
+
+<!--
+
+If you've just used "view source" and are wondering where the mathematics are
+happening, have a look at the file etc/color_math_macros.m4 in the source
+repository: https://github.com/datagrok/m4-bakery
+
+All the color calculations happen when you run "make."
+
+-->
+
+<table cellpadding=8 cellspacing=0 border=0>
+<tr>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #7fb2ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #7fb2ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color: #ffcc7f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #bfbfbf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #bfbfbf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #ffcc7f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #ffcc7f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color: #ffcc7f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #bfbfbf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #9fdf9f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #bfe57f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #ffcc7f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #7fb2ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #7fd8bf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #7fff7f">&nbsp;Wow, remember when HTML tables were used for layout?&nbsp;</td>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #7fb2ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #7fb2ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="background-color: #ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+</table>
+
+<p>Of course, this demo is showing this project's age. In the modern, civilized
+world, one might use color math in their CSS templates rather than build
+colored tables. Which one could totally do with m4-bakery, by creating files
+named something.css.m4.</p>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="_/js/jquery-1.7.2.min.js"></script>
+    <script src="_/js/bootstrap.min.js"></script>
+
+
+
+<script src="_/js/functions.js"></script>
+
+ 
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
