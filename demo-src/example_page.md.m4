@@ -12,4 +12,4 @@ markup, code, and macro calls.
 
 # Here's a subheading
 
-Here's another paragraph.
+Here's another paragraph. "Here's a sentence in quotes---containing em dashes---to demonstrate pandoc's 'smart quotes' feature."

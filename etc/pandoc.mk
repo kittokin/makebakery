@@ -6,4 +6,4 @@
 # this step.
 $(DST)/%.html.m4: $(DST)/%.md.m4 $(MACROS) $(TEMPLATE) etc/pandoc_template.html
 	# Rendering $< to $@ with pandoc
-	pandoc -f markdown -t html --template=etc/pandoc_template.html -o $@ $<
+	pandoc -S -f markdown -t html --base-header-level 2 --template=etc/pandoc_template.html -o $@ $<
