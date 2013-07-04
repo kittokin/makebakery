@@ -1,7 +1,6 @@
 var dirname_re = /^.*\//;
 
 $(document).ready(function (){
-    return;
     $.getJSON('pages.json', function(data){
         // data contains an array of all the content nodes on our site. We can
         // now build a navagation heiarchy however we like.

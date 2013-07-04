@@ -55,14 +55,18 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
           <a class="brand" href="/__ROOT">__SITENAME</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
+<ul class="breadcrumb">
+  <li><a href="#">Home</a> <span class="divider">/</span></li>
+  <li><a href="#">Library</a> <span class="divider">/</span></li>
+  <li class="active">Data</li>
+</ul>
     </div>
+
+    
 
     <div class="container">
         <h1>__TITLE</h1>
@@ -99,18 +103,4 @@ m4_ifdef(`__GACODE', `<script>
 
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 m4_dnl vim: ft=m4 :

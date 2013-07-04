@@ -68,6 +68,86 @@ This repository contains the following:
     |-- README.md
     `-- template.html.m4            # An HTML template that will wrap all content
 
+# Similar projects
+
+It has been said that every programmer, at some point, writes a blog/website publishing engine. Here are some other such projects that are similar in some way.
+
+## Forks
+
+- Brandon Invergo's [m4-bloggery](https://gitorious.org/bi-websites/m4-bloggery) is based on m4-bakery and takes some slightly different approaches.
+
+## Friends
+
+- ironfroggy's [jules](https://github.com/ironfroggy/jules)
+- Nate Smith's [Cadigan]()
+- redline6561's [Coleslaw]()
+
+## Others
+
+
+blacksmith                                                http://blacksmith.jit.su/
+blatter                                                   http://bitbucket.org/jek/blatter/
+blogofile                                                 http://blogofile.com/
+bonsai                                                    https://github.com/benschwarz/bonsai
+cactus                                                    https://github.com/koenbok/Cactus
+chisel                                                    https://github.com/dz/chisel
+coleslaw                                                  http://www.cliki.net/coleslaw
+django                                                    staticsomething
+docpad                                                    https://github.com/bevry/docpad
+drupan                                                    https://github.com/fallenhitokiri/drupan
+emacs                                                     +                                        org-mode +    org-publish
+fairytale                                                 https://github.com/46Bit/fairytale
+fmpp                                                      http://fmpp.sourceforge.net/
+fragments                                                 http://glyphobet.github.com/fragments/
+frank
+fugitive                                                  https://gitorious.org/fugitive
+hakyll                                                    http://jaspervdj.be/hakyll/
+hammer                                                    http://hammerformac.com/
+hastie                                                    https://github.com/mkaz/hastie
+nanoc                                                     http://nanoc.ws/about/#similar-projects
+regenerate.lisp https://gist.github.com/TeMPOraL/4190622
+https://www.dropbox.com/s/mk9w8r0zjkkwpqi/static_sites.md
+hyde                                                      http://ringce.com/hyde
+ikiwiki                                                   http://ikiwiki.info/
+jekyll
+kirby
+liquidink                                                 and                                      rest2web
+markbox                                                   https://github.com/myfreeweb/markbox
+middleman
+movable                                                   Type
+mynt                                                      http://mynt.mirroredwhite.com
+nanoc                                                     nanoc.ws
+nestaCMS
+nikola                                                    http://nikola.ralsina.com.ar
+non-static                                                webserver                                +        list of          pages + wget
+octopress
+pelican
+phrozn                                                    http://phrozn.info
+piecrust                                                  http://bolt80.com/piecrust/
+poole                                                     https://bitbucket.org/obensonne/poole
+punch-blog                                                https://github.com/laktek/punch-blog
+quill
+romulus
+ruhoh
+second                                                    Crack
+sphinx/docutils
+stacey
+stasis
+staticMatic
+staticjinja                                               https://github.com/Ceasar/staticjinja
+syte                                                      https://github.com/rigoneri/syte
+telegram                                                  https://telegr.am/
+tinkerer                                                  http://tinkerer.me
+toto                                                      https://github.com/cloudhead/toto
+webby                                                     (http://webby.rubyforge.org/)
+webgen
+wintersmith                                               http://jnordberg.github.com/wintersmith/
+wok                                                       https://github.com/mythmon/wok
+
+
+https://gist.github.com/davatron5000/2254924
+
+
 # License
 
 The `demo-src` part of this repository includes unmodified copies of:
