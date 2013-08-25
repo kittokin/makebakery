@@ -75,7 +75,12 @@ all: $(targets) $(indices)
 # here because it creates any needed paths automatically.
 # When Make is done compiling it will delete those copies.
 $(DST)/%: $(SRC)/%
-	install -m 644 -D $< $@
+	if [ "`uname -s`" = "Darwin" ]; then \
+		mkdir -p $(DST); \
+		install -m 644 $< $@; \
+	else \
+		install -m 644 -D $< $@; \
+	fi
 
 # Any files named '*.html.m4' will be interpreted by M4
 # with the macros available, wrapped in the HTML template,
