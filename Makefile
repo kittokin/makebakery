@@ -12,6 +12,7 @@ DST      := build/m4-bakery
 BASEPATH    := $(shell readlink $(DST) || echo $(DST))
 BASEURL	    :=
 
+PLATFORM := $(shell uname -s)
 
 # Build a list of all the files that should exist when the
 # baking is done. We do this by getting a list of all the
@@ -75,12 +76,12 @@ all: $(targets) $(indices)
 # here because it creates any needed paths automatically.
 # When Make is done compiling it will delete those copies.
 $(DST)/%: $(SRC)/%
-	if [ "`uname -s`" = "Darwin" ]; then \
-		mkdir -p $(DST); \
-		install -m 644 $< $@; \
-	else \
-		install -m 644 -D $< $@; \
-	fi
+ifeq ($(PLATFORM), Darwin)
+		mkdir -p $(DST)
+		install -m 644 $< $@
+else
+		install -m 644 -D $< $@
+endif
 
 # Any files named '*.html.m4' will be interpreted by M4
 # with the macros available, wrapped in the HTML template,
