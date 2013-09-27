@@ -24,12 +24,13 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
 
     <!-- Le styles -->
     <link rel="stylesheet" href="_/css/bootstrap.min.css">
+    <link rel="stylesheet" href="_/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="_/css/style.css">
-    <link rel="stylesheet" href="_/css/bootstrap-responsive.min.css">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="_/js/html5shiv.js"></script>
+      <script src="_/js/respond.min.js"></script>
     <![endif]-->
 
     <!-- Le fav and touch icons -->
@@ -43,33 +44,42 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
   </head>
 
   <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- Let's not demo navbar navigation until it works automatically.
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          -->
+          <a class="navbar-brand" href="/__ROOT">__SITENAME</a>
+        </div>m4_dnl /navbar-header
+        <!-- Let's not demo navbar navigation until it works automatically.
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>m4_dnl /navbar-collapse
+        -->
+      </div>m4_dnl /container
+    </div>m4_dnl /navbar
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/__ROOT">__SITENAME</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-<ul class="breadcrumb">
-  <li><a href="#">Home</a> <span class="divider">/</span></li>
-  <li><a href="#">Library</a> <span class="divider">/</span></li>
-  <li class="active">Data</li>
-</ul>
-    </div>
-
-    
+    <!-- Let's not demo the breadcrumb navigation until it works automatically.
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="#"></a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+      </ol>
+    </div>m4_dnl /container
+    -->
 
     <div class="container">
-        <h1>__TITLE</h1>
+      <h1>__TITLE</h1>
 m4_dnl
 m4_divert(3)m4_dnl  --- Content will be placed here ---
 m4_dnl
@@ -78,7 +88,7 @@ m4_dnl
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="_/js/jquery-1.7.2.min.js"></script>
+    <script src="_/js/jquery-2.0.3.min.js"></script>
     <script src="_/js/bootstrap.min.js"></script>
 
 m4_dnl  If the original created date for the document is defined, make it
@@ -103,4 +113,4 @@ m4_ifdef(`__GACODE', `<script>
 
   </body>
 </html>
-m4_dnl vim: ft=m4 :
+m4_dnl vim: ft=html sw=2 :

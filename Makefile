@@ -69,6 +69,11 @@ targets := $(filter-out I/%,$(targets))
 # targets_and_indices.mk: create_targets.py
 # 	python create_targets.py > $@
 
+
+default: all
+
+include etc/pandoc.mk
+
 all: $(targets) $(indices)
 
 # First, all source files will be copied verbatim to the
@@ -88,8 +93,6 @@ endif
 # and saved without the '.m4' extension. 
 $(DST)/%.html: $(DST)/%.html.m4 $(MACROS) $(TEMPLATE)
 	$(M4) $(MACROS) $< $(TEMPLATE) > $@
-
-include etc/pandoc.mk
 
 # Any files named '*.index' will depend on the rest of the
 # pages having been processed before being processed
@@ -114,7 +117,7 @@ $(DST)/%: $(DST)/%.m4 $(MACROS)
 # chances of running an 'rm -rf /'.
 clean:
 	mv $(BASEPATH) $(BASEPATH).old
-	rm -r $(BASEPATH).old
-	mkdir $(BASEPATH)
+	rm -rf $(BASEPATH).old
+	git clone . -b gh-pages $(BASEPATH)
 
 # vim: tw=59 :
