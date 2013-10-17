@@ -1,33 +1,27 @@
 [
     {
-        "path": "/blog/second.html",
-        "created": null,
-        "modified": 1365056217000,
-        "title": "Untitled Page"
-    },
-    {
-        "path": "/blog/first.html",
-        "created": null,
-        "modified": 1365056217000,
-        "title": "Untitled Page"
-    },
-    {
         "path": "/index.html",
         "created": 1362094031000,
-        "modified": 1365056217000,
-        "title": "GNU Make and M4 Website Bakery"
-    },
-    {
-        "path": "/example_page.html",
-        "created": 1365033600000,
-        "modified": 1365056217000,
-        "title": "An example webpage"
+        "modified": 1382002984000,
+        "title": "Make and M4 Website Bakery"
     },
     {
         "path": "/html_color_macros_demo.html",
         "created": null,
-        "modified": 1365056217000,
+        "modified": 1381999446000,
         "title": "HTML Colors Demonstration"
+    },
+    {
+        "path": "/example_page.html",
+        "created": 1381968000000,
+        "modified": 1382000444000,
+        "title": "An example webpage"
+    },
+    {
+        "path": "/subsection/index.html",
+        "created": null,
+        "modified": 1382000444000,
+        "title": "An example sub-section"
     },
             {}
 ]

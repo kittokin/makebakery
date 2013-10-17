@@ -4,79 +4,108 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>GNU Make and M4 Website Bakery</title>
+    <title>Make and M4 Website Bakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="GNU Make and M4 Website Bakery">
+    <meta name="title" content="Make and M4 Website Bakery">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <meta name="author" content="Your Name Here">
     <meta name="Copyright" content="Copyright Your Name Here 2011. All Rights Reserved.">
 
-        <meta name="DC.title" content="GNU Make and M4 Website Bakery">
+        <meta name="DC.title" content="Make and M4 Website Bakery">
     <meta name="DC.subject" content="">
     <meta name="DC.creator" content="">
     <meta name="DC.date" content="2013-02-28T23:27:11+00:00">
 
     <!-- Le styles -->
-    <link rel="stylesheet" href="_/css/bootstrap.min.css">
-    <link rel="stylesheet" href="_/css/style.css">
-    <link rel="stylesheet" href="_/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/m4-bakery/_/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/m4-bakery/_/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/m4-bakery/_/css/style.css">
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="/m4-bakery/_/js/html5shiv.js"></script>
+      <script src="/m4-bakery/_/js/respond.min.js"></script>
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="_/img/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="_/img/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="_/img/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="_/img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/m4-bakery/_/img/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/m4-bakery/_/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/m4-bakery/_/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/m4-bakery/_/img/apple-touch-icon-57-precomposed.png">
 
-        <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+        <link href="/m4-bakery/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
   </head>
 
   <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/m4-bakery/">datagrok/m4-bakery</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+          </button>
+          <a class="navbar-brand" href="/m4-bakery/">datagrok/m4-bakery</a>
+        </div>        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>      </div>    </div>
+    <!-- Let's not demo the breadcrumb navigation until it works automatically.
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="#"></a></li>
+        <li><a href="#">Library</a></li>
+        <li class="active">Data</li>
+      </ol>
+    </div>    -->
 
     <div class="container">
-        <h1>GNU Make and M4 Website Bakery</h1>
+      <h1>Make and M4 Website Bakery</h1>
 
 
 
-<p><img style="margin: 10px 5% 10px 5%; max-width: 40%;" class="pull-right" src="http://placekitten.com/400/400" /><b>m4-bakery</b> is a simple collection of configuration and scripts that build a static website, using the GNU tools <tt><a href="https://www.gnu.org/software/make/">make</a></tt> and <tt><a href="https://www.gnu.org/software/m4/">m4</a></tt>. Those tools are so ubiquitous, you probably already have them installed on your computer.</p>
+<p><img style="margin: 10px 5% 10px 5%; max-width: 40%;" class="pull-right" src="http://placekitten.com/400/400" /><b>m4-bakery</b> is a simple collection of configuration and scripts that build a static website, using the venerable UNIX tools <tt><a href="https://www.gnu.org/software/make/">GNU make</a></tt> and <tt><a href="https://www.gnu.org/software/m4/">GNU m4</a></tt>.</p>
 
-<p>m4-bakery is fairly simplistic and open-ended; I demonstrate in the source how one might wire up their favorite markdown compiler (I love <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>), so that your source files may be in markdown format. You could similarly replace m4 with a modern templating engine like Jinja, or add CSS compilers like LESS, image processing, and whatever other custom scripts you wish to the compilation pipeline.</p>
+<p>A <i>static website</i> is one which requires no logic on the server-side to work. They are useful because they're effortlessly fast, scalable, and can easily take advantage of caching. They are much easier to secure, and can be served from the very cheapest of hosting services.</p>
 
-<p>This website is the result of running <tt>make</tt> in the <tt>m4-bakery</tt> repository, which compiles the included demo site source to HTML.</p>
+<p><tt>GNU Make</tt> is a tool that figures out from your collection of source files what commands need to be run to render those files as HTML. It is smart enough to only re-render those files whose sources have changed. Modern work-alikes include <a href="gruntjs.com">Grunt</a>, <a href="http://rake.rubyforge.org">Rake</a>, or <a href="http://ant.apache.org">Ant</a>.</p>
 
-<p>The source code for this demo site is included with m4-bakery in the <tt>demo-src</tt> directory. Visit <a href="https://github.com/datagrok/m4-bakery">the m4-bakery project page on GitHub</a> to learn more. Read the README, browse the source code, or fork the project for your own use.</p>
+<p><tt>GNU M4</tt> is a <i>macro processor</i> which we employ as a minimalist templating engine.</p>
 
-<p>Here are some interior pages:</p>
+<p>Neither <tt>Make</tt> nor <tt>M4</tt> are the most intuitive of tools, but since they are so ubiquitious, it's likely that they're already installed on your computer, and your web host's servers.</p>
+
+<p><b>m4-bakery</b> is fairly simplistic and open-ended; it is intended more as a demonstration of techniques than a framework or a cohesive bundle of software.</p>
+
+<p>I demonstrate in the sources how one might wire up their favorite plain-text-to-html compiler (I love <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>), so that you can keep all your source files in markdown format. You could similarly replace <tt>m4</tt> with a modern templating engine like <a href="http://jinja.pocoo.org/">Jinja</a>, or add CSS compilers like <a href="http://lesscss.org/">LESS</a>, image processing using <a href="http://www.imagemagick.org">ImageMagick</a>, and whatever other custom scripts you like to the compilation pipeline.</p>
+
+<p>This website is the result of running <code>make</code> in the <code>m4-bakery</code> repository, which compiles the included demo site source to HTML.</p>
+
+<p>The source code for this demo site is included with m4-bakery in the <code>demo-src</code> directory. Visit <a href="https://github.com/datagrok/m4-bakery">the m4-bakery project page on GitHub</a> to learn more. Read the README, browse the source code, or fork the project for your own use.</p>
+
+<h2>Interesting features</h2>
+
+<p>Static page-compiling tools are fairly boring, but there are some clever pieces within:</p>
+
 <ul>
-    <li><a href="example_page.html">A minimalist markdown example</a></li>
-    <li><a href="html_color_macros_demo.html">Using M4 macros to do HTML color math</a></li>
-    <li><a href="atom.xml">An autogenerated Atom-format feed</a></li>
+<li>Unlike many other attempts, I try to avoid any boilerplate in source files. Page templates are not "included" from sources; instead all sources get a template wrapped around them.</li>
+<li>The included demo is a responsive site that uses <a href="http://getbootstrap.com">Twitter Bootstrap</a>.</li>
+<li>Pages are compiled according to their filename; you may freely mix markdown, raw html, and other files within your sources.</li>
+<li><code>demo-src/pages.json.m4.index</code> renders <a href="pages.json">a .json index of all the pages on the site</a>. This enables us to automatically build navigation bars like the one in the header on this page, or "recent changes" links, all on the client side.
+<li><code>demo-src/atom.xml.m4.index</code> renders <a href="atom.xml">an atom-format .xml file</a> of changes made to the site. Even though the site is static you can still have it update feed readers whenever you make a change.
+</ul>
+
+<h2>Coming soon</h2>
+
+<ul>
+<li>Example of how to use m4-bakery to compile a blog.</li>
+<li>Example of how to automatically build a breadcrumbs bar.</li>
+<li>Example of how to automatically build a <a href="http://www.sitemaps.org">sitemap</a>.</li>
+<li>Example of how to automatically compile Twitter Bootstrap CSS from its LESS sources.</li>
 </ul>
 
 <p>Created by <a href="http://datagrok.org">Michael F. Lamb</a>. License: <a href="https://www.gnu.org/licenses/agpl-3.0.html">Affero GPL version 3 or later</a>.</p>
@@ -85,30 +114,19 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="_/js/jquery-1.7.2.min.js"></script>
-    <script src="_/js/bootstrap.min.js"></script>
+    <script src="/m4-bakery/_/js/jquery-2.0.3.min.js"></script>
+    <script src="/m4-bakery/_/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-    var created = new Date(1362094031000);
-    </script>
 
-<script src="_/js/functions.js"></script>
+  var created = new Date(1362094031000);
+
+  var site_root = "/m4-bakery/";
+</script>
+
+<script src="/m4-bakery/_/js/functions.js"></script>
 
  
 
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
