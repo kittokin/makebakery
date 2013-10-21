@@ -45,7 +45,7 @@ function build_header_nav(data) {
             "'><a href=\'"+
             target +
             "\'>" +
-            item.title +
+            (item.short_title || item.title) +
             "</a></li>");
 
     }).join("");

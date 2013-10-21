@@ -10,6 +10,12 @@ m4_define(`TITLE', `m4_dnl
 m4_define(`__TITLE', `$1')')
 
 m4_dnl
+m4_dnl  TITLE(`text'): Set the "short title" of this page, preferred in navbars etc. to the normal TITLE.
+m4_dnl
+m4_define(`SHORT_TITLE', `m4_dnl  
+m4_define(`__SHORT_TITLE', `$1')')
+
+m4_dnl
 m4_dnl  DATE(`date string'): Set the original creation date of this page. Date
 m4_dnl  format is whatever is parseable by your system's /bin/date.
 m4_dnl

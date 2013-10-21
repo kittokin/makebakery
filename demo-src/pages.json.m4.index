@@ -6,7 +6,7 @@ m4_dnl  ( •_•)
 m4_dnl  ( •_•)>⌐■-■
 m4_dnl  (⌐■_■) deal with it
 m4_dnl
-m4_dnl  Store the resukt of evaluating the CWD macro somewhere because we need
+m4_dnl  Store the result of evaluating the CWD macro somewhere because we need
 m4_dnl  to change the quoting char and that messes up the macro.
 m4_define(mycwd, CWD)m4_dnl
 m4_dnl  
@@ -17,6 +17,7 @@ m4_esyscmd({{
 cd }}mycwd{{
 find -name "*.html" | while read filename; do
     title="$( sed -n 's/^\s*<title>\([^<]*\)<\/title>/\1/p' "$filename" )"
+    short_title="$( sed -n 's/^\s*<meta name=\"short title\" content=\"\([^\"]*\)\">/"\1"/p' "$filename" )"
     ctime="$( sed -n 's/^\s*var created = new Date(\([^)]*\));/\1/p' "$filename" )"
     mtime="$( date -u -r "$filename" "+%s000" )"
     cat <<- EOF
@@ -24,7 +25,9 @@ find -name "*.html" | while read filename; do
         "path": "${filename#.}",
         "created": ${ctime:-null},
         "modified": $mtime,
+        "short_title": ${short_title:-null},
         "title": "$title"
+        
     },
 EOF
 done
