@@ -45,30 +45,25 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
   </head>
 
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
+
+        <a href="https://github.com/datagrok/m4-bakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/__ROOT`'_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
         <div class="navbar-header">
-          m4_dnl<a href="https://github.com/datagrok/m4-bakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/__ROOT`'_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
           <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="glyphicon glyphicon-folder-open"></span>
           </button>
           <a class="navbar-brand" href="/__ROOT">__SITENAME</a>
         </div>m4_dnl /navbar-header
-        <div class="collapse navbar-collapse2">
-          test
-        </div>
-        <div class="collapse navbar-collapse">
-          <button type="button" class="btn btn-default navbar-btn navbar-right navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse2">
-            <span class="glyphicon glyphicon-tree-conifer"></span>
-          </button>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav"></ul>
         </div>m4_dnl /navbar-collapse
+
       </div>m4_dnl /container
-    </div>m4_dnl /navbar
+    </nav>
 
     <!-- Let's not demo the breadcrumb navigation until it works automatically.
     <div class="container">
