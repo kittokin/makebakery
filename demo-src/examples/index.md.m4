@@ -5,3 +5,5 @@
 SHORT_TITLE(Examples)
 
 This directory includes example source files that m4-bakery can render.
+
+# Child pages
