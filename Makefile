@@ -117,7 +117,8 @@ $(DST)/%: $(DST)/%.m4 $(MACROS)
 # chances of running an 'rm -rf /'.
 clean:
 	mv $(BASEPATH) $(BASEPATH).old
+	mkdir $(BASEPATH)
+	mv $(BASEPATH).old/.git $(BASEPATH)
 	rm -rf $(BASEPATH).old
-	git clone . -b gh-pages $(BASEPATH)
 
 # vim: tw=59 :
