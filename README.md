@@ -14,7 +14,7 @@ One of the first hacks that I was really proud of was this website-baking system
 
 Of course, with no processing occurring on the server end, it's not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like [Disqus](http://disqus.com) to implement these features anyway.
 
-In short, if you're not using any of the dynamic features of your web hosting service, you might as well make the whole site static.
+In short, if you're not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you are using those features for some pieces of your site, you're better off making the static parts simple static files.
 
 ## GNU Make and GNU M4
 
@@ -72,81 +72,21 @@ This repository contains the following:
 
 It has been said that every programmer, at some point, writes a blog/website publishing engine. Here are some other such projects that are similar in some way.
 
+## Friends
+
+- [ironfroggy](https://github.com/ironfroggy)'s [jules](https://github.com/ironfroggy/jules)
+- [nathanielksmith](https://github.com/nathanielksmith)'s [Cadigan](https://github.com/nathanielksmith/cadigan)
+- [redline6561](https://github.com/redline6561)'s [Coleslaw](https://github.com/redline6561/coleslaw)
+- [veselosky](https://github.com/veselosky)'s [Otto Webber](https://github.com/veselosky/otto-webber)
+
 ## Forks
 
 - Brandon Invergo's [m4-bloggery](https://gitorious.org/bi-websites/m4-bloggery) is based on m4-bakery and takes some slightly different approaches.
 
-## Friends
-
-- ironfroggy's [jules](https://github.com/ironfroggy/jules)
-- Nate Smith's [Cadigan]()
-- redline6561's [Coleslaw]()
-
 ## Others
 
-
-blacksmith                                                http://blacksmith.jit.su/
-blatter                                                   http://bitbucket.org/jek/blatter/
-blogofile                                                 http://blogofile.com/
-bonsai                                                    https://github.com/benschwarz/bonsai
-cactus                                                    https://github.com/koenbok/Cactus
-chisel                                                    https://github.com/dz/chisel
-coleslaw                                                  http://www.cliki.net/coleslaw
-django                                                    staticsomething
-docpad                                                    https://github.com/bevry/docpad
-drupan                                                    https://github.com/fallenhitokiri/drupan
-emacs                                                     +                                        org-mode +    org-publish
-fairytale                                                 https://github.com/46Bit/fairytale
-fmpp                                                      http://fmpp.sourceforge.net/
-fragments                                                 http://glyphobet.github.com/fragments/
-frank
-fugitive                                                  https://gitorious.org/fugitive
-hakyll                                                    http://jaspervdj.be/hakyll/
-hammer                                                    http://hammerformac.com/
-hastie                                                    https://github.com/mkaz/hastie
-nanoc                                                     http://nanoc.ws/about/#similar-projects
-regenerate.lisp https://gist.github.com/TeMPOraL/4190622
-https://www.dropbox.com/s/mk9w8r0zjkkwpqi/static_sites.md
-hyde                                                      http://ringce.com/hyde
-ikiwiki                                                   http://ikiwiki.info/
-jekyll
-kirby
-liquidink                                                 and                                      rest2web
-markbox                                                   https://github.com/myfreeweb/markbox
-middleman
-movable                                                   Type
-mynt                                                      http://mynt.mirroredwhite.com
-nanoc                                                     nanoc.ws
-nestaCMS
-nikola                                                    http://nikola.ralsina.com.ar
-non-static                                                webserver                                +        list of          pages + wget
-octopress
-pelican
-phrozn                                                    http://phrozn.info
-piecrust                                                  http://bolt80.com/piecrust/
-poole                                                     https://bitbucket.org/obensonne/poole
-punch-blog                                                https://github.com/laktek/punch-blog
-quill
-romulus
-ruhoh
-second                                                    Crack
-sphinx/docutils
-stacey
-stasis
-staticMatic
-staticjinja                                               https://github.com/Ceasar/staticjinja
-syte                                                      https://github.com/rigoneri/syte
-telegram                                                  https://telegr.am/
-tinkerer                                                  http://tinkerer.me
-toto                                                      https://github.com/cloudhead/toto
-webby                                                     (http://webby.rubyforge.org/)
-webgen
-wintersmith                                               http://jnordberg.github.com/wintersmith/
-wok                                                       https://github.com/mythmon/wok
-
-
-https://gist.github.com/davatron5000/2254924
-
+- jaspervdj's semi-automated [Static Site Generators Listing](https://github.com/jaspervdj/static-site-generator-comparison)
+- davatron5000's [crowdsourced recommendations gist](https://gist.github.com/davatron5000/2254924)
 
 # License
 
