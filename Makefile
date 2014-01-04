@@ -18,17 +18,16 @@ PLATFORM := $(shell uname -s)
 # baking is done. We do this by getting a list of all the
 # source files and rewriting pathnames and file suffixes as
 # necessary.
+
+# We want a second class of ".index" files to be processed
+# after all the other files have been processed, but we
+# want to process them with the same pipeline as all
+# the other files. So: 
 #
-# "pages" is the subset of these files which are pieces of
-# content while "targets" include also files which collate
-# or enumerate other pages (blog rollups, sitemaps, etc.)
-#
-# This mess temporarily renames whatevs.index to I/whatevs
-# so that it can apply the same steps to convert the
-# filenames to their target filenames to the indices and
-# non-indices. Then it separates the indices into another
-# vairable so we can have the indices depend on the
-# completed processing of the non-indices.
+# 1. Temporarily renames whatevs.index to I/whatevs
+# 2. Separates the indices into another vairable so we can
+# have the indices depend on the completed processing of
+# the non-indices.
 #
 # In words, we're doing this. "To obtain the list of all
 # the files we want to generate,
@@ -42,9 +41,9 @@ PLATFORM := $(shell uname -s)
 # - remove all .m4 suffixes
 # - transform all .md suffixes into .html
 # - split all the makred indices into their own variable
-targets := $(shell find -L $(SRC)/ -not \( -name '.git' -prune \) -type f)
+sources := $(shell find -L $(SRC)/ -not \( -name '.git' -prune \) -type f)
+targets := $(sources:$(SRC)/%=$(DST)/%)
 targets := $(filter-out %.inc %.swp,$(targets))
-targets := $(targets:$(SRC)/%=$(DST)/%)
 targets := $(filter-out %.index,$(targets)) $(addprefix I/,$(filter %.index,$(targets)))
 targets := $(targets:.index=)
 targets := $(targets:.m4=)
