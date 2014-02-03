@@ -1,0 +1,4 @@
+The scripts in this directory are all symbolic links whose targets are located
+in ../mods-available/ .
+
+Only scripts ending in .mk will be included into the main makefile.
