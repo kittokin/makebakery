@@ -11,6 +11,7 @@ SRC      := demo-src
 DST      := build/m4-bakery
 TEMPLATE    := $(SRC)/.site/template.html.m4
 
+default_document := contents.html
 
 # BASEPATH is the absolute path to the root on the
 # filesystem of the site build-out
@@ -74,27 +75,10 @@ default: all
 sources := $(shell find -L $(SRC)/ \( -name '.site' -o -name '.git' -o -name '.gitignore' \) -prune -o -type f -print)
 targets := $(sources:$(SRC)/%=$(DST)/%)
 targets := $(filter-out %.inc %.swp,$(targets))
-targets := $(filter-out %.index,$(targets)) $(addprefix I/,$(filter %.index,$(targets)))
-targets := $(targets:.index=)
 
-include etc/m4.mk
-include etc/python-static.mk
-include etc/rfc2822ish.mk
-include etc/pandoc.mk
-include etc/coffeescript.mk
-default_document := contents.html
-include etc/paths_are_dirs.mk
-include etc/extensionless_html.mk
-include etc/raw.mk
+include etc/mods-enabled/*.mk
 
-indices := $(filter I/%,$(targets))
-indices := $(indices:I/%=%)
-targets := $(filter-out I/%,$(targets))
-
-targets: $(targets)
-indices: targets $(indices)
-
-all: targets indices
+all: $(targets)
 
 # First, all source files will be copied verbatim to the
 # destination. I use the ubiquitous unix 'install' tool
@@ -107,14 +91,6 @@ ifeq ($(PLATFORM), Darwin)
 else
 		install -m 644 -D $< $@
 endif
-
-# Any files named '*.index' will depend on the rest of the
-# pages having been processed before being processed
-# themselves. In this way you can create automatic indices,
-# sitemaps, etc. No processing occurs here, we just remove
-# the extension.
-$(DST)/%: $(DST)/%.index $(targets)
-	cp $< $@
 
 # By default, GNU Make will skip any source files that have
 # not been modified since the last time they were rendered.
