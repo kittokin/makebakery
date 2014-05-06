@@ -1,3 +1,6 @@
+#
+# Filter files with .m4 extensions through the m4 macro processor.
+#
 M4 	     := m4 -I etc -P
 MACROS   := macros.m4
 targets := $(targets:.m4=)
