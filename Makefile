@@ -11,7 +11,7 @@ SRC      := demo-src
 DST      := build/m4-bakery
 TEMPLATE    := $(SRC)/.site/template.html.m4
 
-DEFUALT_DOCUMENT := contents.html
+DEFAULT_DOCUMENT := contents.html
 
 # BASEPATH is the absolute path to the root on the
 # filesystem of the site build-out
@@ -26,7 +26,7 @@ PLATFORM := $(shell uname -s)
 export DST
 export SRC
 export BASEURL
-export DEFUALT_DOCUMENT
+export DEFAULT_DOCUMENT
 
 default: all
 # Build a list of all the files that should exist when the
@@ -105,6 +105,6 @@ clean:
 	rm -rf $(BASEPATH).old
 
 serve:
-	BASEURL=$(BASEURL) DEFAULT_DOCUMENT=$(DEFAULT_DOCUMENT) python bin/serve.py
+	python bin/serve.py
 
 # vim: tw=59 :
