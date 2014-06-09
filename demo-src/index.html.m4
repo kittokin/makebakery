@@ -38,7 +38,7 @@ DATE(`Thu, 28 Feb 2013 18:27:11 -0500')
 <li>Example of how to automatically build a breadcrumbs bar.</li>
 <li>Example of how to automatically build a <a href="http://www.sitemaps.org">sitemap</a>.</li>
 <li>Example of how to automatically compile Twitter Bootstrap CSS from its LESS sources.</li>
-<li>Using m4-bakery to easily build a static AJAX-based application, its static backend, and the <a href="https://developers.google.com/webmasters/ajax-crawling/docs/learn-more">HTML Snapshot needed for non-javascript browsers and webcrawlers to indexa it</a>.
+<li>Using m4-bakery to easily build a static AJAX-based application, its static backend, and the <a href="https://developers.google.com/webmasters/ajax-crawling/docs/learn-more">HTML Snapshot needed for non-javascript browsers and webcrawlers to index it</a>.
 </ul>
 
 <p>Created by <a href="http://datagrok.org">Michael F. Lamb</a>. License: <a href="https://www.gnu.org/licenses/agpl-3.0.html">Affero GPL version 3 or later</a>.</p>
