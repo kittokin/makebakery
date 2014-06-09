@@ -24,24 +24,24 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
     <meta name="DC.date" content="__DATE_ISO">
 
     <!-- Le styles -->
-    <link rel="stylesheet" href="/__ROOT`'_/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/__ROOT`'_/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/__ROOT`'_/css/style.css">
+    <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="__BASEURL/`'_/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="/__ROOT`'_/js/html5shiv.js"></script>
-      <script src="/__ROOT`'_/js/respond.min.js"></script>
+      <script src="__BASEURL/`'_/js/html5shiv.js"></script>
+      <script src="__BASEURL/`'_/js/respond.min.js"></script>
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/__ROOT`'_/img/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/__ROOT`'_/img/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/__ROOT`'_/img/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/__ROOT`'_/img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="__BASEURL/`'_/img/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="__BASEURL/`'_/img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="__BASEURL/`'_/img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="__BASEURL/`'_/img/apple-touch-icon-57-precomposed.png">
 
     m4_dnl hook up our atom feed
-    <link href="/__ROOT`'atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="__BASEURL/`'atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
   </head>
 
   <body>
@@ -49,13 +49,13 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
 
-        <a href="https://github.com/datagrok/m4-bakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/__ROOT`'_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+        <a href="https://github.com/datagrok/m4-bakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="__BASEURL/`'_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
         <div class="navbar-header">
           <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="glyphicon glyphicon-folder-open"></span>
           </button>
-          <a class="navbar-brand" href="/__ROOT">__SITENAME</a>
+          <a class="navbar-brand" href="__BASEURL/">__SITENAME</a>
         </div>m4_dnl /navbar-header
 
         <div class="navbar-collapse collapse">
@@ -85,8 +85,8 @@ m4_dnl
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/__ROOT`'_/js/jquery-2.0.3.min.js"></script>
-    <script src="/__ROOT`'_/js/bootstrap.min.js"></script>
+    <script src="__BASEURL/`'_/js/jquery-2.0.3.min.js"></script>
+    <script src="__BASEURL/`'_/js/bootstrap.min.js"></script>
 
 m4_dnl  Get some other variables useful to javascript into the page context.
 <script type="text/javascript">
@@ -95,11 +95,11 @@ m4_dnl  available to javascript.
 m4_ifdef(`__DATE_MSEC', `
   var created = new Date(__DATE_MSEC);
 ')
-  var site_root = "/__ROOT";
+  var site_root = "__BASEURL/";
 </script>
 
 m4_dnl  this is where we put our custom functions
-<script src="/__ROOT`'_/js/functions.js"></script>
+<script src="__BASEURL/`'_/js/functions.js"></script>
 
 m4_ifdef(`__GACODE', `<script>
     var _gaq = _gaq || [];

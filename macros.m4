@@ -49,35 +49,32 @@ m4_dnl  ----------------------------------------------------------------------
 
 m4_dnl  FIXME: This stuff is specific to each site; if the user is building
 m4_dnl  many different sites with a single main m4-bakery, should we put this
-m4_dnl  somewhere else?
+m4_dnl  in the .site directory along with the template?
 
-m4_dnl  If your site is rooted somewhere other than /, specify it with no
-m4_dnl  leading nor trailing slash. If the site is at the root of your webhost,
-m4_dnl  leave this commented out.
-m4_dnl
-m4_dnl  __ROOT should have a trailing slash, not a leding slash. To specify no
-m4_dnl  leading path, leave __ROOT undefined.
+m4_dnl  If your site is rooted somewhere other than /, specify its path as
+m4_dnl  __BASEURL with no leading nor trailing slash. If the site is at the
+m4_dnl  root of your webhost, leave __BASEURL undefined.
 m4_dnl
 m4_dnl  Example: If I am using m4-bakery to build a site served at the url
 m4_dnl  http://datagrok.org/foo/bar/mysite then I would set:
 m4_dnl      __SITEHOST  http://datagrok.org
-m4_dnl      __ROOT      foo/bar/mysite/
+m4_dnl      __BASEURL   /foo/bar/mysite
 m4_dnl
 m4_define(`__SITEHOST', `http://datagrok.github.com')
 m4_define(`__SITENAME', `datagrok/m4-bakery')
-m4_define(`__ROOT', `m4-bakery/')
 m4_dnl
 m4_dnl  Your Google analytics code:
 m4_dnl      m4_define(`__GACODE', `UA-XXXXXX-XX')
 m4_dnl
 
 
+
 m4_dnl  You shouldn't need to modify anything below.
 m4_dnl  ----------------------------------------------------------------------
 
-m4_dnl  If you don't define a __ROOT above, we configure it to expand to
-m4_dnl  nothing (site root).
-m4_ifdef(`__ROOT',, `m4_define(`__ROOT', `')')
+m4_dnl  If you don't define a __BASEURL above, we configure it to expand to
+m4_dnl  '' (site root).
+m4_ifdef(`__BASEURL',, `m4_define(`__BASEURL', `')')
 
 m4_divert(2)m4_dnl  Keep this line near the end of the file.
 m4_dnl vim: et: commentstring=m4_dnl\ \ %s:comments=\:#,\:m4_dnl
