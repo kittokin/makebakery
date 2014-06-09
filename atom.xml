@@ -1,41 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[datagrok/m4-bakery]]></title>
-  <link href="/m4-bakery//atom.xml" rel="self"/>
-  <link href="/m4-bakery//"/>
-  <updated>2013-10-17T00:00:00+00:00</updated>
-  <id>http://datagrok.github.com/m4-bakery//</id>
+  <link href="/m4-bakery/atom.xml" rel="self"/>
+  <link href="/m4-bakery/"/>
+  <updated>2014-06-09T00:00:00+00:00</updated>
+  <id>http://datagrok.github.com/m4-bakery/</id>
   <author>
     <name><![CDATA[__AUTHOR]]></name>
     <email><![CDATA[__EMAIL]]></email>
   </author>
   <generator uri="https://github.com/datagrok/m4-bakery">m4-bakery</generator>
     <entry>
-        <title type="html"><![CDATA[Make and M4 Website Bakery]]></title>
-        <link href="http://datagrok.github.com/m4-bakery//./index.html"/>
-        <updated>1382002984000</updated>
-        <id>http://datagrok.github.com/m4-bakery//./index.html</id>
+        <title type="html"><![CDATA[HTML Colors Demonstration]]></title>
+        <link href="http://datagrok.github.com/m4-bakery/./examples/html_color_macros_demo/index.html"/>
+        <updated>1402309678000</updated>
+        <id>http://datagrok.github.com/m4-bakery/./examples/html_color_macros_demo/index.html</id>
         
     </entry>
     <entry>
-        <title type="html"><![CDATA[HTML Colors Demonstration]]></title>
-        <link href="http://datagrok.github.com/m4-bakery//./html_color_macros_demo.html"/>
-        <updated>1381999446000</updated>
-        <id>http://datagrok.github.com/m4-bakery//./html_color_macros_demo.html</id>
+        <title type="html"><![CDATA[Examples of use]]></title>
+        <link href="http://datagrok.github.com/m4-bakery/./examples/index.html"/>
+        <updated>1402309678000</updated>
+        <id>http://datagrok.github.com/m4-bakery/./examples/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[An example webpage]]></title>
-        <link href="http://datagrok.github.com/m4-bakery//./example_page.html"/>
-        <updated>1382000444000</updated>
-        <id>http://datagrok.github.com/m4-bakery//./example_page.html</id>
+        <link href="http://datagrok.github.com/m4-bakery/./examples/example_page/index.html"/>
+        <updated>1402309678000</updated>
+        <id>http://datagrok.github.com/m4-bakery/./examples/example_page/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[An example sub-section]]></title>
-        <link href="http://datagrok.github.com/m4-bakery//./subsection/index.html"/>
-        <updated>1382000444000</updated>
-        <id>http://datagrok.github.com/m4-bakery//./subsection/index.html</id>
+        <link href="http://datagrok.github.com/m4-bakery/./examples/subsection/index.html"/>
+        <updated>1402309678000</updated>
+        <id>http://datagrok.github.com/m4-bakery/./examples/subsection/index.html</id>
+        
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Getting Started]]></title>
+        <link href="http://datagrok.github.com/m4-bakery/./getting_started/index.html"/>
+        <updated>1402309678000</updated>
+        <id>http://datagrok.github.com/m4-bakery/./getting_started/index.html</id>
+        
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Make and M4 Website Bakery]]></title>
+        <link href="http://datagrok.github.com/m4-bakery/./index.html"/>
+        <updated>1402309678000</updated>
+        <id>http://datagrok.github.com/m4-bakery/./index.html</id>
         
     </entry>
 </feed>
