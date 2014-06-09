@@ -11,7 +11,7 @@ SRC      := demo-src
 DST      := build/m4-bakery
 TEMPLATE    := $(SRC)/.site/template.html.m4
 
-DEFAULT_DOCUMENT := contents.html
+DEFAULT_DOCUMENT := index.html
 
 # BASEPATH is the absolute path to the root on the
 # filesystem of the site build-out
@@ -19,7 +19,7 @@ BASEPATH    := $(shell readlink $(DST) || echo $(DST))
 # BASEURL is the URL path from the root of the domain to
 # the root of the site. If defined, should start with / and
 # never end with /
-BASEURL	    :=
+BASEURL	    := /m4-bakery
 
 PLATFORM := $(shell uname -s)
 

@@ -52,7 +52,7 @@ m4_dnl  many different sites with a single main m4-bakery, should we put this
 m4_dnl  in the .site directory along with the template?
 
 m4_dnl  If your site is rooted somewhere other than /, specify its path as
-m4_dnl  __BASEURL with no leading nor trailing slash. If the site is at the
+m4_dnl  __BASEURL with a leading, but no trailing slash. If the site is at the
 m4_dnl  root of your webhost, leave __BASEURL undefined.
 m4_dnl
 m4_dnl  Example: If I am using m4-bakery to build a site served at the url
