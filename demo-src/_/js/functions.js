@@ -43,8 +43,9 @@ function build_header_nav(data) {
             "</a></li>");
 
     }).join("");
+    nav = $(nav)
     $(document).ready(function(){
-        $('ul.nav').html(nav);
+        $('ul.nav').append(nav);
     });
 }
 
@@ -103,10 +104,11 @@ function build_child_links(data) {
             "</a></li>");
 
     }).join("");
+    nav = $("<ul>" + nav + "</ul>");
     $(document).ready(function(){
         var target = $('h2:contains(Child pages)');
         if (!target.length) return;
-        target.after("<ul>" + nav + "</ul>");
+        target.after(nav);
     });
 }
 
