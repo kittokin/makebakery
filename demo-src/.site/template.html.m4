@@ -24,7 +24,7 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
     <meta name="DC.date" content="__DATE_ISO">
 
     <!-- Le styles -->
-    <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap-3.2.0.min.css">
     <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="__BASEURL/`'_/css/style.css">
 
@@ -86,7 +86,7 @@ m4_dnl
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="__BASEURL/`'_/js/jquery-2.1.1.min.js"></script>
-    <script src="__BASEURL/`'_/js/bootstrap.min.js"></script>
+    <script src="__BASEURL/`'_/js/bootstrap-3.2.0.min.js"></script>
 
 m4_dnl  Get some other variables useful to javascript into the page context.
 <script type="text/javascript">
