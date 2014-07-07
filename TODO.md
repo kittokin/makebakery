@@ -1,8 +1,10 @@
 # To Do
 
-- Improve .url for retrieval of upstream resources
+- Improve .url source format for retrieval of upstream resources
     - Support files inside of zips and tarballs
     - Support files inside of git clones
+    - Support for checking an MD5SUM of a downloaded resource
+- Even though I suspect GNU Make can obviate all need for Grunt and Bower, those tools have become part of the workflow for many developers. Show how we can play nice with them, incorporating them into the build pipeline.
 - Pattern for collation of pages
     - Feeds: Atom, RSS
     - Google Sitemap
