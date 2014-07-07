@@ -85,7 +85,7 @@ m4_dnl
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="__BASEURL/`'_/js/jquery-2.0.3.min.js"></script>
+    <script src="__BASEURL/`'_/js/jquery-2.1.1.min.js"></script>
     <script src="__BASEURL/`'_/js/bootstrap.min.js"></script>
 
 m4_dnl  Get some other variables useful to javascript into the page context.
