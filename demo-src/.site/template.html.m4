@@ -30,8 +30,8 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="__BASEURL/`'_/js/html5shiv.js"></script>
-      <script src="__BASEURL/`'_/js/respond.min.js"></script>
+      <script src="__BASEURL/`'_/js/html5shiv-3.7.2.min.js"></script>
+      <script src="__BASEURL/`'_/js/respond-1.4.2.min.js"></script>
     <![endif]-->
 
     <!-- Le fav and touch icons -->
