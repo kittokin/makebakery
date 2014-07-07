@@ -93,7 +93,6 @@ It has been said that every programmer, at some point, writes a blog/website pub
 
 The `demo-src` part of this repository includes unmodified copies of:
 
-- [HTML5 reset](http://html5reset.org/), License: BSD
 - [Modernizr](http://modernizr.com/), License: MIT
 - [jQuery](http://jquery.org), License: MIT
 
