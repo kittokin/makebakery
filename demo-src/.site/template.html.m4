@@ -25,7 +25,7 @@ m4_ifdef(`__TITLE',, `m4_define(`__TITLE', `Untitled Page')')
 
     <!-- Le styles -->
     <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap-3.2.0.min.css">
-    <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="__BASEURL/`'_/css/bootstrap-theme-3.2.0.min.css">
     <link rel="stylesheet" href="__BASEURL/`'_/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
