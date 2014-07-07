@@ -1,6 +1,6 @@
-# GNU Make and M4 Website Bakery
+# GNU Make and M4 Static Website Generator
 
-One of the first hacks that I was really proud of was this website-baking system I built in late 1999 with some venerable old Unix tools, [GNU Make](http://www.gnu.org/software/make/) and [GNU m4](http://www.gnu.org/software/m4/). The article [Using M4 to write HTML](http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html) by Bob Hepple was my original inspiration, but I think I was able to surpass the utility of the examples given therein.
+One of the first hacks that I was really proud of was a static website generator that I built in late 1999 with some venerable old Unix tools, [GNU Make](http://www.gnu.org/software/make/) and [GNU m4](http://www.gnu.org/software/m4/). The article [Using M4 to write HTML](http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html) by Bob Hepple was my original inspiration to build it that way. At that time I think I was able to surpass the utility of the examples given therein, and since then I've attempted to whittle this old hack down into a bunch of modular parts that one might use to build their own, or simply to learn about GNU Make.
 
 **You're currently viewing the 'master' branch of this repository.** I've tried to include here many interesting features and ideas for how this technique might be used, including the use of [Pandoc](http://johnmacfarlane.net/pandoc/) for markdown-format source files. I've tried to include a generous amount of internal documentation and comments as well, but it may yet be a lot to absorb at once. To more easily understand what's going on here, be sure to take a look at the 'simple' branch of the repository: http://github.com/datagrok/m4-bakery/tree/simple
 
@@ -26,12 +26,12 @@ The difficulty in employing m4 may contribute to my pride in having built a usef
 
 ## Features
 
-- The HTML template is wrapped around .html.m4 files automatically; no boilerplate is necessary in the source file.
-- The HTML template is a single file, not a separate header and footer.
-- Files named .m4 don't get the template, but still get interpreted by m4.
-- Any files not named '.m4' don't get interpreted by m4; they are copied verbatim.
-- Macros defined in source .html.m4 files will be expanded in the template. This lets you put complex logic in the template and trigger it from the source file. For example, you could set the page title, toggle a template style, define sidebars, etc.
-- Macros defined in the macros file will be expanded in the source files and the template. You can define macros here that you want to be available everywhere.
+- m4: The HTML template is wrapped around .html.m4 files automatically; no boilerplate or "include" statements are necessary in the source files.
+- m4: The HTML template is a single file, not a separate header and footer.
+- Makefile: Files named .m4 don't get the template, but still get interpreted by m4.
+- Makefile: Any files not named '.m4' don't get interpreted by m4; they are copied verbatim.
+- m4: Macros defined in source .html.m4 files will be expanded in the template. This lets you put complex logic in the template and trigger it from the source file. For example, you could set the page title, toggle a template style, define sidebars, etc.
+- m4: Macros defined in the macros file will be expanded in the source files and the template. You can define macros here that you want to be available everywhere.
 
 ## Execution
 
@@ -85,8 +85,9 @@ It has been said that every programmer, at some point, writes a blog/website pub
 
 ## Others
 
-- jaspervdj's semi-automated [Static Site Generators Listing](https://github.com/jaspervdj/static-site-generator-comparison)
+- jaspervdj's semi-automated [Static Site Generators Listing](http://staticsitegenerators.net)
 - davatron5000's [crowdsourced recommendations gist](https://gist.github.com/davatron5000/2254924)
+
 
 # License
 

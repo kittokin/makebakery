@@ -1,5 +1,8 @@
 # To Do
 
+- Improve .url for retrieval of upstream resources
+    - Support files inside of zips and tarballs
+    - Support files inside of git clones
 - Pattern for collation of pages
     - Feeds: Atom, RSS
     - Google Sitemap
