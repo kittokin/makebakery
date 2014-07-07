@@ -2,7 +2,7 @@
     {
         "path": "/examples/html_color_macros_demo/index.html",
         "created": null,
-        "modified": 1404718950000,
+        "modified": 1404722645000,
         "short_title": null,
         "title": "HTML Colors Demonstration"
         
@@ -10,7 +10,7 @@
     {
         "path": "/examples/index.html",
         "created": null,
-        "modified": 1404718950000,
+        "modified": 1404722645000,
         "short_title": "Examples",
         "title": "Examples of use"
         
@@ -18,7 +18,7 @@
     {
         "path": "/examples/example_page/index.html",
         "created": 1404950400000,
-        "modified": 1404718950000,
+        "modified": 1404722645000,
         "short_title": null,
         "title": "An example webpage"
         
@@ -26,7 +26,7 @@
     {
         "path": "/examples/subsection/index.html",
         "created": null,
-        "modified": 1404718950000,
+        "modified": 1404722645000,
         "short_title": null,
         "title": "An example sub-section"
         
@@ -34,7 +34,7 @@
     {
         "path": "/getting_started/index.html",
         "created": null,
-        "modified": 1404718951000,
+        "modified": 1404722658000,
         "short_title": null,
         "title": "Getting Started"
         
@@ -42,7 +42,7 @@
     {
         "path": "/index.html",
         "created": 1362094031000,
-        "modified": 1404718950000,
+        "modified": 1404722645000,
         "short_title": null,
         "title": "Make and M4 Static Website Generator"
         
