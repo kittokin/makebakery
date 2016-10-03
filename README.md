@@ -89,15 +89,9 @@ It has been said that every programmer, at some point, writes a blog/website pub
 - davatron5000's [crowdsourced recommendations gist](https://gist.github.com/davatron5000/2254924)
 
 
-# License
+# License: AGPL-3.0+ with additional permissions
 
-The `demo-src` part of this repository includes unmodified copies of:
+This software is copyright 2016 [Michael F. Lamb][] and released under the terms of the [GNU Affero General Public License, Version 3][AGPL-3.0+] (or, at your option, any later version,) with a grant of additional permission that allows you to apply any terms you wish to the output HTML and Javascript. For details, see [LICENSE.md](LICENSE.md).
 
-- [Modernizr](http://modernizr.com/), License: MIT
-- [jQuery](http://jquery.org), License: MIT
-
-These resources, of course, retain their original license.
-
-The parts of this repository that I wrote are released under the terms of the [GNU Affero General Public License](http://www.gnu.org/licenses/agpl-3.0.html) verison 3 or later.
-
-If these terms don't meet your needs, just contact me.
+[AGPL-3.0+]: http://www.gnu.org/licenses/agpl.html
+[Michael F. Lamb]: http://datagrok.org
