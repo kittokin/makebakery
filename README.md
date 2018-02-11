@@ -1,48 +1,57 @@
-# GNU Make and M4 Static Website Generator
+# Makebakery: a Make-based static website generator
 
-One of the first hacks that I was really proud of was a static website generator that I built in late 1999 with some venerable old Unix tools, [GNU Make](http://www.gnu.org/software/make/) and [GNU m4](http://www.gnu.org/software/m4/). The article [Using M4 to write HTML](http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html) by Bob Hepple was my original inspiration to build it that way. At that time I think I was able to surpass the utility of the examples given therein, and since then I've attempted to whittle this old hack down into a bunch of modular parts that one might use to build their own, or simply to learn about GNU Make.
+**Makebakery** is a static website generator, implemented as a configuration for the build tool [GNU Make][]. Static websites are those which require no database or server-side logic.
 
-**You're currently viewing the 'master' branch of this repository.** I've tried to include here many interesting features and ideas for how this technique might be used, including the use of [Pandoc](http://johnmacfarlane.net/pandoc/) for markdown-format source files. I've tried to include a generous amount of internal documentation and comments as well, but it may yet be a lot to absorb at once. To more easily understand what's going on here, be sure to take a look at the 'simple' branch of the repository: http://github.com/datagrok/m4-bakery/tree/simple
+The basic idea of using a Makefile to build static HTML files from various sources using various renderers is fairly obvious and straightforward. Employing GNU Make in this way gets us several cool features "for free":
 
-## Site Baking
+- Speed via multiprocessing. GNU Make has built-in parallelism. So if you have 8 cpu cores you can re-render your website about 8x as fast as you could with a single-process build tool.
+- Speed via dependency tracking. When you change a source file, GNU Make is smart enough to know that it only needs to rebuild that portion of the rendered HTML, not the whole site.
+- Language agnosticism. GNU Make doesn't care what languages you prefer to use with it; it works equally well with javascript stacks, c compilers, and scripting languages.
+- Ubiquity. GNU Make has been around a long time and is fairly well-documented. Chances are good that it is available for your platform.
 
-"Website baking" is the pattern of building from templates a mostly- or completely-static website that requires no special software to serve. Baking a website provides huge advantages when it can be employed, because they:
+This particular implementation, however, employs some GNU Make features to implement a modular plug-in system. The goal of this project is to make it easy for you to extend it to work with your own renderers, template engines, and source file formats.
+
+Here are some of the things you can do with it out-of-the-box:
+
+- Render markdown to HTML with Pandoc, markdown, or your favorite renderer.
+- Compile [CoffeeScript][] to JavaScript.
+- Compile SASS to CSS.
+- Run scripts in your sources directory that output HTML, implemented in JavaScript, Python, Ruby, Bash, or any other language.
+- Run scripts in your sources directory that output markdown, and compile that into HTML the same as you would a markdown-format source file.
+- Run scripts in your sources directory that output markdown, compile that into HTML, and wrap the result in a site template
+- Run scripts in your sources directory that output site maps in multiple formats (JSON, RDF, XML, HTML, etc.)
+- Wrap content in a template defined in GNU m4 with no changes to your source files (no tedious "include statements".)
+- Retrieve resources from the Internet to be stored and served locally.
+
+- A modular system for extensibility, allowing source file formats to be easily added to (or removed from) the system, without modifications to this project's Makefile.
+- Included modules for source file formats:
+- Included modules for templating: GNU m4, Pandoc, 
+
+See the included [modules documentation](etc/mods-available) for examples and a list of included modules.
+
+## About static websites
+
+Static websites are those that require no special software to serve. A static website provides huge advantages, because they:
 
 - have fewer vectors for break-ins, 
 - easily scale to handle massive amounts of traffic, and 
 - may be hosted on commodity hardware or the cheapest of web hosting services.
 
-Of course, with no processing occurring on the server end, it's not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like [Disqus](http://disqus.com) to implement these features anyway.
+Of course, with no processing occurring on the server end, it's not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like [Disqus](http://disqus.com) to implement these features anyway, or rely on third-party forums like to provide discussion areas for their content.
 
-In short, if you're not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you are using those features for some pieces of your site, you're better off making the static parts simple static files.
+In short, if you're not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you _are_ using those features on some areas of your site, you're better off making the static parts simple static files.
 
-## GNU Make and GNU M4
+## Quick Start
 
-That is of course only an argument for building static websites. Doing it in this _particular_ way may be... ill-advised.
+Clone this repository.
 
-Though m4 may be venerable and may come pre-installed on several modern Unix platforms, it brings along a notoriously cumbersome syntax for defining and calling macros, escaping, quoting, and other things. Sendmail's configuration system serves as a cautionary tale, as it was built upon m4 and is legendary for being obtuse. Employing m4 may be an exercise in masochism.
-
-The difficulty in employing m4 may contribute to my pride in having built a useful tool with it a whole decade+ ago. I hope that this repository will yet serve as an instructive example of how to 'bake' a website using ubiquitous Unix tools, even if every single user ends up swapping out m4 for modern template software, e.g. [Jinja](http://jinja.pocoo.org/).
-
-## Features
-
-- m4: The HTML template is wrapped around .html.m4 files automatically; no boilerplate or "include" statements are necessary in the source files.
-- m4: The HTML template is a single file, not a separate header and footer.
-- Makefile: Files named .m4 don't get the template, but still get interpreted by m4.
-- Makefile: Any files not named '.m4' don't get interpreted by m4; they are copied verbatim.
-- m4: Macros defined in source .html.m4 files will be expanded in the template. This lets you put complex logic in the template and trigger it from the source file. For example, you could set the page title, toggle a template style, define sidebars, etc.
-- m4: Macros defined in the macros file will be expanded in the source files and the template. You can define macros here that you want to be available everywhere.
-
-## Execution
-
-Beginning with source files like this:
+Create a directory with source files, like this:
 
 	src/
 	|-- index.html.m4
 	`-- style.css
 
-Along with the Makefile, macros file, and HTML template, running 'make' will
-output:
+Run `make`. It will output:
 
 	install -m 644 -D src/style.css dst/style.css
 	m4 -P macros.m4 src/index.html.m4 template.html.m4 > src/index.html
@@ -55,39 +64,60 @@ And produce the following structure:
 	|-- index.html
 	`-- style.css
 
-# Directory layout
+## Usage
 
-This repository contains the following:
+Run `make`, specifying some parameters to control its execution, as follows.
 
-    .
-    |-- build/                      # The default locaiton for rendered HTML (not in version control)
-    |-- demo-src/                   # Source files for an example website
-    |-- etc/                        # Includeable or "plugin" files
-    |-- macros.m4                   # M4 macros made available to every M4 file
-    |-- Makefile                    # GNU Makefile, defines how to transform source files into HTML
-    |-- README.md
-    `-- template.html.m4            # An HTML template that will wrap all content
+You may employ Make's command-line options to speed up execution; I recommend using the following:
 
-# Similar projects
+-  `--no-builtin-rules`: GNU Make includes [built-in rules](https://www.gnu.org/software/make/manual/html_node/Catalogue-of-Rules.html#Catalogue-of-Rules) for compiling C, C++, and Fortran programs. We don't need these when compiling HTML files.
+-  `--no-builtin-variables`: GNU Make includes [built-in variables](https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html) for compiling programs. We don't need these when compiling HTML files. 
+-  `--jobs` enables GNU Make's automatic parallelization. You can optionally provide it a maximum number of simultaneous jobs. See [5.4 Parallel Execution](https://www.gnu.org/software/make/manual/html_node/Parallel.html) in the GNU Make manual for more information.
+
+You can use several Make parameters to configure the build:
+
+- **SRC**: the path containing source files
+- **DST**: the path where the output HTML should be rendered
+- **MODS**: the path containing extension modules to be included
+
+In addition, some demonstration source files and included modules rely upon some environment variables to be set. For consistency, I recommend that your source files and custom modules employ the same names:
+
+- **BASEURL**: the url path to (or "mount point" for) our rendered HTML, when served by the webserver. 
+- **SITEHOST**: the hostname of the site when served by the webserver.
+- **DEFAULT_DOCUMENT**: set this to correspond with Apache's DefaultDocument setting; defaults to `index.html`.
+
+I typically render my staging site by creating a shell script like so:
+
+    #!/bin/sh
+
+    export BASEURL='/~mike/datagrok.org'
+    make -rRj4 \
+        SRC=$src \
+        DST=$HOME/public_html/datagrok.org \
+        MODS=$src/.site/mods-enabled \
+        DEFAULT_DOCUMENT=contents.html \
+        M4_MACROS=$src/.site/macros.m4 \
+        "$@"
+
+## About the name
+
+> Some websites, [the webmake documentation explains](http://webmake.taint.org/dist/doc/concepts.html), are fried up for the user every time. But others are baked once and served up again and again.
+>
+> —[Aaron Swartz: The Weblog, "Bake, don't Fry" (2002)](http://www.aaronsw.com/weblog/000404)
+
+I used to call this project **m4-bakery**, which conflated the use of GNU Make for coordinating the rendering of files with the use of [GNU m4][] for templating. Now, all the `m4`-related logic is [moved into a module][m4-module], so you can easily avoid it in favor of more modern templating engines, if you prefer.
+
+## Similar projects
 
 It has been said that every programmer, at some point, writes a blog/website publishing engine. Here are some other such projects that are similar in some way.
 
-## Friends
-
+- [staticsitegenerators.net](http://staticsitegenerators.net) contains a crowdsourced database of a myriad of different projects built for the same general purpose as this one.
+- [Pelican](http://getpelican.com) is a popular Python-based static generator that some friends enjoy.
 - [ironfroggy](https://github.com/ironfroggy)'s [jules](https://github.com/ironfroggy/jules)
 - [nathanielksmith](https://github.com/nathanielksmith)'s [Cadigan](https://github.com/nathanielksmith/cadigan)
 - [redline6561](https://github.com/redline6561)'s [Coleslaw](https://github.com/redline6561/coleslaw)
-- [veselosky](https://github.com/veselosky)'s [Otto Webber](https://github.com/veselosky/otto-webber)
-
-## Forks
-
-- Brandon Invergo's [m4-bloggery](https://gitorious.org/bi-websites/m4-bloggery) is based on m4-bakery and takes some slightly different approaches.
-
-## Others
-
-- jaspervdj's semi-automated [Static Site Generators Listing](http://staticsitegenerators.net)
+- Brandon Invergo's [m4-bloggery](https://gitorious.org/bi-websites/m4-bloggery) is based on this project but takes some slightly different approaches.
 - davatron5000's [crowdsourced recommendations gist](https://gist.github.com/davatron5000/2254924)
-
 
 # License: AGPL-3.0+ with additional permissions
 
@@ -95,3 +125,8 @@ This software is copyright 2016 [Michael F. Lamb][] and released under the terms
 
 [AGPL-3.0+]: http://www.gnu.org/licenses/agpl.html
 [Michael F. Lamb]: http://datagrok.org
+[GNU Make]: http://www.gnu.org/software/make/
+[GNU m4]: https://www.gnu.org/software/m4/
+[m4-module]: modules/m4/
+[CoffeeScript]: http://coffeescript.org/
+[built-in variables]: https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html

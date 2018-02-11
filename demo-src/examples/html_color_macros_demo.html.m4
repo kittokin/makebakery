@@ -20,7 +20,7 @@ macros to blend these together for the "overlapping" bits.
 
 If you've just used "view source" and are wondering where the mathematics are
 happening, have a look at the file etc/color_math_macros.m4 in the source
-repository: https://github.com/datagrok/m4-bakery
+repository: https://github.com/datagrok/makebakery
 
 All the color calculations happen when you run "make."
 
@@ -66,5 +66,5 @@ All the color calculations happen when you run "make."
 
 <p>Of course, this demo is showing this project's age. In the modern, civilized
 world, one might use color math in their CSS templates rather than build
-colored tables. Which one could totally do with m4-bakery, by creating files
+colored tables. Which one could totally do with makebakery, by creating files
 named something.css.m4.</p>
