@@ -13,7 +13,7 @@
     <entry>
         <title type="html"><![CDATA[Makefile-Based Static Website Generator]]></title>
         <link href="https://datagrok.github.io/makebakery/./index.html"/>
-        <updated>1518382346000</updated>
+        <updated>1518391633000</updated>
         <id>https://datagrok.github.io/makebakery/./index.html</id>
         
     </entry>
@@ -43,6 +43,13 @@
         <link href="https://datagrok.github.io/makebakery/./examples/html_color_macros_demo/index.html"/>
         <updated>1518382348000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/html_color_macros_demo/index.html</id>
+        
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What makebakery means]]></title>
+        <link href="https://datagrok.github.io/makebakery/./examples/whats-in-a-name/index.html"/>
+        <updated>1518391321000</updated>
+        <id>https://datagrok.github.io/makebakery/./examples/whats-in-a-name/index.html</id>
         
     </entry>
     <entry>

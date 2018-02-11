@@ -2,7 +2,7 @@
     {
         "path": "/index.html",
         "created": 1362094031000,
-        "modified": 1518382346000,
+        "modified": 1518391633000,
         "short_title": null,
         "title": "Makefile-Based Static Website Generator"
         
@@ -37,6 +37,14 @@
         "modified": 1518382348000,
         "short_title": null,
         "title": "HTML Colors Demonstration"
+        
+    },
+    {
+        "path": "/examples/whats-in-a-name/index.html",
+        "created": 1518384315000,
+        "modified": 1518391321000,
+        "short_title": null,
+        "title": "What makebakery means"
         
     },
     {
