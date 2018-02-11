@@ -1,50 +1,66 @@
 [
     {
-        "path": "/examples/html_color_macros_demo/index.html",
-        "created": null,
-        "modified": 1404722645000,
+        "path": "/index.html",
+        "created": 1362094031000,
+        "modified": 1518382346000,
         "short_title": null,
-        "title": "HTML Colors Demonstration"
-        
-    },
-    {
-        "path": "/examples/index.html",
-        "created": null,
-        "modified": 1404722645000,
-        "short_title": "Examples",
-        "title": "Examples of use"
-        
-    },
-    {
-        "path": "/examples/example_page/index.html",
-        "created": 1404950400000,
-        "modified": 1404722645000,
-        "short_title": null,
-        "title": "An example webpage"
-        
-    },
-    {
-        "path": "/examples/subsection/index.html",
-        "created": null,
-        "modified": 1404722645000,
-        "short_title": null,
-        "title": "An example sub-section"
+        "title": "Makefile-Based Static Website Generator"
         
     },
     {
         "path": "/getting_started/index.html",
         "created": null,
-        "modified": 1404722658000,
+        "modified": 1518382348000,
         "short_title": null,
         "title": "Getting Started"
         
     },
     {
-        "path": "/index.html",
-        "created": 1362094031000,
-        "modified": 1404722645000,
+        "path": "/examples/index.html",
+        "created": 1382283893000,
+        "modified": 1518382348000,
+        "short_title": "Examples",
+        "title": "Examples of use"
+        
+    },
+    {
+        "path": "/examples/subsection/index.html",
+        "created": null,
+        "modified": 1518382348000,
         "short_title": null,
-        "title": "Make and M4 Static Website Generator"
+        "title": "An example sub-section"
+        
+    },
+    {
+        "path": "/examples/html_color_macros_demo/index.html",
+        "created": null,
+        "modified": 1518382348000,
+        "short_title": null,
+        "title": "HTML Colors Demonstration"
+        
+    },
+    {
+        "path": "/examples/example_2/index.html",
+        "created": null,
+        "modified": 1518382348000,
+        "short_title": null,
+        "title": "Example 2"
+        
+    },
+    {
+        "path": "/examples/example_page/index.html",
+        "created": 1365055170000,
+        "modified": 1518382348000,
+        "short_title": null,
+        "title": "An example webpage"
+        
+    },
+    {
+        "path": "/examples/using_make_for_webdev/index.html",
+        "created": null,
+        "modified": 1518382348000,
+        "short_title": null,
+        "title": "Using GNU Make for frontend development"
         
     },
             {}
