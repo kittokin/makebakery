@@ -1,21 +1,21 @@
-SRC              := demo-src
-DST              := build/makebakery
-SITE             := $(SRC)/.site
-MODS             := $(SITE)/modules
-DEFAULT_DOCUMENT := index.html
+SRC                 := demo-src
+DST                 := build/makebakery
+SITE              := $(SRC)/.site
+MODS              := $(SITE)/modules
+DEFAULT_DOCUMENT  := index.html
 
 # BASEPATH is the absolute path to the root on the
 # filesystem of the site build-out
-BASEPATH         := $(shell readlink $(DST) || echo $(DST))
+BASEPATH          := $(shell readlink $(DST) || echo $(DST))
 
 # BASEURL is the URL path from the root of the domain to
 # the root of the site. If defined, should start with / and
 # never end with /
-BASEURL          := /makebakery
-SITEHOST         := https://datagrok.github.io
-SITENAME         := makebakery
+BASEURL             := /makebakery
+SITEHOST          := https://datagrok.github.io
+SITENAME          := makebakery
 
-PLATFORM := $(shell uname -s)
+PLATFORM          := $(shell uname -s)
 
 export DST
 export SRC
