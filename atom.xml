@@ -3,7 +3,7 @@
   <title><![CDATA[makebakery]]></title>
   <link href="/makebakery/atom.xml" rel="self"/>
   <link href="/makebakery/"/>
-  <updated>2018-02-11T00:00:00+00:00</updated>
+  <updated>2018-02-17T00:00:00+00:00</updated>
   <id>https://datagrok.github.io/makebakery/</id>
   <author>
     <name><![CDATA[__AUTHOR]]></name>
@@ -13,63 +13,63 @@
     <entry>
         <title type="html"><![CDATA[Makefile-Based Static Website Generator]]></title>
         <link href="https://datagrok.github.io/makebakery/./index.html"/>
-        <updated>1518391633000</updated>
+        <updated>1518889727000</updated>
         <id>https://datagrok.github.io/makebakery/./index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[Getting Started]]></title>
         <link href="https://datagrok.github.io/makebakery/./getting_started/index.html"/>
-        <updated>1518382348000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./getting_started/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[Examples of use]]></title>
         <link href="https://datagrok.github.io/makebakery/./examples/index.html"/>
-        <updated>1518382348000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[An example sub-section]]></title>
         <link href="https://datagrok.github.io/makebakery/./examples/subsection/index.html"/>
-        <updated>1518382348000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/subsection/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[HTML Colors Demonstration]]></title>
         <link href="https://datagrok.github.io/makebakery/./examples/html_color_macros_demo/index.html"/>
-        <updated>1518382348000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/html_color_macros_demo/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[What makebakery means]]></title>
         <link href="https://datagrok.github.io/makebakery/./examples/whats-in-a-name/index.html"/>
-        <updated>1518391321000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/whats-in-a-name/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[Example 2]]></title>
         <link href="https://datagrok.github.io/makebakery/./examples/example_2/index.html"/>
-        <updated>1518382348000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/example_2/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[An example webpage]]></title>
         <link href="https://datagrok.github.io/makebakery/./examples/example_page/index.html"/>
-        <updated>1518382348000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/example_page/index.html</id>
         
     </entry>
     <entry>
         <title type="html"><![CDATA[Using GNU Make for frontend development]]></title>
         <link href="https://datagrok.github.io/makebakery/./examples/using_make_for_webdev/index.html"/>
-        <updated>1518382348000</updated>
+        <updated>1518889729000</updated>
         <id>https://datagrok.github.io/makebakery/./examples/using_make_for_webdev/index.html</id>
         
     </entry>

@@ -2,7 +2,7 @@
     {
         "path": "/index.html",
         "created": 1362094031000,
-        "modified": 1518391633000,
+        "modified": 1518889727000,
         "short_title": null,
         "title": "Makefile-Based Static Website Generator"
         
@@ -10,7 +10,7 @@
     {
         "path": "/getting_started/index.html",
         "created": null,
-        "modified": 1518382348000,
+        "modified": 1518889729000,
         "short_title": null,
         "title": "Getting Started"
         
@@ -18,7 +18,7 @@
     {
         "path": "/examples/index.html",
         "created": 1382283893000,
-        "modified": 1518382348000,
+        "modified": 1518889729000,
         "short_title": "Examples",
         "title": "Examples of use"
         
@@ -26,7 +26,7 @@
     {
         "path": "/examples/subsection/index.html",
         "created": null,
-        "modified": 1518382348000,
+        "modified": 1518889729000,
         "short_title": null,
         "title": "An example sub-section"
         
@@ -34,7 +34,7 @@
     {
         "path": "/examples/html_color_macros_demo/index.html",
         "created": null,
-        "modified": 1518382348000,
+        "modified": 1518889729000,
         "short_title": null,
         "title": "HTML Colors Demonstration"
         
@@ -42,7 +42,7 @@
     {
         "path": "/examples/whats-in-a-name/index.html",
         "created": 1518384315000,
-        "modified": 1518391321000,
+        "modified": 1518889729000,
         "short_title": null,
         "title": "What makebakery means"
         
@@ -50,7 +50,7 @@
     {
         "path": "/examples/example_2/index.html",
         "created": null,
-        "modified": 1518382348000,
+        "modified": 1518889729000,
         "short_title": null,
         "title": "Example 2"
         
@@ -58,7 +58,7 @@
     {
         "path": "/examples/example_page/index.html",
         "created": 1365055170000,
-        "modified": 1518382348000,
+        "modified": 1518889729000,
         "short_title": null,
         "title": "An example webpage"
         
@@ -66,7 +66,7 @@
     {
         "path": "/examples/using_make_for_webdev/index.html",
         "created": null,
-        "modified": 1518382348000,
+        "modified": 1518889729000,
         "short_title": null,
         "title": "Using GNU Make for frontend development"
         
