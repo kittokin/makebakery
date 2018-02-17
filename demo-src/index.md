@@ -2,7 +2,9 @@
 % Michael F. Lamb
 % Thu, 28 Feb 2013 18:27:11 -0500
 
-![image][] **makebakery** is a *Makefile* that builds a static website from various sources, using the venerable old UNIX tool `GNU make`. It is carefully crafted to be modular and extensible, allowing it to be customized to your preferences.
+![Credit: [Borya, "Bakery" (2006)](https://www.flickr.com/photos/barthelomaus/104318646/) ([CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)). Resized.][image]
+
+**makebakery** is a *Makefile* that builds a static website from various sources, using the venerable old UNIX tool `GNU make`. It is carefully crafted to be modular and extensible, allowing it to be customized to your preferences.
 
 A *static* website is one which requires no special logic on the server-side to work, as opposed to *dynamic* websites which trigger some server-side processing for most page requests. Static websites are useful because they're effortlessly fast, scalable, and cache-able. Compared to dynamic sites, static sites are much easier to secure, and can be served from the very cheapest of hosting services.
 
@@ -56,7 +58,7 @@ In short, if you're not using any of the dynamic features of your web hosting se
 
 Created by [Michael F. Lamb][]. License: [GNU Affero GPL version 3 or later][], with additional permissions for unencumbered output. See the [COPYING][] in the source code for more information.
 
-[image]: http://lorempixel.com/400/400/cats/Placeholder%20Image/{.pull-right}
+[image]: bakery.jpg {.pull-right}
 [baking]: examples/whats-in-a-name/
 [Grunt]: gruntjs.com
 [Rake]: http://rake.rubyforge.org
