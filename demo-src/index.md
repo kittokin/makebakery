@@ -33,13 +33,17 @@ Static page-compiling tools are fairly boring, but there are some clever pieces 
 - `GNU make` has built-in support for multiprocessing. With one command-line option it will take full advantage of multi-core and multi-processor machines to compile pages in parallel.
 - I have recently implemented most features as a system of `GNU Make`-based *plug-ins* around a small core Makefile. Easily toggle between the features you prefer, disable the ones you don't use to save speed, or build your own without having to modify the entire system.
 
-## Using GNU M4 as a templating language
+## About static websites
 
-When I first started this project, it was named *m4-bakery*, and the focus was on a single templating mechanism using another ubiquitous old unix tool: GNU M4. However, the learning curve for `m4` is very steep and the resulting code can be quite ugly, especially for nontrivial tasks. `m4` has now been relegated to a mere makebakery plug-in that I include simply because I once enjoyed the challenge of using it.
+Static websites are those that require no special software to serve. A static website provides huge advantages, because they:
 
-Using `m4` as a templating engine brought along some interesting challenges of its own:
+- have fewer vectors for break-ins, 
+- easily scale to handle massive amounts of traffic, and 
+- may be hosted on commodity hardware or the cheapest of web hosting services.
 
-- Unlike many other templating schemes, I try to avoid any boilerplate in source files. Page templates are not "included" from sources; instead all sources get a template wrapped around them. This was somewhat tricky to accomplish with `m4`.
+Of course, with no processing occurring on the server end, it's not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like [Disqus](http://disqus.com) to implement these features anyway, or rely on third-party forums like to provide discussion areas for their content.
+
+In short, if you're not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you _are_ using those features on some areas of your site, you're better off making the static parts simple static files.
 
 ## Coming soon
 

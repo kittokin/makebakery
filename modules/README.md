@@ -6,6 +6,14 @@ One of the first hacks that I was really proud of was a static website generator
 
 **You're currently viewing the 'master' branch of this repository.** I've tried to include here many interesting features and ideas for how this technique might be used, including the use of [Pandoc](http://johnmacfarlane.net/pandoc/) for markdown-format source files. I've tried to include a generous amount of internal documentation and comments as well, but it may yet be a lot to absorb at once. To more easily understand what's going on here, be sure to take a look at the 'simple' branch of the repository: http://github.com/datagrok/makebakery/tree/simple
 
+## Using GNU M4 as a templating language
+
+Using `m4` as a templating engine brought along some interesting challenges of its own:
+
+- Unlike many other templating schemes, I try to avoid any boilerplate in source files. Page templates are not "included" from sources; instead all sources get a template wrapped around them. This was somewhat tricky to accomplish with `m4`.
+
+I wouldn't recommend using GNU m4 as a templating engine these days; there are far better tools available. I still do, for nostalgia. But if you really want to, it is available as a module!
+
 ## GNU Make and GNU M4
 
 That is of course only an argument for building static websites. Doing it in this _particular_ way may be... ill-advised.

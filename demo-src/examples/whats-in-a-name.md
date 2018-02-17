@@ -2,12 +2,14 @@
 % Michael F. Lamb
 % Sun, 11 Feb 2018 13:25:15 -0800
 
-_makebakery_ used to be "m4-bakery," because it grew out of a first iteration that was just a simple Makefile using [GNU Make][] and [GNU m4][] to build my website back in 1998.
+_makebakery_ used to be "m4-bakery," because it grew out of a simpler first iteration that also used [GNU Make][] but whose focus was on a single templating mechanism using another ubiquitous old unix tool: [GNU m4][].
+
+However, the learning curve for `m4` is very steep and the resulting code can be quite ugly, especially for nontrivial tasks.
+`m4` has now been relegated to a mere plug-in that I still include simply because I once enjoyed the challenge of using it.
+
 The article [Using M4 to write HTML][] (1997)[^4] was my original inspiration to build it that way.
 
 At that time I think I was able to surpass the utility of the examples given therein, and since then I've attempted to whittle this old hack down into a bunch of modular parts that one might use to build their own static site generator, or simply to learn about GNU Make.
-
-I wouldn't recommend using GNU m4 as a templating engine these days; there are far better tools available. I still do, for nostalgia. But if you really want to, it is available as a module!
 
 The "bakery" in _makebakery_ references:
 

@@ -1,8 +1,9 @@
 # Makebakery: a Make-based static website generator
 
-**Makebakery** is a static website generator, implemented as a configuration for the build tool [GNU Make][]. Static websites are those which require no database or server-side logic.
+**Makebakery** is a static website generator, implemented as a set of configuration files for the build tool [GNU Make][].
 
-The basic idea of using a Makefile to build static HTML files from various sources using various renderers is fairly obvious and straightforward. Employing GNU Make in this way gets us several cool features "for free":
+The basic idea of using a Makefile to build static HTML files from various sources using various renderers is fairly well known.
+Employing GNU Make in this way gets us several cool features "for free":
 
 - Speed via multiprocessing. GNU Make has built-in parallelism. So if you have 8 cpu cores you can re-render your website about 8x as fast as you could with a single-process build tool.
 - Speed via dependency tracking. When you change a source file, GNU Make is smart enough to know that it only needs to rebuild that portion of the rendered HTML, not the whole site.
@@ -28,18 +29,6 @@ Here are some of the things you can do with it out-of-the-box:
 - Included modules for templating: GNU m4, Pandoc, 
 
 See the included [modules documentation](etc/mods-available) for examples and a list of included modules.
-
-## About static websites
-
-Static websites are those that require no special software to serve. A static website provides huge advantages, because they:
-
-- have fewer vectors for break-ins, 
-- easily scale to handle massive amounts of traffic, and 
-- may be hosted on commodity hardware or the cheapest of web hosting services.
-
-Of course, with no processing occurring on the server end, it's not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like [Disqus](http://disqus.com) to implement these features anyway, or rely on third-party forums like to provide discussion areas for their content.
-
-In short, if you're not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you _are_ using those features on some areas of your site, you're better off making the static parts simple static files.
 
 ## Quick Start
 
