@@ -69,6 +69,6 @@ Created by [Michael F. Lamb][]. License: [GNU Affero GPL version 3 or later][], 
 [W:Make]: https://en.wikipedia.org/wiki/Make_%28software%29
 [sitemap]: http://www.sitemaps.org
 [ajax-crawling]: https://developers.google.com/webmasters/ajax-crawling/docs/learn-more
-[Michael F. Lamb]: http://datagrok.org
+[Michael F. Lamb]: https://datagrok.org
 [GNU Affero GPL version 3 or later]: https://www.gnu.org/licenses/agpl-3.0.html
 [COPYING]: https://github.com/datagrok/makebakery/blob/master/COPYING.md
