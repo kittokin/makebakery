@@ -1,5 +1,24 @@
 # makebakery modules
 
+- **\_\_multisource**: Merge multiple sources for rendering. Good for keeping site design and content in separate repos.
+- **\_\_paths\_are\_dirs**: `/foo.md` creates `/foo/` not `/foo.html`. Avoids extensions in URLs and makes relative navigation simpler. 
+- **\_\_source**: Basic filesystem-based sources.
+- **\_environment**: Defines environment settings that should be active during rendering.
+- **\_index**: Allow a class of source that should be processed after everything else. Useful for building indices, sitemaps, atom feeds, etc.
+- **\_m4**: Use GNU m4 as a template system.
+- **bootstrap-less**
+- **coffeescript**: render coffeescript to javascript.
+- **coffeescript_sources***: copy coffeescript source files to output to comply with copyleft licenses.
+- **discount_theme**
+- **executable**: Execute files and render their output.
+- **extensionless_html**: `/foo.md` creates `/foo` not `/foo.html`; an alternative to \_\_paths\_are\_dirs to avoid extensions.
+- **mk**: allow sources to define their own rules for building.
+- **pandoc**: use pandoc as a markdown renderer.
+- **raw**: pass files through without rendering at all.
+- **rfc2822ish**
+- **sass**
+- **url**: render by retrieving a url.
+
 ## GNU m4 template processor
 
 One of the first hacks that I was really proud of was a static website generator that I built in late 1999 with some venerable old Unix tools, [GNU Make](http://www.gnu.org/software/make/) and [GNU m4](http://www.gnu.org/software/m4/). The article [Using M4 to write HTML](http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html) by [Bob Hepple](http://bhepple.freeshell.org/) was my original inspiration to build it that way. At that time I think I was able to surpass the utility of the examples given therein, and since then I've attempted to whittle this old hack down into a bunch of modular parts that one might use to build their own, or simply to learn about GNU Make.
