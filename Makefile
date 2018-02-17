@@ -52,7 +52,7 @@ gh-pages:
 	[ -z "$$(git status -s)" ] # Error on unpublished changes
 	$(MAKE) clean
 	$(MAKE) -rRj4
-	[ "$$(git -C $(DST) symbolic-ref HEAD)" != "refs/heads/gh-pages" ] # Error with gh-pages clone
+	[ "$$(git -C $(DST) symbolic-ref HEAD)" = "refs/heads/gh-pages" ] # Error with gh-pages clone
 	git -C $(DST) add .
 	git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)"
 	git -C $(DST) push
