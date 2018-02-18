@@ -17,9 +17,12 @@ figure:has(img.pull-right) {
 }
 */
 figure {
-    margin: 1em 3em;
+    margin: 1em 0em 1em 1em;
     float: right;
 }
 figcaption {
     font-size: smaller;
+}
+blockquote {
+    font-size: inherit;
 }
