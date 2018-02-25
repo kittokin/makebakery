@@ -4,10 +4,10 @@ m4_dnl We're working a lot with HTML colors and the # symbol, so disable the
 m4_dnl comment character behavior for the rest of this file.
 m4_changecom()
 
-m4_define(`_bgcolor',`ffffff')
-m4_define(`_panel1',_ColorAverage(_bgcolor,`0066ff'))
-m4_define(`_panel2',_ColorAverage(_bgcolor,`ff9900'))
-m4_define(`_panel3',_ColorAverage(_bgcolor,`00ff00'))
+m4_define({m4{_bgcolor}m4},{m4{ffffff}m4})
+m4_define({m4{_panel1}m4},_ColorAverage(_bgcolor,{m4{0066ff}m4}))
+m4_define({m4{_panel2}m4},_ColorAverage(_bgcolor,{m4{ff9900}m4}))
+m4_define({m4{_panel3}m4},_ColorAverage(_bgcolor,{m4{00ff00}m4}))
 
 <p>This table is built with the specification of three colors:
 <span style="background-color: #_panel1">Panel 1</span>

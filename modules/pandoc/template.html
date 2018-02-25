@@ -1,5 +1,5 @@
 m4_dnl pass the title and data metadata through to m4.
-$if(pagetitle)$TITLE(`$pagetitle$')$endif$
-$if(date)$DATE(`$date$')$endif$
-$if(author)$AUTHOR(`$author$')$endif$
+$if(pagetitle)$TITLE({m4{$pagetitle$}m4})$endif$
+$if(date)$DATE({m4{$date$}m4})$endif$
+$if(author)$AUTHOR({m4{$author$}m4})$endif$
 $body$

@@ -6,10 +6,7 @@ m4_dnl  ( •_•)
 m4_dnl  ( •_•)>⌐■-■
 m4_dnl  (⌐■_■) deal with it
 m4_dnl
-m4_dnl  Change the quoting macro because trying to manage shell quotes and M4
-m4_dnl  default quotes is way too hard.
-m4_changequote({{,}})m4_dnl 
-m4_esyscmd({{
+m4_esyscmd({m4{
 cd $DST
 find -name "index.html" | while read filename; do
     title="$( sed -n 's/^\s*<title>\([^<]*\)<\/title>/\1/p' "$filename" )"
@@ -27,7 +24,7 @@ find -name "index.html" | while read filename; do
     },
 EOF
 done
-}})m4_dnl
+}m4})m4_dnl
     m4_dnl trailing empty object to avoid having to deal with no trailing comma
     m4_dnl in last element of an array in javascript
     {}
