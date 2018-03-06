@@ -23,6 +23,7 @@ export BASEURL
 export DEFAULT_DOCUMENT
 export SITE
 export MODS
+export SITENAME
 
 .NOTPARALLEL: clean
 .PHONY: defaut all clean gh-pages
