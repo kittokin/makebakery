@@ -24,6 +24,7 @@ export DEFAULT_DOCUMENT
 export SITE
 export MODS
 export SITENAME
+export SITEHOST
 
 .NOTPARALLEL: clean
 .PHONY: defaut all clean gh-pages
