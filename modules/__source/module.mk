@@ -4,4 +4,4 @@ sources := $(shell find -L $(SRC) \! \( \( -regex '.*/\.\(gitignore\|site\|sass-
 targets := $(sources:$(SRC)/%=$(DST)/%)
 $(DST)/%: $(SRC)/%
 	@test -d "$(dir $@)" || mkdir -p "$(dir $@)"
-	cp $< $@
+	cp -p $< $@

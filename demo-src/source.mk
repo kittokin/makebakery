@@ -6,4 +6,4 @@ targets := $(patsubst $(srcdir)%,$(DST)/%,$(sources)) $(targets)
 
 $(DST)/%: $(srcdir)%
 	@test -d "$(dir $@)" || mkdir -p "$(dir $@)"
-	cp $< $@
+	cp -p $< $@

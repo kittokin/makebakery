@@ -10,4 +10,4 @@
 # are other ways to do the same.
 targets := $(targets:.html=)
 $(DST)/%: $(DST)/%.html
-	cp $< $@
+	cp -p $< $@

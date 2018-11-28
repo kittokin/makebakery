@@ -11,4 +11,4 @@ $(indices): $(nonindices)
 # sitemaps, etc. No processing occurs here, we just remove
 # the extension.
 $(DST)/%: $(DST)/%.index
-	cp $< $@
+	cp -p $< $@

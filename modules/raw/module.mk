@@ -3,4 +3,4 @@
 # remove .html extensions.
 targets := $(targets:.raw=)
 $(DST)/%: $(DST)/%.raw
-	cp $< $@
+	cp -p $< $@
