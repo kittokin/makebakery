@@ -3,11 +3,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Makefile-Based Static Website Generator</title>
+    <title>🍞 Makebakery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
             
                 
-        <meta name="DC.title" content="Makefile-Based Static Website Generator">
+        <meta name="DC.title" content="🍞 Makebakery">
             <meta name="DC.date" content="2013-02-28T23:27:11+00:00">
 
     <!-- Le styles -->
@@ -58,14 +58,15 @@
     </div>    -->
 
     <div class="container">
-      <h1>Makefile-Based Static Website Generator</h1>
+      <h1>🍞 Makebakery</h1>
 
 
 
+<p><strong>Makebakery</strong> is a static website generator implemented using GNU Make.</p>
 <figure>
-<img src="bakery.jpg" alt="Photo: Boris Bartels, Bakery (2006) (CC-BY-SA 2.0). Resized." class="pull-right" /><figcaption>Photo: <a href="https://www.flickr.com/photos/barthelomaus/104318646/">Boris Bartels, “Bakery” (2006)</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a>). Resized.</figcaption>
+<img src="bakery.jpg" alt="Photo: Boris Bartels, “Bakery” (2006) (CC-BY-SA 2.0). Resized." class="pull-right" /><figcaption>Photo: <a href="https://www.flickr.com/photos/barthelomaus/104318646/">Boris Bartels, “Bakery” (2006)</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a>). Resized.</figcaption>
 </figure>
-<p><strong>makebakery</strong> is a system of <em>Makefiles</em> that builds a static website from various sources, using the venerable old UNIX tool <em>Make</em>. Unlike typical Make-based approaches, its features are organized into modules which may be toggled according to your preferences.</p>
+<p>makebakery is a system of <em>Makefiles</em> that builds a static website from various sources, using the GNU variant of the venerable old UNIX tool <em>Make</em>. Unlike other more minimalist Make-based approaches, its features are organized into modules which may be toggled according to your preferences.</p>
 <p>A <em>static</em> website is one which requires no special logic on the server-side to work, as opposed to <em>dynamic</em> websites which trigger some server-side processing for most page requests.</p>
 <p><em>Make</em> is a tool that figures out which commands need to be run to transform some given set of source files into a desired set of output files. Originally created for compilation of source code into executable code, Makebakery uses <em>Make</em> to transform files in various source formats like <em>Markdown</em> into an HTML website.</p>
 <p>I show in the demonstration site source code (which builds the site you are reading) how one might wire up their favorite HTML-generating tools to Makebakery. I recommend <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>, which lets you keep source files in Markdown format. You might also add to the compilation pipeline a template engine like <a href="http://jinja.pocoo.org/">Jinja</a>, CSS compilers like <a href="http://lesscss.org/">LESS</a>, image processing using <a href="http://www.imagemagick.org">ImageMagick</a>, and any other custom scripts you please.</p>
