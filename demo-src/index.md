@@ -1,10 +1,12 @@
-% Makefile-Based Static Website Generator
+% 🍞 Makebakery
 % Michael F. Lamb
 % Thu, 28 Feb 2013 18:27:11 -0500
 
+**Makebakery** is a static website generator implemented using GNU Make.
+
 ![Photo: [Boris Bartels, "Bakery" (2006)][bakery attribution] ([CC-BY-SA 2.0][]). Resized.][image]
 
-**makebakery** is a system of *Makefiles* that builds a static website from various sources, using the venerable old UNIX tool _Make_. Unlike typical Make-based approaches, its features are organized into modules which may be toggled according to your preferences.
+makebakery is a system of *Makefiles* that builds a static website from various sources, using the GNU variant of the venerable old UNIX tool _Make_. Unlike other more minimalist Make-based approaches, its features are organized into modules which may be toggled according to your preferences.
 
 A *static* website is one which requires no special logic on the server-side to work, as opposed to *dynamic* websites which trigger some server-side processing for most page requests. 
 
