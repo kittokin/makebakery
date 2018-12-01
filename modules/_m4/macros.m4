@@ -3,8 +3,8 @@ m4_divert(-1)m4_dnl  Keep this line at the beginning of this file.
 m4_dnl  Macros defined here will be available to all files interpreted by m4.
 m4_dnl  ----------------------------------------------------------------------
 
-m4_include({m4{modules/_m4/metadata_macros.m4}m4})
-m4_include({m4{modules/_m4/color_math_macros.m4}m4})
+m4_include(__M4LIB{m4{/metadata_macros.m4}m4})
+m4_include(__M4LIB{m4{/color_math_macros.m4}m4})
 
 
 

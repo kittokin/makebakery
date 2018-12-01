@@ -1,37 +1,20 @@
-SRC                 := demo-src
-DST                 := build/makebakery
-SITE              := $(SRC)/.site
-MODS              := $(SITE)/modules
-DEFAULT_DOCUMENT  := index.html
-
+MODULES_PATH  := $(dir $(lastword $(MAKEFILE_LIST)))/modules
 # BASEPATH is the absolute path to the root on the
 # filesystem of the site build-out
-BASEPATH          := $(shell readlink $(DST) || echo $(DST))
-
-# BASEURL is the URL path from the root of the domain to
-# the root of the site. If defined, should start with / and
-# never end with /
-BASEURL             := /makebakery
-SITEHOST          := https://datagrok.github.io
-SITENAME          := makebakery
-
-PLATFORM          := $(shell uname -s)
+BASEPATH      := $(shell readlink $(DST) || echo $(DST))
+PLATFORM      := $(shell uname -s)
 
 export DST
 export SRC
 export BASEURL
-export DEFAULT_DOCUMENT
-export SITE
-export MODS
+export MODULES_PATH
 export SITENAME
 export SITEHOST
 
+.SUFFIXES:
 .NOTPARALLEL: clean
 .PHONY: defaut all clean gh-pages
 default: all
-
-# we could $(sort $(wildcard $(MODS))) here instead.
-modules := $(sort $(wildcard $(MODS)/*))
 
 ifeq (,$(findstring guile,$(.FEATURES)))
 reverse = $(if $(wordlist 2,2,$(1)),$(call reverse,$(wordlist 2,$(words $(1)),$(1))) $(firstword $(1)),$(1))
@@ -43,17 +26,19 @@ endif
 # 1. those in modules directory, either files or directory/module.mk, in order
 # 2. those in sources directories
 # 3. those in modules directory, in reverse order
-include $(wildcard \
-	$(addsuffix /module.mk,    $(modules)) \
-	$(addsuffix .mk,           $(modules)) \
-	$(addsuffix /module_out.mk,$(call reverse,$(modules))))
+include $(wildcard $(addprefix $(MODULES_PATH)/,\
+	$(addsuffix /module.mk,    $(MODULES)) \
+	$(addsuffix .mk,           $(MODULES)) \
+	$(addsuffix /module_out.mk,$(call reverse,$(MODULES)))))
+
+targets := $(filter-out $(addprefix $(DST)/,$(IGNORE)),$(targets))
 
 all: $(targets)
 
-gh-pages:
+gh-pages: 
 	[ -z "$$(git status -s)" ] # Error on unpublished changes
 	$(MAKE) clean
-	$(MAKE) -rRj4
+	$(MAKE) -Rj4
 	[ "$$(git -C $(DST) symbolic-ref HEAD)" = "refs/heads/gh-pages" ] # Error with gh-pages clone
 	git -C $(DST) add .
 	git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)"
@@ -69,5 +54,3 @@ clean:
 	mkdir "$(BASEPATH)"
 	if [ -d "$(BASEPATH).old/.git" ]; then mv "$(BASEPATH).old/.git" "$(BASEPATH)"; fi
 	rm -rf "$(BASEPATH).old"
-
-vim: tw=59 :

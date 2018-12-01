@@ -1,5 +1,7 @@
 # Markdown to HTML, using 'theme', a tool included with the markdown tool 'discount'
 targets := $(targets:.md=.html)
-$(DST)/%.html: $(DST)/%.md $(MODS)/discount-theme/page.theme
-	# Rendering $< to $@ with theme
-	theme -t $(MODS)/discount-theme/page.theme -o $@ $<
+default_discount_theme := $(dir $(lastword $(MAKEFILE_LIST)))/page.theme
+DISCOUNT_THEME ?= $(default_discount_theme)
+
+$(DST)/%.html: $(DST)/%.md $(DISCOUNT_THEME)
+	theme -t $(DISCOUNT_THEME) -o $@ $<

@@ -1,4 +1,3 @@
-# NOTE: If you add this module, add its counterpart 20_indexpass.mk as well.
 indices := $(filter I/%,$(targets))
 indices := $(indices:I/%=%)
 nonindices := $(filter-out I/%,$(targets))

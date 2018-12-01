@@ -20,3 +20,5 @@
 #
 targets := $(targets:.html=/$(DEFAULT_DOCUMENT))
 targets := $(targets:/$(basename $(DEFAULT_DOCUMENT))/$(DEFAULT_DOCUMENT)=/$(DEFAULT_DOCUMENT))
+
+.INTERMEDIATE: $(patsubst $(DST)/%/$(DEFAULT_DOCUMENT),$(DST)/%.html,$(filter $(DST)/%/$(DEFAULT_DOCUMENT),$(targets)))
