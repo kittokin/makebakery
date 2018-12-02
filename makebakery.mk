@@ -26,6 +26,7 @@ endif
 # 1. those in modules directory, either files or directory/module.mk, in order
 # 2. those in sources directories
 # 3. those in modules directory, in reverse order
+MODULES := $(sort $(MODULES))
 include $(wildcard $(addprefix $(MODULES_PATH)/,\
 	$(addsuffix /module.mk,    $(MODULES)) \
 	$(addsuffix .mk,           $(MODULES)) \

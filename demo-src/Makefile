@@ -9,15 +9,14 @@ SITENAME		:= makebakery
 M4_TEMPLATE := .site/m4-template.html.m4
 
 # This must appear before the statement to include makebakery.mk.
-MODULES = $(sort \
+MODULES = \
 	___raw \
 	__multisource \
 	__paths_are_dirs \
 	_m4 \
 	executable \
 	pandoc \
-	url \
-	)
+	url
 
 # Since this Makefile is in the directory containing source files, we need to
 # exclude it from the destination files. This must appear before the statement
