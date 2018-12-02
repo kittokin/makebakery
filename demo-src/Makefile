@@ -10,12 +10,12 @@ M4_TEMPLATE := .site/m4-template.html.m4
 
 # This must appear before the statement to include makebakery.mk.
 MODULES = $(sort \
+	___raw \
 	__multisource \
 	__paths_are_dirs \
 	_m4 \
 	executable \
 	pandoc \
-	raw \
 	url \
 	)
 
