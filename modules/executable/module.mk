@@ -8,5 +8,5 @@
 targets := $(targets:.run=)
 $(DST)/%: $(DST)/%.run
 	chmod +x $<
-	$< > $@
+	cd $(DST); $< > $@
 	chmod -x $<
