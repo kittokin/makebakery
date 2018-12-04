@@ -36,7 +36,7 @@ targets := $(filter-out $(addprefix $(DST)/,$(IGNORE)),$(targets))
 
 all: $(targets)
 
-gh-pages: 
+gh-pages:
 	[ -z "$$(git status -s)" ] # Error on unpublished changes
 	$(MAKE) clean
 	$(MAKE) -Rj4
