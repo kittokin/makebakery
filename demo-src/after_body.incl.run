@@ -1,0 +1,20 @@
+#!/bin/sh
+cat <<- EOF
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="${BASEURL}/_/js/jquery-2.1.1.min.js"></script>
+<script src="${BASEURL}/_/js/bootstrap-3.2.0.min.js"></script>
+
+<!--  Get some other variables useful to javascript into the page context. -->
+<script type="text/javascript">
+  var site_root = "${BASEURL}/";
+</script>
+
+<!--  this is where we put our custom functions -->
+<script src="${BASEURL}/_/js/functions.js"></script>
+
+EOF

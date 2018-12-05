@@ -8,7 +8,7 @@ PANDOC_ARGS = \
   --base-header-level=2 \
   --strip-comments \
 	--email-obfuscation=none \
-	  --standalone
+	--standalone
 
 ifdef PANDOC_TEMPLATE
 PANDOC_ARGS += --template=$(PANDOC_TEMPLATE)
@@ -23,7 +23,7 @@ ifdef PANDOC_AFTER_BODY
 PANDOC_ARGS += --include-after-body=$(PANDOC_AFTER_BODY)
 endif
 ifdef PANDOC_STYLESHEET
-PANDOC_ARGS += --css $(PANDOC_STYLESHEET)
+PANDOC_ARGS += $(foreach css,$(PANDOC_STYLESHEET),--css $(css))
 endif
 
 ifdef m4_templates

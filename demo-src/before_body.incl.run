@@ -1,0 +1,36 @@
+#!/bin/sh
+
+cat <<- EOF
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <a href="https://github.com/datagrok/makebakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="${BASEURL}/_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <div class="navbar-header">
+      <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="glyphicon glyphicon-folder-open"></span>
+      </button>
+      <a class="navbar-brand" href="${BASEURL}/">${SITENAME}</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav"></ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Let's not demo the breadcrumb navigation until it works automatically.
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="#"></a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+</div>
+-->
+
+<div class="container">
+
+EOF
