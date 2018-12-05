@@ -1,6 +1,9 @@
 body {
     padding-top: 50px; /* required with .navbar-fixed-top */
 }
+p.author, p.date {
+    display: none;
+}
 
 .breadcrumb {
     margin-bottom: 0px;
