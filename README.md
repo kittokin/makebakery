@@ -12,7 +12,7 @@ So, Makebakery is a collection of Make modules containing common functionality a
 
 ## Goals
 
-- Source-language-agnostic. Supports a heterogenous mix of markdown, scripts, coffeescript, etc.
+- Source-language-agnostic. Supports a heterogeneous mix of markdown, scripts, coffeescript, etc.
 - Tinker-able: easily add support for a new type of source format
 - Useful for multiple styles of site: shell account on the webserver, git repository, s3, etc.
 - DRY: I can use it for all my static sites

@@ -1,7 +1,6 @@
-
 .SUFFIXES:
 .NOTPARALLEL: clean
-.PHONY: defaut all clean gh-pages
+.PHONY: default all clean gh-pages
 default: all
 
 ifeq (,$(findstring guile,$(.FEATURES)))
