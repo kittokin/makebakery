@@ -28,7 +28,7 @@ MODULES = \
 # Since this Makefile is in the directory containing source files, we need to
 # exclude it from the destination files. This must appear before the statement
 # to include makebakery.mk.
-IGNORE := Makefile before_body.incl after_body.incl
+IGNORE := Makefile before_body.incl after_body.incl README/index.html
 
 include ../makebakery.mk
 
