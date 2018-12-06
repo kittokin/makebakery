@@ -1,59 +1,59 @@
 [
 {
+    "path": "/getting_started/index.html",
+    "created": null,
+    "modified": 1544140784000,
+    "short_title": null,
+    "title": "Getting Started"
+},
+{
     "path": "/index.html",
     "created": null,
-    "modified": 1543971949000,
+    "modified": 1544140784000,
     "short_title": null,
     "title": "🍞 Makebakery"
 },
 {
-    "path": "/examples/index.html",
-    "created": null,
-    "modified": 1543971949000,
-    "short_title": null,
-    "title": "Examples of use"
-},
-{
     "path": "/examples/subsection/index.html",
     "created": null,
-    "modified": 1543971949000,
+    "modified": 1544140784000,
     "short_title": null,
     "title": "An example sub-section"
 },
 {
-    "path": "/examples/using_make_for_webdev/index.html",
+    "path": "/examples/index.html",
     "created": null,
-    "modified": 1543971949000,
+    "modified": 1544140784000,
     "short_title": null,
-    "title": "Using GNU Make for frontend development"
+    "title": "Examples of use"
 },
 {
     "path": "/examples/example_2/index.html",
     "created": null,
-    "modified": 1543971949000,
+    "modified": 1544140784000,
     "short_title": null,
     "title": "Example 2"
 },
 {
     "path": "/examples/example_page/index.html",
     "created": null,
-    "modified": 1543971949000,
+    "modified": 1544140784000,
     "short_title": null,
     "title": "An example webpage"
 },
 {
-    "path": "/examples/whats-in-a-name/index.html",
+    "path": "/examples/using_make_for_webdev/index.html",
     "created": null,
-    "modified": 1543971949000,
+    "modified": 1544140784000,
     "short_title": null,
-    "title": "What makebakery means"
+    "title": "Using GNU Make for frontend development"
 },
 {
-    "path": "/getting_started/index.html",
+    "path": "/examples/whats-in-a-name/index.html",
     "created": null,
-    "modified": 1543971949000,
+    "modified": 1544140784000,
     "short_title": null,
-    "title": "Getting Started"
+    "title": "What makebakery means"
 },
 {}
 ]
