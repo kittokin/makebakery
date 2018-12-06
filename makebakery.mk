@@ -1,6 +1,6 @@
 .SUFFIXES:
 .NOTPARALLEL: clean
-.PHONY: default all clean gh-pages
+.PHONY: default all clean gh-pages gh-pages-check
 default: all
 
 ifeq (,$(findstring guile,$(.FEATURES)))
@@ -24,11 +24,15 @@ targets := $(filter-out $(addprefix $(DST)/,$(IGNORE)),$(targets))
 
 all: $(targets)
 
-gh-pages:
-	[ -z "$$(git status -s)" ] # Error on unpublished changes
-	$(MAKE) clean
-	$(MAKE) -Rj4
-	[ "$$(git -C $(DST) symbolic-ref HEAD)" = "refs/heads/gh-pages" ] # Error with gh-pages clone
+gh-pages-check:
+	# Ensuring there are no uncommitted changes in the current branch.
+	git status -s
+	[ -z "$$(git status -s)" ]
+	# Ensuring $(DST) is a clone of this repo with gh-pages branch checked out.
+	[ "$$(git -C $(DST) symbolic-ref HEAD)" = "refs/heads/gh-pages" ]
+
+gh-pages: gh-pages-check
+	$(MAKE) all
 	git -C $(DST) add .
 	git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)"
 	git -C $(DST) push

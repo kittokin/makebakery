@@ -9,7 +9,7 @@ To update the live site:
 1. Create a local `gh-pages` branch. You don't have to check it out.
   
     ```
-    git branch origin/gh-pages gh-pages
+    git branch gh-pages origin/gh-pages
     ```
 
 2. Clone the repo to the destination directory with the `gh-pages` branch checked out.
