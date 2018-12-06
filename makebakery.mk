@@ -1,15 +1,3 @@
-MODULES_PATH  := $(dir $(lastword $(MAKEFILE_LIST)))/modules
-# BASEPATH is the absolute path to the root on the
-# filesystem of the site build-out
-BASEPATH      := $(shell readlink $(DST) || echo $(DST))
-PLATFORM      := $(shell uname -s)
-
-export DST
-export SRC
-export BASEURL
-export MODULES_PATH
-export SITENAME
-export SITEHOST
 
 .SUFFIXES:
 .NOTPARALLEL: clean
@@ -26,8 +14,9 @@ endif
 # 1. those in modules directory, either files or directory/module.mk, in order
 # 2. those in sources directories
 # 3. those in modules directory, in reverse order
-MODULES := $(sort $(MODULES))
-include $(wildcard $(addprefix $(MODULES_PATH)/,\
+MODULES				:= $(sort $(MODULES))
+modules_path  := $(dir $(lastword $(MAKEFILE_LIST)))/modules
+include $(wildcard $(addprefix $(modules_path)/,\
 	$(addsuffix /module.mk,    $(MODULES)) \
 	$(addsuffix .mk,           $(MODULES)) \
 	$(addsuffix /module_out.mk,$(call reverse,$(MODULES)))))
@@ -50,8 +39,9 @@ gh-pages:
 # Run 'make clean' to erase the destination directory for a
 # complete rebuild. I do a 'mv' then 'rm' to reduce the
 # chances of running an 'rm -rf /'.
+adst := $(realpath $(DST))
 clean:
-	mv "$(BASEPATH)" "$(BASEPATH).old"
-	mkdir "$(BASEPATH)"
-	if [ -d "$(BASEPATH).old/.git" ]; then mv "$(BASEPATH).old/.git" "$(BASEPATH)"; fi
-	rm -rf "$(BASEPATH).old"
+	mv "$(adst)" "$(adst).old"
+	mkdir "$(adst)"
+	if [ -d "$(adst).old/.git" ]; then mv "$(adst).old/.git" "$(adst)"; fi
+	rm -rf "$(adst).old"
