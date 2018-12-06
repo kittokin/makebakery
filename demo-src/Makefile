@@ -9,6 +9,7 @@ SITENAME		:= makebakery
 
 export BASEURL
 export SITEHOST
+export SITENAME
 
 PANDOC_BEFORE_BODY := $(DST)/before_body.incl
 PANDOC_AFTER_BODY := $(DST)/after_body.incl
