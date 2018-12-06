@@ -2,50 +2,45 @@
 
 **Makebakery** is a static website generator, implemented as a set of configuration files for the build tool [GNU Make][].
 
-The basic idea of using a Makefile to build static HTML files from various sources using various renderers is fairly well known.
-Employing GNU Make in this way gets us several cool features "for free":
+The basic idea of using a Makefile to orchestrate building static HTML files from source files is fairly well known.
 
-- Speed via multiprocessing. GNU Make has built-in parallelism. So if you have 8 cpu cores you can re-render your website about 8x as fast as you could with a single-process build tool.
-- Speed via dependency tracking. When you change a source file, GNU Make is smart enough to know that it only needs to rebuild that portion of the rendered HTML, not the whole site.
-- Language agnosticism. GNU Make doesn't care what languages you prefer to use with it; it works equally well with javascript stacks, c compilers, and scripting languages.
-- Ubiquity. GNU Make has been around a long time and is fairly well-documented. Chances are good that it is available for your platform.
+I found myself re-implementing similar-but-different Makefiles over and over again for each static site I wanted to build.
 
-This particular implementation, however, employs some GNU Make features to implement a modular plug-in system. The goal of this project is to make it easy for you to extend it to work with your own renderers, template engines, and source file formats.
+Since each site might differ in its configuration and infrastructure, no single Makefile could fit them all.
 
-Here are some of the things you can do with it out-of-the-box:
+So, Makebakery is a collection of Make modules containing common functionality and hacks, that one may select among and enable through configuration.
 
-- Render markdown to HTML with Pandoc, markdown, or your favorite renderer.
-- Compile [CoffeeScript][] to JavaScript.
-- Compile SASS to CSS.
-- Run scripts in your sources directory that output HTML, implemented in JavaScript, Python, Ruby, Bash, or any other language.
-- Run scripts in your sources directory that output markdown, and compile that into HTML the same as you would a markdown-format source file.
-- Run scripts in your sources directory that output markdown, compile that into HTML, and wrap the result in a site template
-- Run scripts in your sources directory that output site maps in multiple formats (JSON, RDF, XML, HTML, etc.)
-- Wrap content in a template defined in GNU m4 with no changes to your source files (no tedious "include statements".)
-- Retrieve resources from the Internet to be stored and served locally.
+## Goals
 
-- A modular system for extensibility, allowing source file formats to be easily added to (or removed from) the system, without modifications to this project's Makefile.
-- Included modules for source file formats:
-- Included modules for templating: GNU m4, Pandoc, 
-
-See the included [modules documentation](etc/mods-available) for examples and a list of included modules.
+- Source-language-agnostic. Supports a heterogenous mix of markdown, scripts, coffeescript, etc.
+- Tinker-able: easily add support for a new type of source format
+- Useful for multiple styles of site: shell account on the webserver, git repository, s3, etc.
+- DRY: I can use it for all my static sites
 
 ## Quick Start
 
-Clone this repository.
+Clone this repository somewhere.
+
+Create a file named `Makefile` with this content:
+
+``` makefile
+SRC = src
+DST = dst
+MODULES = __source pandoc
+include /path/to/makebakery.mk
+```
+
+Where `/path/to/makebakery.mk` is the full path to the file `makebakery.mk` in your clone of this repo.
 
 Create a directory with source files, like this:
 
 	src/
-	|-- index.html.m4
+	|-- index.md
 	`-- style.css
 
-Run `make`. It will output:
+Run `make -Rj`. The `-Rj` is optional, but will likely speed up the compilation.
 
-	install -m 644 -D src/style.css dst/style.css
-	m4 -P macros.m4 src/index.html.m4 template.html.m4 > src/index.html
-	install -m 644 -D src/index.html dst/index.html
-	rm src/index.html
+    ...
 
 And produce the following structure:
 
@@ -55,38 +50,19 @@ And produce the following structure:
 
 ## Usage
 
-Run `make`, specifying some parameters to control its execution, as follows.
-
-You may employ Make's command-line options to speed up execution; I recommend using the following:
-
--  `--no-builtin-rules`: GNU Make includes [built-in rules](https://www.gnu.org/software/make/manual/html_node/Catalogue-of-Rules.html#Catalogue-of-Rules) for compiling C, C++, and Fortran programs. We don't need these when compiling HTML files.
--  `--no-builtin-variables`: GNU Make includes [built-in variables](https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html) for compiling programs. We don't need these when compiling HTML files. 
--  `--jobs` enables GNU Make's automatic parallelization. You can optionally provide it a maximum number of simultaneous jobs. See [5.4 Parallel Execution](https://www.gnu.org/software/make/manual/html_node/Parallel.html) in the GNU Make manual for more information.
-
-You can use several Make parameters to configure the build:
+Several Make parameters to configure the core behavior:
 
 - **SRC**: the path containing source files
 - **DST**: the path where the output HTML should be rendered
-- **MODS**: the path containing extension modules to be included
+- **MODULES**: a space-separated list of modules to enable
 
-In addition, some demonstration source files and included modules rely upon some environment variables to be set. For consistency, I recommend that your source files and custom modules employ the same names:
+Each module may respond to its own additional parameters.
 
 - **BASEURL**: the url path to (or "mount point" for) our rendered HTML, when served by the webserver. 
 - **SITEHOST**: the hostname of the site when served by the webserver.
 - **DEFAULT_DOCUMENT**: set this to correspond with Apache's DefaultDocument setting; defaults to `index.html`.
 
-I typically render my staging site by creating a shell script like so:
-
-    #!/bin/sh
-
-    export BASEURL='/~mike/datagrok.org'
-    make -rRj4 \
-        SRC=$src \
-        DST=$HOME/public_html/datagrok.org \
-        MODS=$src/.site/mods-enabled \
-        DEFAULT_DOCUMENT=contents.html \
-        M4_MACROS=$src/.site/macros.m4 \
-        "$@"
+And you might need some site-specific configuration (but I'm trying to think of ways to eliminate elaborate Makefile hacks for most purposes.)
 
 ## About the name
 
@@ -100,7 +76,9 @@ I used to call this project **m4-bakery**, which conflated the use of GNU Make f
 
 It has been said that every programmer, at some point, writes a blog/website publishing engine. Here are some other such projects that are similar in some way.
 
-- [staticsitegenerators.net](http://staticsitegenerators.net) contains a crowdsourced database of a myriad of different projects built for the same general purpose as this one.
+- [staticsitegenerators.net](http://staticsitegenerators.net) contains a crowdsourced database of a myriad of different static site generators.
+- [Phil "technomancy" Hagelberg](https://technomancy.us/colophon) uses a minimalist approach including a 12-line Makefile and GNU M4.
+- I'm excited by David Thompson's [Haunt](https://dthompson.us/projects/haunt.html) because it is implemented in GNU Guile Scheme.
 - [Pelican](http://getpelican.com) is a popular Python-based static generator that some friends enjoy.
 - [ironfroggy](https://github.com/ironfroggy)'s [jules](https://github.com/ironfroggy/jules)
 - [nathanielksmith](https://github.com/nathanielksmith)'s [Cadigan](https://github.com/nathanielksmith/cadigan)

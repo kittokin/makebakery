@@ -1,5 +1,10 @@
 # To Do
 
+- Design and implementation of Makebakery
+    - Introduction to Make 
+    - Simple use
+    - Need for Makebakery: collect all the various hacks
+
 - Improve .url source format for retrieval of upstream resources
     - Support files inside of zips and tarballs
     - Support files inside of git clones
