@@ -1,5 +1,5 @@
 SRC					:= .
-DST					:= $(realpath ../../build/makebakery)
+DST					:= $(abspath ../../build/makebakery)
 # BASEURL is the URL path from the root of the domain to
 # the root of the site. If defined, should start with / and
 # never end with /
