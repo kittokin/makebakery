@@ -17,7 +17,7 @@ To update the live site there is a `gh-pages` Makefile target that can help. To 
 2. Create a local clone of this repo at the destination directory, with the `gh-pages` branch checked out.
 
     ```
-    git clone -b gh-pages . ../build/makebakery
+    git clone -b gh-pages . ../../build/makebakery
     ```
     
     If you have already run `make` you might need to delete the existing destination directory first.
