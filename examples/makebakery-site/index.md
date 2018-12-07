@@ -14,7 +14,7 @@ _Make_ is a tool that figures out which commands need to be run to transform som
 
 I show in the demonstration site source code (which builds the site you are reading) how one might wire up their favorite HTML-generating tools to Makebakery. I recommend [Pandoc][], which lets you keep source files in Markdown format. You might also add to the compilation pipeline a template engine like [Jinja][], CSS compilers like [LESS][], image processing using [ImageMagick][], and any other custom scripts you please.
 
-This website is the result of running `make` in the root of the makebakery source code directory, which compiles the included demo site source in `/demo-src` to HTML in `/build/makebakery`. Visit [the makebakery project page on GitHub][github/makebakery] to learn more.
+This website is the result of running `make` in the root of the makebakery source code directory, which compiles the included demo site source in `/examples/makebakery-site` to HTML in `/build/makebakery`. Visit [the makebakery project page on GitHub][github/makebakery] to learn more.
 
 ## Interesting features
 
@@ -24,8 +24,8 @@ Static site generators are fairly boring, but there are some clever pieces withi
 - Unlike many other static site generators, makebakery tries to remain programming-language-agnostic. Use any language, or a mix of languages, to implement modules or scripts that run at compile time to generate page content.
 - Pages are compiled in a pipeline according to their filename extension. You may freely mix markdown, raw html, compile-time executables, and other files within your sources. Also, you may chain them together, so that for example a Python script might retrieve information from a database and render markdown, which is then rendered into html.
 - With the index module, a page may be designated for compilation in a second pass. This enables:
-    - **Programmatic and HTML site maps.** Look at how `demo-src/pages.json.m4.index` renders a .json [index of all the pages on the site](pages.json). This enables us to automatically build navigation bars like the one in the header on this page, or "recent changes" links, all on the client side. Take careful note of this: the site is static but the header bar will *automatically be updated whenever pages are added or removed*.
-    - **Feeds**. Look at how `demo-src/atom.xml.m4.index` renders [an atom-format .xml file](atom.xml) of changes made to the site. Even though the site is static you can still have it update feed readers whenever you make a change.
+    - **Programmatic and HTML site maps.** Look at how `examples/makebakery-site/pages.json.m4.index` renders a .json [index of all the pages on the site](pages.json). This enables us to automatically build navigation bars like the one in the header on this page, or "recent changes" links, all on the client side. Take careful note of this: the site is static but the header bar will *automatically be updated whenever pages are added or removed*.
+    - **Feeds**. Look at how `examples/makebakery-site/atom.xml.m4.index` renders [an atom-format .xml file](atom.xml) of changes made to the site. Even though the site is static you can still have it update feed readers whenever you make a change.
 - Modular features: disable the ones you don't use for more speed, or build your own without merge conflicts.
 
 ## About static sites

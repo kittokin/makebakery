@@ -1,5 +1,5 @@
 SRC					:= .
-DST					:= $(realpath ../build/makebakery)
+DST					:= $(realpath ../../build/makebakery)
 # BASEURL is the URL path from the root of the domain to
 # the root of the site. If defined, should start with / and
 # never end with /
@@ -31,7 +31,7 @@ MODULES = \
 # to include makebakery.mk.
 IGNORE := Makefile before_body.incl after_body.incl README/index.html
 
-include ../makebakery.mk
+include ../../makebakery.mk
 
 $(DST)/atom.xml: $(filter %.html,$(targets))
 $(DST)/pages.json: $(filter %.html,$(targets))
