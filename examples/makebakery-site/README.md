@@ -1,6 +1,6 @@
 # datagrok.github.io/makebakery
 
-This directory contains the source files that become the static website <https://datagrok.github.io/makebakery> when compiled with the **makebakery**-based [Makefile][Makefile].
+This directory contains the source files that become the static website <https://datagrok.github.io/makebakery> when compiled with the **makebakery**-based [Makefile](Makefile).
 
 To render it yourself, run `make` in this directory.
 
