@@ -1,6 +1,6 @@
 .SUFFIXES:
 .NOTPARALLEL: clean
-.PHONY: default all clean gh-pages
+.PHONY: default all clean
 default: all
 
 ifndef SRC
@@ -48,24 +48,7 @@ include $(wildcard $(addprefix $(modules_path)/,\
 	$(addsuffix .mk,           $(MODULES)) \
 	$(addsuffix /module_out.mk,$(call reverse,$(MODULES)))))
 
-targets := $(filter-out $(addprefix $(DST)/,$(IGNORE)),$(targets))
-
 all: $(targets)
-
-gh-pages: all
-	# Ensuring there are no uncommitted changes in the current branch:
-	git status -s
-	[ -z "$$(git status -s)" ]
-	# Ensuring local gh-pages branch exists here:
-	git show-ref refs/heads/gh-pages
-	# Ensuring local gh-pages branch is not currently checked out here:
-	[ "$$(git symbolic-ref HEAD)" != "refs/heads/gh-pages" ]
-	# Ensuring $(DST) is a clone of this repo and gh-pages branch is checked out there:
-	[ "$$(git -C $(DST) symbolic-ref HEAD)" = "refs/heads/gh-pages" ]
-	$(MAKE) all
-	git -C $(DST) add .
-	git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)"
-	git -C $(DST) push
 
 # By default, GNU Make will skip any source files that have not been modified
 # since the last time they were rendered. Run 'make clean' to erase the

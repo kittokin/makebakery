@@ -20,9 +20,11 @@ PANDOC_STYLESHEET := $(addprefix $(BASEURL)/_/css/, \
 
 # This must appear before the statement to include makebakery.mk.
 MODULES = \
-	__source \
+	___ignore \
 	__paths_are_dirs \
+	__source \
 	executable \
+	gh-pages \
 	pandoc \
 	url
 
