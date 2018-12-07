@@ -3,6 +3,18 @@
 .PHONY: default all clean gh-pages
 default: all
 
+ifndef SRC
+$(error SRC is not defined)
+endif
+
+ifndef DST
+$(error DST is not defined)
+endif
+
+ifndef MODULES
+$(warning MODULES is not defined; makebakery will not do much without it...)
+endif
+
 # Define a mechanism to reverse a list. Used by the modules logic. This is
 # surprisingly hard to do with GNU Make.
 ifeq (,$(findstring guile,$(.FEATURES)))
@@ -17,12 +29,18 @@ endif
 # 2. those in modules directory named <name>.mk
 # 2. those in modules directory named <name>/module_out.mk, in reverse order
 #
-# This sets up a "ring" configuration, somewhat like django's middleware.
+# This sets up a "ring" configuration, somewhat like django's middleware. This
+# is necessary to allow all manipulation of the targets variable to occur before
+# any rules are defined which might depend on it.
+#
 # Modules with high alphanumeric precedence (prefixed with underscores) get
 # their module.mk processed before everything else, and their module_out.mk
 # processed after everything else.
 #
 # Note: any names that do not match a module are silently ignored.
+#
+# The set of modules should define a variable named 'targets', and rules which
+# transform source files to destination files within DST.
 MODULES				:= $(sort $(MODULES))
 modules_path  := $(dir $(lastword $(MAKEFILE_LIST)))/modules
 include $(wildcard $(addprefix $(modules_path)/,\
