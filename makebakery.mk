@@ -3,16 +3,26 @@
 .PHONY: default all clean gh-pages
 default: all
 
+# Define a mechanism to reverse a list. Used by the modules logic. This is
+# surprisingly hard to do with GNU Make.
 ifeq (,$(findstring guile,$(.FEATURES)))
 reverse = $(if $(wordlist 2,2,$(1)),$(call reverse,$(wordlist 2,$(words $(1)),$(1))) $(firstword $(1)),$(1))
 else
 reverse = $(guile (reverse (string-tokenize "$(1)")))
 endif
 
-# modules to include:
-# 1. those in modules directory, either files or directory/module.mk, in order
-# 2. those in sources directories
-# 3. those in modules directory, in reverse order
+# Modules to include:
+#
+# 1. those in modules directory named <name>/module.mk
+# 2. those in modules directory named <name>.mk
+# 2. those in modules directory named <name>/module_out.mk, in reverse order
+#
+# This sets up a "ring" configuration, somewhat like django's middleware.
+# Modules with high alphanumeric precedence (prefixed with underscores) get
+# their module.mk processed before everything else, and their module_out.mk
+# processed after everything else.
+#
+# Note: any names that do not match a module are silently ignored.
 MODULES				:= $(sort $(MODULES))
 modules_path  := $(dir $(lastword $(MAKEFILE_LIST)))/modules
 include $(wildcard $(addprefix $(modules_path)/,\
@@ -24,7 +34,7 @@ targets := $(filter-out $(addprefix $(DST)/,$(IGNORE)),$(targets))
 
 all: $(targets)
 
-gh-pages:
+gh-pages: all
 	# Ensuring there are no uncommitted changes in the current branch:
 	git status -s
 	[ -z "$$(git status -s)" ]
@@ -39,11 +49,12 @@ gh-pages:
 	git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)"
 	git -C $(DST) push
 
-# By default, GNU Make will skip any source files that have
-# not been modified since the last time they were rendered.
-# Run 'make clean' to erase the destination directory for a
-# complete rebuild. I do a 'mv' then 'rm' to reduce the
-# chances of running an 'rm -rf /'.
+# By default, GNU Make will skip any source files that have not been modified
+# since the last time they were rendered. Run 'make clean' to erase the
+# destination directory for a complete rebuild. I do a 'mv' then 'rm' to reduce
+# the chances of running an 'rm -rf /'. The temporary directory and manipulation
+# of the .git directory is to be compatible with destination directories that
+# are git repos (such as when rendering for GitHub Pages).
 adst := $(realpath $(DST))
 clean:
 	mv "$(adst)" "$(adst).old"
