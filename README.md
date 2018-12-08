@@ -1,12 +1,8 @@
-# Makebakery: a `GNU Make`-based static website generator (library?)
+# Makebakery
 
-**Makebakery** is a static website generator, implemented as a set of configuration files for the build tool [GNU Make][].
+**Makebakery** is a static website generator implemented using [GNU Make][].
 
-The basic idea of using a Makefile to orchestrate building static HTML files from source files is fairly well known.
-
-I found myself re-implementing similar-but-different Makefiles over and over again for each static site I wanted to build.
-
-Makebakery is the result of collecting various Make modules containing common functionality and hacks into a single place, that one may select among and enable through configuration instead of deep Makefile hacking.
+More accurately, it is a collection of GNU Make _rules_ and _recipes_, organized into modules in a way that makes it easy to select and enable the functionality appropriate for your static website.
 
 Check out <https://datagrok.github.io/makebakery> for more.
 (That site itself is rendered using Makebakery, from sources in `examples/makebakery-site`.)
