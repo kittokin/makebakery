@@ -1,4 +1,14 @@
 #
+# m4 module: process targets with GNU m4
+#
+# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+#
+# This program is part of Makebakery.
+# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# See COPYING for details.
+#
+
+#
 # Filter files with .m4 extensions through the m4 macro processor.
 #
 m4modpath		:= $(dir $(lastword $(MAKEFILE_LIST)))

@@ -1,3 +1,13 @@
+#
+# paths_are_dirs module: convert foo.html to foo/index.html
+#
+# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+#
+# This program is part of Makebakery.
+# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# See COPYING for details.
+#
+
 # Causes all source .html files to end up as name/(default doc). This
 # effectively makes every page into a "directory."
 #

@@ -1,3 +1,13 @@
+#
+# pandoc module: use pandoc to convert markdown to html
+#
+# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+#
+# This program is part of Makebakery.
+# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# See COPYING for details.
+#
+
 # - email obfuscation=none so that email addresses specified in author field
 # don't get replaced by huge script tags.
 # - --template implies --standalone

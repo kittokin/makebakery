@@ -1,3 +1,14 @@
+#
+# bootstrap-less module: compile bootstrap and bootstrap-theme stylesheets from
+# user-selected components
+#
+# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+#
+# This program is part of Makebakery.
+# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# See COPYING for details.
+#
+
 # I suppose I could use grunt here instead?
 
 bootstrap_deps := $(addprefix $(SRC)/_/less/,$(addsuffix .less, variables mixins normalize print scaffolding type code grid tables forms buttons component-animations glyphicons dropdowns button-groups input-groups navs navbar breadcrumbs pagination pager labels badges jumbotron thumbnails alerts progress-bars media list-group panels wells close modals tooltip popovers carousel utilities responsive-utilities))

@@ -1,6 +1,16 @@
+#
+# rfc2822ish module: convert MIME-format messages to Markdown
+#
+# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+#
+# This program is part of Makebakery.
+# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# See COPYING for details.
+#
+
 # My .msg files are basically RFC2822 MIME-format documents with the eventual
 # goal of each possibly containing a hierarchy of multiple sub-documents.
-# 
+#
 # To accomplish that, need to add a rule to generate .mk files from RFC2822
 # documents, and an include statement to include them all.
 # https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html
