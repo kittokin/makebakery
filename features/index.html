@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Michael F. Lamb" />
+  <title>Features</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.2.0.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.2.0.min.css" />
+  <link rel="stylesheet" href="/makebakery/_/css/style.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <a href="https://github.com/datagrok/makebakery"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/makebakery/_/img/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <div class="navbar-header">
+      <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="glyphicon glyphicon-folder-open"></span>
+      </button>
+      <a class="navbar-brand" href="/makebakery/">makebakery</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav"></ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Let's not demo the breadcrumb navigation until it works automatically.
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="#"></a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+  </ol>
+</div>
+-->
+
+<div class="container">
+<header>
+<h1 class="title">Features</h1>
+<p class="author">Michael F. Lamb</p>
+<p class="date">Thu, 28 Feb 2013 18:27:11 -0500</p>
+</header>
+<p>From my static site generator, I wanted:</p>
+<ul>
+<li>to use [Pandoc][] or sometimes [discount][] to author HTML pages on my website(s) using [Markdown][]</li>
+<li>to build pages in parallel, taking advantage of all my processor cores</li>
+<li>to have a multi-step pipeline, so that I might have a shell script output Markdown syntax, which would then be processed into HTML by Pandoc.</li>
+<li>to organize my pages into a hierarchy if I prefer, not just a flat collection or serialized “blog”</li>
+<li>a website navigation mechanism visible on every page that will automatically update itself whenever I make changes to pages
+<ul>
+<li>that will work both with and without javascript enabled</li>
+</ul></li>
+<li>all my pages to automatically share a common design</li>
+<li>to have the option of occasionally authoring pages <em>not</em> in Markdown, but instead raw HTML or generated from a script
+<ul>
+<li>but still automatically share the common page design</li>
+</ul></li>
+<li>to author interactive features with [coffeescript][] and have it automatically convert to JavaScript</li>
+<li>to serve fonts and javascript libraries from my website, without manually “vendoring” a copy into my git repository</li>
+<li>an efficient build mechanism that would update only the pages whose source files have changed</li>
+<li>URLs which do not reveal filename extensions</li>
+<li>to deploy on Apache that I do not control, on an nginx that I do control, on an S3 bucket configured for website hosting, or to GitHub Pages.</li>
+<li>when I’m feeling masochistic, to use [GNU M4][] to do templating like I did back in ’99</li>
+<li><p>to be language-agnostic; to use any language or mix of languages in little scripts that could be used to generate pages</p></li>
+<li><p>Pages are compiled in a pipeline according to their filename extension. You may freely mix markdown, raw html, compile-time executables, and other files within your sources. Also, you may chain them together, so that for example a Python script might retrieve information from a database and render markdown, which is then rendered into html.</p></li>
+</ul>
+
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/makebakery/_/js/jquery-2.1.1.min.js"></script>
+<script src="/makebakery/_/js/bootstrap-3.2.0.min.js"></script>
+
+<!--  Get some other variables useful to javascript into the page context. -->
+<script type="text/javascript">
+  var site_root = "/makebakery/";
+</script>
+
+<!--  this is where we put our custom functions -->
+<script src="/makebakery/_/js/functions.js"></script>
+</body>
+</html>
