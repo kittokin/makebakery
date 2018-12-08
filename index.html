@@ -12,6 +12,71 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
   <link rel="stylesheet" href="/makebakery/_/css/bootstrap-3.2.0.min.css" />
   <link rel="stylesheet" href="/makebakery/_/css/bootstrap-theme-3.2.0.min.css" />
   <link rel="stylesheet" href="/makebakery/_/css/style.css" />
@@ -53,27 +118,64 @@
 <p class="author">Michael F. Lamb</p>
 <p class="date">Thu, 28 Feb 2013 18:27:11 -0500</p>
 </header>
-<p><strong>Makebakery</strong> is a static website generator implemented using GNU Make.</p>
+<p><strong>Makebakery</strong> is a static website generator implemented using <a href="https://www.gnu.org/software/make/">GNU Make</a>.</p>
 <figure>
 <img src="bakery.jpg" alt="Photo: Boris Bartels, “Bakery” (2006) (CC-BY-SA 2.0). Resized." class="pull-right" /><figcaption>Photo: <a href="https://www.flickr.com/photos/barthelomaus/104318646/">Boris Bartels, “Bakery” (2006)</a> (<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA 2.0</a>). Resized.</figcaption>
 </figure>
-<p>makebakery is a system of <em>Makefiles</em> that builds a static website from various sources, using the GNU variant of the venerable old UNIX tool <em>Make</em>. Unlike other more minimalist Make-based approaches, its features are organized into modules which may be toggled according to your preferences.</p>
-<p>A <em>static</em> website is one which requires no special logic on the server-side to work, as opposed to <em>dynamic</em> websites which trigger some server-side processing for most page requests.</p>
-<p><em>Make</em> is a tool that figures out which commands need to be run to transform some given set of source files into a desired set of output files. Originally created for compilation of source code into executable code, Makebakery uses <em>Make</em> to transform files in various source formats like <em>Markdown</em> into an HTML website.</p>
-<p>I show in the demonstration site source code (which builds the site you are reading) how one might wire up their favorite HTML-generating tools to Makebakery. I recommend <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>, which lets you keep source files in Markdown format. You might also add to the compilation pipeline a template engine like <a href="http://jinja.pocoo.org/">Jinja</a>, CSS compilers like <a href="http://lesscss.org/">LESS</a>, image processing using <a href="http://www.imagemagick.org">ImageMagick</a>, and any other custom scripts you please.</p>
-<p>This website is the result of running <code>make</code> in the root of the makebakery source code directory, which compiles the included demo site source in <code>/examples/makebakery-site</code> to HTML in <code>/build/makebakery</code>. Visit <a href="https://github.com/datagrok/makebakery">the makebakery project page on GitHub</a> to learn more.</p>
-<h3 id="interesting-features">Interesting features</h3>
-<p>Static site generators are fairly boring, but there are some clever pieces within makebakery:</p>
+<p>A <strong><em>static</em> website</strong> is one which requires no special logic on the server-side to work, as opposed to <em>dynamic</em> websites which trigger some server-side processing for most page requests.</p>
+<p><strong><em>Make</em></strong> is a venerable old UNIX build tool intended for the compilation of software source code into executable code, but Makebakery puts it to use compiling websites. <strong>GNU Make</strong> is one popular variant of <em>Make</em> with several enhancements, included with most GNU/Linux distributions.</p>
+<p>More accurately, Makebakery is a <em>collection of rules and recipes</em> for GNU Make that are useful for orchestrating various tools in the generation of static websites of varying architecture. Unlike minimalist <em>Make</em>-based approaches for generating static websites, Makebakery’s features are organized into <em>modules</em> which may be toggled according to the requirements of the site it is building.</p>
+<h3 id="motivation">Motivation</h3>
+<p>The basic idea of using <em>Make</em> to orchestrate building static HTML files from source files is fairly well-known. I’ve been doing it since I learned of the idea in 1998, after reading <a href="http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html">Using M4 to write HTML</a>.</p>
+<p>Unfortunately, I found myself re-implementing similar-but-different Makefiles over and over again for each different static site I wanted to build. Makebakery is the result of refactoring my various Makefiles into modular parts, and finding a simple mechanism to toggle those parts on or off for any site that uses the collection.</p>
+<h3 id="example">Example</h3>
+<p>A short Makefile is enough to get started:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode makefile"><code class="sourceCode makefile"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dt">SRC      </span><span class="ch">=</span><span class="st"> .</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="dt">DST      </span><span class="ch">=</span><span class="st"> /tmp/build/example</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="dt">MODULES  </span><span class="ch">=</span><span class="st"> ___ignore __source pandoc</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="dt">IGNORE   </span><span class="ch">=</span><span class="st"> README.html Makefile</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">include</span> /path/to/makebakery.mk</a></code></pre></div>
+<p>When you run <code>make</code>, this will copy source files from the current directory to the destination directory, and use <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> to convert Markdown to HTML in the process:</p>
+<pre><code>.                        /tmp/build/example
+├── about.md      -&gt;     ├── about.html
+├── contact.md           ├── contact.html
+├── index.md             ├── index.html
+├── logo.png             ├── logo.png
+├── projects.md          └── projects.html
+├── Makefile
+└── README.md</code></pre>
+<p>For a more detailed description, see <a href="https://github.com/datagrok/makebakery/tree/master/examples/minimal">the “minimal” example</a> in the source code repository.</p>
+<p>You might also add to the compilation pipeline a template engine like <a href="http://jinja.pocoo.org/">Jinja</a>, CSS compilers like <a href="http://lesscss.org/">LESS</a>, image processing using <a href="http://www.imagemagick.org">ImageMagick</a>, and any other custom scripts you please. Adding a new conversion tool to this example is as simple as adding its module’s name to the <code>MODULES</code> variable, and defining any configuration variables it needs.</p>
+<p>For a slightly more advanced example, examine the source code for this site (that you are reading).</p>
+<p>This website is the result of running <code>make</code> from the <code>/examples/makebakery-site</code> directory of the Makebakery repository. Visit <a href="https://github.com/datagrok/makebakery">the Makebakery project page on GitHub</a> to see the source code.</p>
+<h3 id="features">Features</h3>
+<p>From my static site generator, I wanted:</p>
 <ul>
-<li>Thanks to built-in support for multiprocessing in <em>Make</em>, makebakery takes advantage of multi-core machines to compile pages in parallel.</li>
-<li>Unlike many other static site generators, makebakery tries to remain programming-language-agnostic. Use any language, or a mix of languages, to implement modules or scripts that run at compile time to generate page content.</li>
+<li>to use <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a> or sometimes [discount][] to author HTML pages on my website(s) using [Markdown][]</li>
+<li>to build pages in parallel, taking advantage of all my processor cores</li>
+<li>to have a multi-step pipeline, so that I might have a shell script output Markdown syntax, which would then be processed into HTML by Pandoc.</li>
+<li>to organize my pages into a hierarchy if I prefer, not just a flat collection or serialized “blog”</li>
+<li>a website navigation mechanism visible on every page that will automatically update itself whenever I make changes to pages</li>
+<li>all my pages to automatically share a common design</li>
+<li>to have the option of occasionally authoring pages <em>not</em> in Markdown, but instead raw HTML or generated from a script
+<ul>
+<li>but still automatically share the common page design</li>
+</ul></li>
+<li>to author interactive features with [coffeescript][] and have it automatically convert to JavaScript</li>
+<li>to serve fonts and javascript libraries from my website, without manually “vendoring” a copy into my git repository</li>
+<li>an efficient build mechanism that would update only the pages whose source files have changed</li>
+<li>URLs which do not reveal filename extensions</li>
+<li>to deploy on Apache that I do not control, on an nginx that I do control, on an S3 bucket configured for website hosting, or to GitHub Pages.</li>
+<li>when I’m feeling masochistic, to use [GNU M4][] to do templating like I did back in ’99</li>
+<li><p>to be language-agnostic; to use any language or mix of languages in little scripts that could be used to generate pages</p></li>
+<li>Unlike many other static site generators, Makebakery tries to remain programming-language-agnostic. Use any language, or a mix of languages, to implement modules or scripts that run at compile time to generate page content.</li>
 <li>Pages are compiled in a pipeline according to their filename extension. You may freely mix markdown, raw html, compile-time executables, and other files within your sources. Also, you may chain them together, so that for example a Python script might retrieve information from a database and render markdown, which is then rendered into html.</li>
 <li>With the index module, a page may be designated for compilation in a second pass. This enables:
 <ul>
 <li><strong>Programmatic and HTML site maps.</strong> Look at how <code>examples/makebakery-site/pages.json.m4.index</code> renders a .json <a href="pages.json">index of all the pages on the site</a>. This enables us to automatically build navigation bars like the one in the header on this page, or “recent changes” links, all on the client side. Take careful note of this: the site is static but the header bar will <em>automatically be updated whenever pages are added or removed</em>.</li>
 <li><strong>Feeds</strong>. Look at how <code>examples/makebakery-site/atom.xml.m4.index</code> renders <a href="atom.xml">an atom-format .xml file</a> of changes made to the site. Even though the site is static you can still have it update feed readers whenever you make a change.</li>
 </ul></li>
-<li>Modular features: disable the ones you don’t use for more speed, or build your own without merge conflicts.</li>
+<li><p>Modular features: disable the ones you don’t use for more speed, or build your own without merge conflicts.</p></li>
 </ul>
 <h3 id="about-static-sites">About static sites</h3>
 <p>Static websites are those whose content is pre-rendered and require only simple software to serve to visitors.</p>
@@ -86,21 +188,22 @@
 </ul>
 <p>Of course, with no processing occurring on the server end, it’s not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like <a href="http://disqus.com">Disqus</a> to implement these features anyway, or rely on third-party forums like to provide discussion areas for their content.</p>
 <p>In short, if you’re not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you <em>are</em> using those features on some areas of your site, you’re better off making the static parts simple static files.</p>
-<p>If <em>makebakery</em> doesn’t meet your needs, it is only one of <a href="https://staticsitegenerators.net/">literally hundreds of different static site generators</a> that people have made. A friend of mine wrote <a href="https://github.com/kingcons/coleslaw">coleslaw</a> and I’ve heard good things about <a href="https://blog.getpelican.com/">Pelican</a> too.</p>
+<p>If <em>Makebakery</em> doesn’t meet your needs, it is only one of <a href="https://staticsitegenerators.net/">literally hundreds of different static site generators</a> that people have made. A friend of mine wrote <a href="https://github.com/kingcons/coleslaw">coleslaw</a> and I’ve heard good things about <a href="https://blog.getpelican.com/">Pelican</a> too.</p>
 <h3 id="about-make">About <em>Make</em></h3>
-<p>Modern <em>Make</em> work-alikes include <a href="gruntjs.com">Grunt</a>, <a href="http://rake.rubyforge.org">Rake</a>, or <a href="http://ant.apache.org">Ant</a>. Despite its age and the number of times it has been re-invented, Make has some surprising features that I think makes it superior to the newcomers:</p>
+<p><em>Make</em> is a build tool that figures out which commands need to be run to transform some given set of source files into a desired set of output files. Modern work-alikes include <a href="gruntjs.com">Grunt</a>, <a href="http://rake.rubyforge.org">Rake</a>, or <a href="http://ant.apache.org">Ant</a>. Despite its age and the number of times it has been re-invented, <em>Make</em> has some surprising features that I think makes it superior to the newcomers:</p>
 <ul>
 <li>When invoked multiple times, it is smart enough to only recompile target files whose source files have changed.</li>
 <li>When used on multi-core systems or with I/O heavy jobs, it is smart enough to figure out how to parallelize its work.</li>
-<li>Make can apply multiple compilation steps to each source file to render the desired output, and it cleans up the intermediate files automatically.</li>
+<li><em>Make</em> can apply multiple compilation steps to each source file to render the desired output, and it cleans up the intermediate files automatically.</li>
 </ul>
-<p><code>Make</code> has a rather steep learning curve, but since it is so ubiquitous, it’s likely to be already installed on your computer, and your web host’s servers, and easy to obtain if not.</p>
-<p>Make is a POSIX standard, but makebakery relies on a specific implementation with non-standard features: <a href="https://www.gnu.org/software/make/">GNU Make</a>. Why?</p>
+<p><em>Make</em> has a rather steep learning curve, but since it is so ubiquitous, it’s likely to be already installed on your computer, and your web host’s servers, and easy to obtain if not.</p>
+<p><em>Make</em> is a POSIX standard, but Makebakery relies on a specific implementation with non-standard features: <a href="https://www.gnu.org/software/make/">GNU Make</a>. Why?</p>
+<p>Mostly because that’s what is installed on all my computers, all of which run Debian GNU/Linux. It’s Free Software so it’s not difficult to get running on other platforms. Making a similar system based on POSIX <em>Make</em> or <a href="http://doc.cat-v.org/plan_9/4th_edition/papers/mk">Plan 9’s Mk</a> might be possible, but it’s not a high priority for me.</p>
 <blockquote>
 <p>… the POSIX standard version of Make is extraordinarily feature-poor; it lacks many basic functions that people need in practice. As a result, most people create makefiles (the input files to make) that require specific implementations instead of just following the POSIX standard. Typically that specific implementation is GNU make; since GNU make runs on nearly every Unix-like system, and is FLOSS, this is an easy requirement to meet.</p>
 <p>–David Wheeler, <a href="https://www.dwheeler.com/essays/make.html">Improving Make (2014)</a></p>
 </blockquote>
-<p>More about Make and GNU Make: <a href="https://en.wikipedia.org/wiki/Make_%28software%29">Wikipedia: Make (software)</a></p>
+<p>More about <em>Make</em> and GNU Make: <a href="https://en.wikipedia.org/wiki/Make_%28software%29">Wikipedia: Make (software)</a></p>
 <h3 id="coming-soon">Coming soon</h3>
 <ul>
 <li>Example of how to automatically build a blog from a collection of posts, with RSS and ATOM feeds.</li>
