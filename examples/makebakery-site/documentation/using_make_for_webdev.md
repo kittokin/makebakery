@@ -1,5 +1,6 @@
-% Using GNU Make for frontend development
+% (draft) Make for frontend dev
 
+An except from [How it feels to learn Javascript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f):
 
 > That seems overly complicated to just grab a bunch of dependencies and tie them together.
 > 
@@ -13,15 +14,17 @@
 > 
 > > Yeah, but apparently in the web we love making things complicated and then going back to the basics. We do that every year or so, just wait for it, we are going to do assembly in the web in a year or two.
 
-https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f
+Apparently there was a brief window of time when Make experienced a resurgence of popularity for building websites, and I missed it. :(
 
-https://www.thumbtack.com/engineering/makefiles-for-less-and-css/
+---
 
-http://hadihariri.com/2014/04/21/build-make-no-more/
+<https://www.thumbtack.com/engineering/makefiles-for-less-and-css/>
 
-https://www.smashingmagazine.com/2015/10/building-web-applications-with-make/
+<http://hadihariri.com/2014/04/21/build-make-no-more/>
 
-https://www.sitepoint.com/using-gnu-make-front-end-development-build-tool/https://www.sitepoint.com/using-gnu-make-front-end-development-build-tool/
+<https://www.smashingmagazine.com/2015/10/building-web-applications-with-make/>
 
-http://www.vittoriozaccaria.net/wmake/
+<https://www.sitepoint.com/using-gnu-make-front-end-development-build-tool/>
+
+<http://www.vittoriozaccaria.net/wmake/>
 
