@@ -1,4 +1,4 @@
-# Makebakery: a Make-based static website generator
+# Makebakery: a `GNU Make`-based static website generator (library?)
 
 **Makebakery** is a static website generator, implemented as a set of configuration files for the build tool [GNU Make][].
 
@@ -6,9 +6,10 @@ The basic idea of using a Makefile to orchestrate building static HTML files fro
 
 I found myself re-implementing similar-but-different Makefiles over and over again for each static site I wanted to build.
 
-Since each site might differ in its configuration and infrastructure, no single Makefile could fit them all.
+Makebakery is the result of collecting various Make modules containing common functionality and hacks into a single place, that one may select among and enable through configuration instead of deep Makefile hacking.
 
-So, Makebakery is a collection of Make modules containing common functionality and hacks, that one may select among and enable through configuration.
+Check out <https://datagrok.github.io/makebakery> for more.
+(That site itself is rendered using Makebakery, from sources in `examples/makebakery-site`.)
 
 ## Goals
 
@@ -17,52 +18,36 @@ So, Makebakery is a collection of Make modules containing common functionality a
 - Useful for multiple styles of site: shell account on the webserver, git repository, s3, etc.
 - DRY: I can use it for all my static sites
 
-## Quick Start
+## Theory of operation
 
-Clone this repository somewhere.
+The user creates a Makefile which defines variables appropriate for their configuration, and then `include makebakery.mk`.
 
-Create a file named `Makefile` with this content:
+(This keeps site-specific configuration with the site itself, so the makebakery repo may exist unmodified, treated as a library.)
 
-``` makefile
-SRC = src
-DST = dst
-MODULES = __source pandoc
-include /path/to/makebakery.mk
-```
+Of particular importance is the `MODULES` variable, which is a whitespace-separated list of *makebakery modules* that should be enabled.
 
-Where `/path/to/makebakery.mk` is the full path to the file `makebakery.mk` in your clone of this repo.
+A *makebakery module* is a file or subdirectory containing Make-syntax code stored within the `modules` directory.
 
-Create a directory with source files, like this:
+A source file may be processed multiple times, according to its filename extension.
+At each step, one layer of filename extension is removed.
+For example, with the `executable`, `pandoc`, and `__paths_are_dirs` modules enabled, a file named  
+`foo.html.md.run` would be executed and have its output captured to obtain  
+`foo.html.md`, then processed by pandoc to obtain  
+`foo.html`, then renamed to obtain  
+`foo/index.html`.
 
-	src/
-	|-- index.md
-	`-- style.css
+Modules are responsible for defining or modifying the variable `targets`, which names all the files that should be rendered to generate the static site.
+Modules also define rules for rendering those target files from (perhaps intermediate) source files.
 
-Run `make -Rj`. The `-Rj` is optional, but will likely speed up the compilation.
+Modules have an "in" and an "out" section. Modules' "in" sections are processed in alphanumeric order, then their "out" sections are processed in reverse alphanumeric order.
+You can think of it like an onion: each module is a "layer" that wraps the next.
 
-    ...
+A typical set of MODULES might include:
 
-And produce the following structure:
-
-	dst/
-	|-- index.html
-	`-- style.css
-
-## Usage
-
-Several Make parameters to configure the core behavior:
-
-- **SRC**: the path containing source files
-- **DST**: the path where the output HTML should be rendered
-- **MODULES**: a space-separated list of modules to enable
-
-Each module may respond to its own additional parameters.
-
-- **BASEURL**: the url path to (or "mount point" for) our rendered HTML, when served by the webserver. 
-- **SITEHOST**: the hostname of the site when served by the webserver.
-- **DEFAULT_DOCUMENT**: set this to correspond with Apache's DefaultDocument setting; defaults to `index.html`.
-
-And you might need some site-specific configuration (but I'm trying to think of ways to eliminate elaborate Makefile hacks for most purposes.)
+- either __source or __multisource to get source files from the filesystem
+- possibly __paths_are_dirs or extensionless_html to keep .html filename extensions out of URLs,
+- one or more rendering engines for HTML pages, like pandoc or _m4, and
+- possibly a processing engine like sass to make authoring css easier.
 
 ## About the name
 
@@ -70,11 +55,11 @@ And you might need some site-specific configuration (but I'm trying to think of 
 >
 > —[Aaron Swartz: The Weblog, "Bake, don't Fry" (2002)](http://www.aaronsw.com/weblog/000404)
 
-I used to call this project **m4-bakery**, which conflated the use of GNU Make for coordinating the rendering of files with the use of [GNU m4][] for templating. Now, all the `m4`-related logic is [moved into a module][m4-module], so you can easily avoid it in favor of more modern templating engines, if you prefer.
+I used to call this project **m4-bakery**, which conflated the use of GNU Make for coordinating the rendering of files with the use of [GNU m4][] for templating. Now, all the `m4`-related logic is [relegated to a module][m4-module], so you can easily avoid it in favor of more modern templating engines, if you prefer.
 
 ## Similar projects
 
-It has been said that every programmer, at some point, writes a blog/website publishing engine. Here are some other such projects that are similar in some way.
+It has been said that every programmer, at some point, writes a blog/website publishing engine. Here are some other such projects.
 
 - [staticsitegenerators.net](http://staticsitegenerators.net) contains a crowdsourced database of a myriad of different static site generators.
 - [Phil "technomancy" Hagelberg](https://technomancy.us/colophon) uses a minimalist approach including a 12-line Makefile and GNU M4.
