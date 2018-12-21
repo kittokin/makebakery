@@ -21,3 +21,11 @@ Making a similar system based on POSIX _Make_ or [Plan 9's Mk][Mk] might be poss
 > --David Wheeler, [Improving Make (2014)][]
 
 More about _Make_ and GNU Make: [Wikipedia: Make (software)][W:Make]
+
+[W:Make]: https://en.wikipedia.org/wiki/Make_%28software%29
+[Improving Make (2014)]: https://www.dwheeler.com/essays/make.html
+[Mk]: http://doc.cat-v.org/plan_9/4th_edition/papers/mk
+[GNU Make]: https://www.gnu.org/software/make/
+[Grunt]: gruntjs.com
+[Rake]: http://rake.rubyforge.org
+[Ant]: http://ant.apache.org

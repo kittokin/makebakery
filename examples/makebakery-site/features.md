@@ -23,9 +23,23 @@ From my static site generator, I wanted:
 
 - Pages are compiled in a pipeline according to their filename extension. You may freely mix markdown, raw html, compile-time executables, and other files within your sources. Also, you may chain them together, so that for example a Python script might retrieve information from a database and render markdown, which is then rendered into html.
 
+<!-- 
+- Source-language-agnostic. Supports a heterogeneous mix of markdown, scripts, coffeescript, etc.
+- Tinker-able: easily add support for a new type of source format
+- Useful for multiple styles of site: shell account on the webserver, git repository, s3, etc.
+- DRY: I can use it for all my static sites
+-->
+
 <!-- FIXME: index module is deprecated for now, but you can still accomplish the same with some lines in your makefile
 - With the index module, a page may be designated for compilation in a second pass. This enables:
     - **Programmatic and HTML site maps.** Look at how `examples/makebakery-site/pages.json.m4.index` renders a .json [index of all the pages on the site](pages.json). This enables us to automatically build navigation bars like the one in the header on this page, or "recent changes" links, all on the client side. Take careful note of this: the site is static but the header bar will *automatically be updated whenever pages are added or removed*.
     - **Feeds**. Look at how `examples/makebakery-site/atom.xml.m4.index` renders [an atom-format .xml file](atom.xml) of changes made to the site. Even though the site is static you can still have it update feed readers whenever you make a change.
 - Modular features: disable the ones you don't use for more speed, or build your own without merge conflicts.
 -->
+
+
+[Pandoc]: http://johnmacfarlane.net/pandoc/
+[discount]: https://www.pell.portland.or.us/~orc/Code/discount/
+[markdown]: https://daringfireball.net/projects/markdown/
+[coffeescript]: https://coffeescript.org/
+[GNU m4]: https://www.gnu.org/software/m4/
