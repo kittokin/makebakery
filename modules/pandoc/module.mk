@@ -12,14 +12,17 @@
 # don't get replaced by huge script tags.
 # - --template implies --standalone
 
+PANDOC_VERSION ?= 2
 PANDOC_ARGS = \
-	-f markdown+pipe_tables+header_attributes+smart \
-	-t html5 \
-  --base-header-level=2 \
-  --strip-comments \
-	--email-obfuscation=none \
-	--standalone
+    -f markdown+pipe_tables+header_attributes+smart \
+    -t html5 \
+    --base-header-level=2 \
+    --email-obfuscation=none \
+    --standalone
 
+ifeq (PANDOC_VERSION,2)
+PANDOC_ARGS += --strip-comments
+endif
 ifdef PANDOC_TEMPLATE
 PANDOC_ARGS += --template=$(PANDOC_TEMPLATE)
 endif
