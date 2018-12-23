@@ -14,14 +14,15 @@
 
 PANDOC_VERSION ?= 2
 PANDOC_ARGS = \
-    -f markdown+pipe_tables+header_attributes+smart \
     -t html5 \
     --base-header-level=2 \
     --email-obfuscation=none \
     --standalone
 
 ifeq (PANDOC_VERSION,2)
-PANDOC_ARGS += --strip-comments
+PANDOC_ARGS += -f markdown+pipe_tables+header_attributes+smart --strip-comments
+else
+PANDOC_ARGS += -f markdown+pipe_tables+header_attributes --smart
 endif
 ifdef PANDOC_TEMPLATE
 PANDOC_ARGS += --template=$(PANDOC_TEMPLATE)
