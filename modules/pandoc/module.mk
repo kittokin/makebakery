@@ -15,14 +15,14 @@
 PANDOC_VERSION ?= 2
 PANDOC_ARGS = \
     -t html5 \
-    --base-header-level=2 \
+    --shift-heading-level-by=1 \
     --email-obfuscation=none \
     --standalone
 
-ifeq (PANDOC_VERSION,2)
-PANDOC_ARGS += -f markdown+pipe_tables+header_attributes+smart --strip-comments
+ifeq ($(PANDOC_VERSION),2)
+PANDOC_ARGS += -f markdown+pipe_tables+header_attributes+auto_identifiers+smart --strip-comments
 else
-PANDOC_ARGS += -f markdown+pipe_tables+header_attributes --smart
+PANDOC_ARGS += -f markdown+pipe_tables+header_attributes+auto_identifiers --smart
 endif
 ifdef PANDOC_TEMPLATE
 PANDOC_ARGS += --template=$(PANDOC_TEMPLATE)
@@ -38,6 +38,9 @@ PANDOC_ARGS += --include-after-body=$(PANDOC_AFTER_BODY)
 endif
 ifdef PANDOC_STYLESHEET
 PANDOC_ARGS += $(foreach css,$(PANDOC_STYLESHEET),--css $(css))
+endif
+ifdef PANDOC_SIDENOTE
+PANDOC_ARGS += --filter pandoc-sidenote
 endif
 
 ifdef m4_templates
