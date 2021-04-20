@@ -14,4 +14,5 @@
 targets := $(targets:.url=)
 
 $(DST)/%: $(DST)/%.url
-	grep -v '^#|$$' $^ | head -1 | xargs curl -o $@ 
+	@echo "$(subst $(DST),,$@)" ← internet
+	grep -v '^#|$$' $^ | head -1 | xargs curl -so $@

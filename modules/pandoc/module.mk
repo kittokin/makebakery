@@ -47,9 +47,11 @@ targets := $(targets:.html.m4.md=.html.m4)
 targets := $(targets:.md=.html.m4)
 
 $(DST)/%.html.m4: $(DST)/%.md $(PANDOC_TEMPLATE) $(PANDOC_HEADER) $(PANDOC_BEFORE_BODY) $(PANDOC_AFTER_BODY)
+	@echo "$(subst $(DST),,$@)" ← "$(notdir $<)"
 	pandoc $(PANDOC_ARGS) --metadata=mtime_msec:"$(shell stat -c %Y $<)000" $< > $@
 
 $(DST)/%.html.m4: $(DST)/%.html.m4.md $(PANDOC_TEMPLATE) $(PANDOC_HEADER) $(PANDOC_BEFORE_BODY) $(PANDOC_AFTER_BODY)
+	@echo "$(subst $(DST),,$@)" ← "$(notdir $<)"
 	pandoc $(PANDOC_ARGS) --metadata=mtime_msec:"$(shell stat -c %Y $<)000" $< > $@
 
 else
@@ -57,6 +59,7 @@ else
 targets := $(targets:.md=.html)
 
 $(DST)/%.html: $(DST)/%.md $(PANDOC_TEMPLATE) $(PANDOC_HEADER) $(PANDOC_BEFORE_BODY) $(PANDOC_AFTER_BODY)
+	@echo "$(subst $(DST),,$@)" ← "$(notdir $<)"
 	pandoc $(PANDOC_ARGS) $< > $@
 
 endif

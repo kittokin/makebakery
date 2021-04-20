@@ -13,6 +13,7 @@ m4_templates := true
 # with the macros available, wrapped in the HTML template,
 # and saved without the '.m4' extension.
 $(DST)/%.html: $(DST)/%.html.m4 $(M4_CONFIG) $(M4_MACROS) $(M4_TEMPLATE)
+	@echo "$(subst $(DST),,$@)" ← "$(notdir $<)"
 	$(M4) $(M4_CONFIG) $(M4_MACROS) $< $(M4_TEMPLATE) > $@
 # Any other files named '*.m4' will be interpreted by M4
 # with the macros available, saved without the '.m4'
@@ -20,4 +21,5 @@ $(DST)/%.html: $(DST)/%.html.m4 $(M4_CONFIG) $(M4_MACROS) $(M4_TEMPLATE)
 # This lets you use M4 within .css, .js, etc. (Just name
 # them blah.css.m4, blah.js.m4, etc.)
 $(DST)/%: $(DST)/%.m4 $(M4_CONFIG) $(M4_MACROS)
+	@echo "$(subst $(DST),,$@)" ← "$(notdir $<)"
 	$(M4) $(M4_CONFIG) $(M4_MACROS) $< > $@
