@@ -18,7 +18,7 @@ The included templates are covered by the AGPL too. If you modify those for use 
 
 You could, for example, use this software to create a tech blog where all the code you publish is permissively-licensed or even kept proprietary "all rights reserved."
 
-Given those rules, someone might consider a clever loophole: modifying this software to output all of itself as a "template," thereby creating a version of itself not covered by the AGPL. So the license tediously states that no, you are not allowed to do that nasty thing.
+Given those rules, someone might consider a clever loophole: if you create a template which embeds all of this software in its output, then this software would generate a copy of itself not covered by the AGPL. So, the license tediously states that no, you are not allowed to do that nasty thing.
 
 The `demo-src` part of this repository includes template code from compatibly-licensed projects:
 
