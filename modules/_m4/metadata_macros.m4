@@ -42,3 +42,5 @@ m4_dnl
 m4_define({m4{STATUS}m4}, {m4{m4_dnl
 m4_define({m4{__STATUS}m4}, {m4{$1}m4})}m4})
 
+m4_define({m4{MTIME_MSEC}m4}, {m4{m4_dnl
+m4_define({m4{__MTIME_MSEC}m4}, {m4{$1}m4})}m4})
