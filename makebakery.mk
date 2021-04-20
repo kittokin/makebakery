@@ -1,3 +1,9 @@
+$(info   makebakery <https://datagrok.github.io/makebakery/>            )
+$(info   Copyright 2018 Michael F. Lamb <http://datagrok.org>           )
+$(info   License: AGPLv3+ with additional permissions; see COPYING      )
+$(info                                                                  )
+
+.SILENT:
 .SUFFIXES:
 .NOTPARALLEL: clean
 .PHONY: default all clean
@@ -12,7 +18,7 @@ $(error DST, the target directory for rendering, is not defined)
 endif
 
 # Define a mechanism to reverse a list. Used by the modules logic. This is
-# surprisingly hard to do with GNU Make.
+# surprisingly hard to do with GNU Make. If this is make-guile it's a bit better
 ifeq (,$(findstring guile,$(.FEATURES)))
 reverse = $(if $(wordlist 2,2,$(1)),$(call reverse,$(wordlist 2,$(words $(1)),$(1))) $(firstword $(1)),$(1))
 else
@@ -43,6 +49,10 @@ include $(wildcard $(addprefix $(modules_path)/,\
 	$(addsuffix /module.mk,    $(MODULES)) \
 	$(addsuffix .mk,           $(MODULES)) \
 	$(addsuffix /module_out.mk,$(call reverse,$(MODULES)))))
+
+ifndef targets
+$(warning targets is not defined; did you set MODULES?)
+endif
 
 all: $(targets)
 
