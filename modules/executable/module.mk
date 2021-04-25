@@ -17,6 +17,8 @@
 #
 targets := $(targets:.run=)
 $(DST)/%: $(DST)/%.run
+	@echo "$(subst $(DST),,$@)" ← "$(notdir $<)"
 	chmod +x $<
 	cd $(DST); $< > $@
+	touch -r $< $@
 	chmod -x $<
