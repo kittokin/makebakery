@@ -9,12 +9,17 @@ $(info                                                                  )
 .PHONY: default all clean
 default: all
 
-ifndef MODULES
-$(warning MODULES is not defined; makebakery will not do much without it...)
-endif
-
 ifndef DST
 $(error DST, the target directory for rendering, is not defined)
+endif
+
+ifndef SRC
+$(warning SRC is not defined; defaulting to the current directory.)
+SRC = .
+endif
+
+ifndef MODULES
+$(warning MODULES is not defined; makebakery will not do much without it...)
 endif
 
 # Define a mechanism to reverse a list. Used by the modules logic. This is
