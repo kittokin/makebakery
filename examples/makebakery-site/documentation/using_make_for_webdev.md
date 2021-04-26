@@ -16,6 +16,8 @@ An except from [How it feels to learn Javascript in 2016](https://hackernoon.com
 
 Apparently there was a brief window of time when Make experienced a resurgence of popularity for building websites, and I missed it. :(
 
+How well did this work? Why was it left behind? I'd like to see examples from that era of makefiles used for frontend work.
+
 ---
 
 <https://www.thumbtack.com/engineering/makefiles-for-less-and-css/>

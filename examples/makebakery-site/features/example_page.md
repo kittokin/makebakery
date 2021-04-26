@@ -1,4 +1,4 @@
-% An example webpage
+% A subdirectory page authored in Markdown
 % Michael F. Lamb
 % Thu, 04 Apr 2013 01:59:30 -0400
 
@@ -14,3 +14,7 @@ markup, code, and macro calls.
 
 Here's another paragraph. "Here's a sentence in quotes---containing em
 dashes---to demonstrate pandoc's 'smart quotes' feature."
+
+Here's [the source for this page][src]
+
+[src]: https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/features/example_page.md

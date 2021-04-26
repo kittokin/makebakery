@@ -7,6 +7,7 @@ _Makebakery_ used to be "m4-bakery," because it grew out of a simpler first iter
 The article [Using M4 to write HTML][] (1997)[^4] was my original inspiration to build it that way.
 
 However, the learning curve for `m4` is very steep and the resulting code can be quite ugly, especially for nontrivial tasks.
+
 Now, all the `m4`-related logic is [relegated to a module][m4-module] and not enabled by default, so you can easily avoid it in favor of more modern template mechanisms, or none at all.
 
 The "bakery" in _Makebakery_ references a 2002 blog post by the late Aaron Swartz[^1]:
