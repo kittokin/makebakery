@@ -13,7 +13,7 @@
 gh-pages: all
 	# Ensuring there are no uncommitted changes in the current branch:
 	git status -s
-	[ -z "$$(git status -s)" ]
+	[ -z "$$(git status -s)" ] || ( echo "Error: commit or stash local changes first." && false )
 	# Ensuring local gh-pages branch exists here:
 	git show-ref refs/heads/gh-pages
 	# Ensuring local gh-pages branch is not currently checked out here:
