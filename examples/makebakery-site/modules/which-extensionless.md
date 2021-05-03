@@ -1,58 +1,58 @@
-% Should I choose `extensionless_html` or `paths_are_dirs`?
+% Why should I use `paths_are_dirs`?
 % Michael F. Lamb
 % Mon 26 Apr 2021 03:46:29 AM PDT
 
-These two modules serve the same purpose:
-they make it so you don't have filename extensions in your page URLs.
-Apache's `multiviews` feature can also help with this.
+`paths_are_dirs` makes it so you don't have filename extensions in your page URLs.
 
-I think using `paths_are_dirs` is better than any of `extensionless_html`, Apache multiviews, or no extension-removal at all, because it improves how you and your code can reason about relative URLs.
-Its only downside is a more complex tree of output files, and I rarely need to think about that.
+Why should you do this?
 
-`extensionless_html` is naïve: it removes the filename extension on pages and expects the webserver to guess the MIME-type correctly.
+- [Cool URIs Don't Change](https://www.w3.org/Provider/Style/URI) (1998)[^1] says you should never change your URLs but the contents might cease to be HTML.
+  (Yeah, I'm not much swayed by that one either, but...)
+- It's easier to manage relative links
+- It's easier to rename pages
 
-`paths_are_dirs` converts all pages like page.html into `page/index.html`.
+[^1]: Tim Berners-Lee. _Style Guide for online hypertext_: [Cool URIs Don't Change][] (1998).
+
+[Cool URIs Don't Change]: https://www.w3.org/Provider/Style/URI
+
+There's other ways to strip the extension from website resources, but not all of them provide all of the advantages listed above:
+
+- Apache's `mod_rewrite`
+- Apache's `mod_negotiation` `MultiViews`
+- deprecated makebakery module `extensionless_html`
+
+I think using `paths_are_dirs` is better than any of those (or not doing it at all).
+Its only downside is a more complex filesystem structure of output files.
+It depends on functionality like Apache `mod_dir`'s `DirectoryIndex` but pretty much all webservers support that.
+
+`paths_are_dirs` converts all pages like `.../page.html` into `.../page/index.html`.
 
 Consider this site structure:
 
-```
-parent
-  page
-  sibling_a
-  sibling_b
-    nibling
-```
+- root
+  - parent
+    - page
+    - sibling
+      - nibling
 
-With any mechanism other than `paths_to_dirs`, link structure will vary on whether the target has any child pages.
-So relative links within `page` look like this:
+------------------------------------------------------------------------------------------------------------- 
+                            No extension removal      `extensionless_html`  Apache `multiviews`  `paths_are_dirs`
+--------------------------- ------------------------- --------------------- -------------------- -------------------------- 
+Root filename:              `/index.html`             `/index`              `/index.html`        `/index.html`
 
+Page filename:              `/parent/page.html`       `/parent/page`        `/parent/page.html`  `/parent/page/index.html`
 
-------------- ---------------------- --------------------------------------------------- 
-               other                  `paths_are_dirs`
-------------- ---------------------- --------------------------------------------------- 
-to parent:     `./`                   `../`
-to itself:     `./page`               `./`
-to sibling a:  `./sibling_a`          `../sibling_a/`
-to sibling b:  `./sibling_b/`         `../sibling_b/`
-to nibling:    `./sibling_b/nibling`  `../sibling_b/nibling/`
-------------- ---------------------- --------------------------------------------------- 
+Absolute URL to page:       `/parent/page.html`       `/parent/page`        `/parent/page`       `/parent/page/`
 
-- to parent: `./`
-- to itself: `./page`
-- to sibling a: `./sibling_a`
-- to sibling b: `./sibling_b/`
-- to nibling: `./sibling_b/nibling`
+Relative URL to parent:     `../parent.html`          `../parent`           `../parent`          `../`
 
-With `paths_are_dirs`, they are uniform:
+Relative URL to itself:     `./page.html`             `./page`              `./page`             `./`
 
-- to parent: `../`
-- to itself: `./`
-- to sibling a: `../sibling_a/`
-- to sibling b: `../sibling_b/`
-- to nibling: `../sibling_b/nibling/`
+Relative URL to child:      `./page/child.html`       conflict              `./page/child`       `./child/`
 
-If a child is added to `page`, with `paths_are_dirs` all those links remain unchanged.
+Relative URL to sibling:    `../sibling.html`         `./sibling`           `./sibling`          `../sibling/`
 
-- to child: `./child/`
+Relative URL to nibling:    `./sibling/nibling.html`  conflict              `./sibling/nibling`  `../sibling/nibling/`
 
-- to parent:
+------------------------------------------------------------------------------------------------------------- 
+
