@@ -49,7 +49,7 @@ endif
 # The set of modules should define a variable named 'targets', and rules which
 # transform source files to destination files within DST.
 MODULES				:= $(sort $(MODULES))
-modules_path  := $(dir $(lastword $(MAKEFILE_LIST)))/modules
+modules_path  := $(dir $(lastword $(MAKEFILE_LIST)))modules
 include $(wildcard $(addprefix $(modules_path)/,\
 	$(addsuffix /module.mk,    $(MODULES)) \
 	$(addsuffix .mk,           $(MODULES)) \
