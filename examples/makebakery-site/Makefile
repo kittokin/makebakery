@@ -15,8 +15,8 @@ DST                 := $(abspath ../../build/makebakery)
 PANDOC_BEFORE_BODY  := $(DST)/before_body.incl
 PANDOC_AFTER_BODY   := $(DST)/after_body.incl
 PANDOC_STYLESHEET   := $(addprefix $(BASEURL)/_/css/, \
-	bootstrap-3.2.0.min.css \
-	bootstrap-theme-3.2.0.min.css \
+	bootstrap-3.4.1.min.css \
+	bootstrap-theme-3.4.1.min.css \
 	style.css)
 
 # This must appear before the statement to include makebakery.mk.
