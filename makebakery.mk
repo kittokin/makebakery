@@ -67,9 +67,8 @@ all: $(targets)
 # the chances of running an 'rm -rf /'. The temporary directory and manipulation
 # of the .git directory is to be compatible with destination directories that
 # are git repos (such as when rendering for GitHub Pages).
-adst := $(abspath $(DST))
-clean:
-	mv "$(adst)" "$(adst).old"
-	mkdir "$(adst)"
-	if [ -d "$(adst).old/.git" ]; then mv "$(adst).old/.git" "$(adst)"; fi
-	rm -rf "$(adst).old"
+clean: $(abspath $(DST))
+	mv "$<" "$<.old"
+	mkdir "$<"
+	if [ -d "$<.old/.git" ]; then mv "$<.old/.git" "$<"; fi
+	rm -rf "$<.old"
