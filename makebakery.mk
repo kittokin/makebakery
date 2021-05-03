@@ -15,7 +15,7 @@ endif
 
 ifndef SRC
 $(warning SRC is not defined; defaulting to the current directory.)
-SRC = .
+SRC := .
 endif
 
 ifndef MODULES
