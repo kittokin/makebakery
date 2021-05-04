@@ -84,10 +84,11 @@ These would be useful, but I haven't built them yet.
 - photo resizing and thumbnails using [imagemagick](https://imagemagick.org)
 - image optimization using [pngquant](https://pngquant.org/), [scour](https://github.com/scour-project/scour), etc.
 - client-side / offline search using [lunr](https://lunrjs.com/)
-- source specific resources from inside zip and tarball archives
+- pick source resources out of zip and tarball archives
 - deployment via rsync
 - deployment including push to remote via gh-pages
 - launch a docker container to run any tools that you might not have installed
+- make all modules check for the existence of executables they expect and tell you how to install
 
 # Module implementation
 

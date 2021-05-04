@@ -33,7 +33,9 @@ MODULES := \
 	executable \
 	gh-pages \
 	pandoc \
-	url
+	serve-python \
+	url \
+	watch
 
 # Since this Makefile is in the directory containing source files, we want to
 # exclude it from the destination files. This must appear before the statement
