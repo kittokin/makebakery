@@ -75,27 +75,6 @@ These modules are either deprecated or experimental and not quite ready for use.
   Avoid filename extensions in URLs by naively removing them from the output filenames.
   Several caveats.
 
-## To do
-
-These would be useful, but I haven't built them yet.
-
-- templating and logic using PHP (processed at compile time)
-- templating using [Jinja](https://palletsprojects.com/p/jinja/)
-- photo resizing and thumbnails using [imagemagick](https://imagemagick.org)
-- image optimization using [pngquant](https://pngquant.org/), [scour](https://github.com/scour-project/scour), etc.
-- client-side / offline search using [lunr](https://lunrjs.com/)
-- pick source resources out of zip and tarball archives
-- deployment via rsync
-- deployment including push to remote via gh-pages
-- launch a docker container to run any tools that you might not have installed
-- make all modules check for the existence of executables they expect and tell you how to install
-
-# Module implementation
-
-You might like to create your own module to customize the pipeline, or add a code compiler or rendering tool.
-
-TODO
-
 [discount]: http://www.pell.portland.or.us/~orc/Code/discount/
 [GNU m4]: http://www.gnu.org/software/m4/
 [pandoc]: https://pandoc.org/

@@ -4,17 +4,15 @@
 
 # Sites included with makebakery
 
-- This site
+- [This website](https://datagrok.github.io/makebakery/).
+  [Source](https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site),
+  [Makefile](https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile)
 
 - A "minimal" site
 
 - A site using Pandoc for markdown and m4 for templating and macro expansion
 
 # Sites built using makebakery (or a fork)
-
-- [This website](https://datagrok.github.io/makebakery/).
-  [Source](https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site),
-  [Makefile](https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile)
 
 - [Michael F. Lamb's website](https://datagrok.org/).
 
