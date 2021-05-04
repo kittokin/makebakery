@@ -8,7 +8,7 @@
 # See COPYING for details.
 #
 
-.PHONY: gh-pages
+.PHONY: gh-pages upload
 
 # NOTE: The GNU Make manual says,
 #
@@ -36,3 +36,7 @@ gh-pages:
 	git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)" \
 		&& git -C $(DST) push \
 		|| echo "Not updating gh-pages branch."
+
+upload:
+	git push origin gh-pages
+	git push github gh-pages
