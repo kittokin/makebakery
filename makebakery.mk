@@ -1,5 +1,5 @@
 $(info   makebakery <https://datagrok.github.io/makebakery/>            )
-$(info   Copyright 2018 Michael F. Lamb <http://datagrok.org>           )
+$(info   Copyright 2018 Michael F. Lamb <https://datagrok.org>           )
 $(info   License: AGPLv3+ with additional permissions; see COPYING      )
 $(info                                                                  )
 

@@ -21,6 +21,6 @@ These projects also use `make` in some capacity for building static sites:
 
 - [Coleslaw](https://github.com/redline6561/coleslaw), implemented in Common Lisp.
 
-- [Pelican](http://getpelican.com), implemented in Python.
+- [Pelican](https://getpelican.com), implemented in Python.
 
 - [Netlify](https://www.netlify.com/)'s [Jamstack](https://jamstack.org) promotes an architecture combining static sites with client-side Javascript use of APIs, and includes a directory of [Jamstack-compatible site generators](https://jamstack.org/generators/).

@@ -24,9 +24,9 @@ This references [the documentation for WebMake][concepts][^2], an old perl-based
 [Bake, Don't Fry]: http://www.aaronsw.com/weblog/000404
 [concepts]: http://webmake.taint.org/dist/doc/concepts.html
 [Baking Versus Frying]: http://www.arachna.com/edu/talks/iswp/slides/baking_versus_frying.html
-[GNU Make]: http://www.gnu.org/software/make/
-[GNU m4]: http://www.gnu.org/software/m4/
-[Using M4 to write HTML]: http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html
+[GNU Make]: https://www.gnu.org/software/make/
+[GNU m4]: https://www.gnu.org/software/m4/
+[Using M4 to write HTML]: https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html
 [Bob Hepple]: http://bhepple.freeshell.org/
 [m4-module]: https://github.com/datagrok/makebakery/tree/master/modules/_m4
 [Aaron Swartz]: https://en.wikipedia.org/wiki/Aaron_Swartz

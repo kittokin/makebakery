@@ -44,4 +44,4 @@
 - Learn about Netlify, how to integrate into their system
 
 [ajax-crawling]: https://developers.google.com/webmasters/ajax-crawling/docs/learn-more
-[sitemap]: http://www.sitemaps.org
+[sitemap]: https://www.sitemaps.org

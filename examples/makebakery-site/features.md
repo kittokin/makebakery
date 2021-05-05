@@ -52,7 +52,7 @@ From my static site generator, I wanted:
 -->
 
 
-[Pandoc]: http://johnmacfarlane.net/pandoc/
+[Pandoc]: https://pandoc.org
 [discount]: https://www.pell.portland.or.us/~orc/Code/discount/
 [markdown]: https://daringfireball.net/projects/markdown/
 [coffeescript]: https://coffeescript.org/

@@ -69,11 +69,11 @@ See [COPYING][] for more information.
 [CC-BY-SA 2.0]: https://creativecommons.org/licenses/by-sa/2.0/
 [COPYING]: https://github.com/datagrok/makebakery/blob/master/COPYING.md
 [GNU Make]: https://www.gnu.org/software/make/
-[ImageMagick]: http://www.imagemagick.org
-[Jinja]: http://jinja.pocoo.org/
+[ImageMagick]: https://imagemagick.org
+[Jinja]: https://jinja.jinja.palletsprojects.com
 [Sass]: https://sass-lang.com/
 [Michael F. Lamb]: https://datagrok.org
-[Pandoc]: http://johnmacfarlane.net/pandoc/
+[Pandoc]: https://pandoc.org
 [bakery attribution]: https://www.flickr.com/photos/barthelomaus/104318646/ 
 [github/makebakery]: https://github.com/datagrok/makebakery
-[Using M4 to write HTML]: http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html
+[Using M4 to write HTML]: https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html

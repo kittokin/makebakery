@@ -26,6 +26,6 @@ More about _Make_ and GNU Make: [Wikipedia: Make (software)][W:Make]
 [Improving Make (2014)]: https://www.dwheeler.com/essays/make.html
 [Mk]: http://doc.cat-v.org/plan_9/4th_edition/papers/mk
 [GNU Make]: https://www.gnu.org/software/make/
-[Grunt]: gruntjs.com
-[Rake]: http://rake.rubyforge.org
-[Ant]: http://ant.apache.org
+[Grunt]: https://gruntjs.com
+[Rake]: https://ruby.github.io/rake/
+[Ant]: https://ant.apache.org

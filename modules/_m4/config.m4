@@ -16,8 +16,8 @@ m4_dnl  __BASEURL with a leading, but no trailing slash. If the site is at the
 m4_dnl  root of your webhost, leave __BASEURL undefined.
 m4_dnl
 m4_dnl  Example: If I am using makebakery to build a site served at the url
-m4_dnl  http://datagrok.org/foo/bar/mysite then I would set:
-m4_dnl      __SITEHOST  http://datagrok.org
+m4_dnl  https://datagrok.org/foo/bar/mysite then I would set:
+m4_dnl      __SITEHOST  https://datagrok.org
 m4_dnl      __BASEURL   /foo/bar/mysite
 m4_dnl
 m4_dnl

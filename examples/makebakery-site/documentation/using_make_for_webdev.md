@@ -22,11 +22,11 @@ How well did this work? Why was it left behind? I'd like to see examples from th
 
 <https://www.thumbtack.com/engineering/makefiles-for-less-and-css/>
 
-<http://hadihariri.com/2014/04/21/build-make-no-more/>
+<https://hadihariri.com/2014/04/21/build-make-no-more/>
 
 <https://www.smashingmagazine.com/2015/10/building-web-applications-with-make/>
 
 <https://www.sitepoint.com/using-gnu-make-front-end-development-build-tool/>
 
-<http://www.vittoriozaccaria.net/wmake/>
+<https://github.com/vzaccaria/make4web>
 

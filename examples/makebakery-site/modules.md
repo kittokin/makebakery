@@ -75,7 +75,7 @@ These modules are either deprecated or experimental and not quite ready for use.
   Avoid filename extensions in URLs by naively removing them from the output filenames.
   Several caveats.
 
-[discount]: http://www.pell.portland.or.us/~orc/Code/discount/
-[GNU m4]: http://www.gnu.org/software/m4/
+[discount]: https://www.pell.portland.or.us/~orc/Code/discount/
+[GNU m4]: https://www.gnu.org/software/m4/
 [pandoc]: https://pandoc.org/
 [CoffeeScript]: https://coffeescript.org/

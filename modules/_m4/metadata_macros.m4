@@ -32,7 +32,7 @@ m4_dnl  Store verbatim in this variable
 m4_define({m4{__DATE}m4}, {m4{$1}m4})m4_dnl
 m4_dnl  Miliseconds since the epoch (for feeding to javascript Date() object)
 m4_define({m4{__DATE_MSEC}m4}, m4_esyscmd({m4{date -u --date="$1" "+%s000" | tr -d "\n"}m4}))m4_dnl
-m4_dnl  ISO8601 format recommended by Dublin Core http://www.w3.org/TR/NOTE-datetime
+m4_dnl  ISO8601 format recommended by Dublin Core https://www.w3.org/TR/NOTE-datetime
 m4_define({m4{__DATE_ISO}m4}, m4_esyscmd({m4{date -u --date="$1" "+%Y-%m-%dT%H:%M:%S%:z" | tr -d "\n"}m4}))m4_dnl
 }m4})
 
