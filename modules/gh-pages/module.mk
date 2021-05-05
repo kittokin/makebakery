@@ -33,7 +33,8 @@ gh-pages:
 	# This pushes the gh-pages branch that we updated in DST back into our own
 	# local repo, not our upstream. It's still up to us to push to GitHub after
 	# this.
-	git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)" \
+	git -C $(DST) add . \
+		&& git -C $(DST) commit -a -m "Result of 'make gh-pages' against commit $$(git rev-parse --short HEAD)" \
 		&& git -C $(DST) push \
 		|| echo "Not updating gh-pages branch."
 
