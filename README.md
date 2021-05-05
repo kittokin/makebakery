@@ -6,7 +6,7 @@
 
 # License: AGPL-3.0+ with additional permissions
 
-This software is copyright 2016 [Michael F. Lamb][] and released under the terms of the [GNU Affero General Public License, Version 3][AGPL-3.0+] (or, at your option, any later version,) with a grant of additional permission that allows you to apply different terms to the output HTML and Javascript. For details, see [COPYING.md](COPYING.md).
+This software is copyright 2021 [Michael F. Lamb][] and released under the terms of the [GNU Affero General Public License, Version 3][AGPL-3.0+] (or, at your option, any later version,) with a grant of additional permission that allows you to apply different terms to the output HTML and Javascript. For details, see [COPYING.md](COPYING.md).
 
 [AGPL-3.0+]: https://www.gnu.org/licenses/agpl.html
 [Michael F. Lamb]: https://datagrok.org
