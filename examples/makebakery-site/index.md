@@ -4,7 +4,7 @@
 
 **Makebakery** is a static website generator implemented using [GNU Make][].
 
-![Photo: [Boris Bartels, "Bakery" (2006)][bakery attribution] ([CC-BY-SA 2.0][]). Resized.][image]
+![Photo: [Boris Bartels, "Bakery" (2006)][bakery attribution] ([CC-BY-SA 2.0][]).][image]
 
 **_Static_ websites** are those which require no special logic on the server-side to work, as opposed to **_dynamic_ websites** which trigger some server-side processing for most page requests. 
 [More about static sites...](documentation/about_static_sites/)
@@ -64,7 +64,7 @@ Created by [Michael F. Lamb][].
 License: [GNU Affero GPL version 3 or later][AGPL3], with additional permissions for output.
 See [COPYING][] for more information.
 
-[image]: bakery.jpg {.pull-right}
+[image]: bakery.jpg {.rounded}
 [AGPL3]: https://www.gnu.org/licenses/agpl-3.0.html
 [CC-BY-SA 2.0]: https://creativecommons.org/licenses/by-sa/2.0/
 [COPYING]: https://github.com/datagrok/makebakery/blob/master/COPYING.md

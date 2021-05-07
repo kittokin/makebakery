@@ -7,7 +7,7 @@ cat <<- EOF
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="${BASEURL}/_/js/jquery-3.6.0.min.js"></script>
-<script src="${BASEURL}/_/js/bootstrap-3.4.1.min.js"></script>
+<script src="${BASEURL}/_/js/bootstrap-5.0.0.bundle.min.js"></script>
 
 <!--  Get some other variables useful to javascript into the page context. -->
 <script type="text/javascript">

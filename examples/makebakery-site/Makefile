@@ -4,7 +4,7 @@
 # If defined, should start with / and never end with /
 export BASEURL  := /makebakery
 export SITEHOST := https://datagrok.github.io
-export SITENAME := makebakery
+export SITENAME := 🍞 makebakery
 # (the m4 module also happens to use these variables but this site does not
 # employ it.)
 
@@ -19,9 +19,9 @@ PANDOC_HEADER       := $(DST)/header.incl
 PANDOC_BEFORE_BODY  := $(DST)/before_body.incl
 PANDOC_AFTER_BODY   := $(DST)/after_body.incl
 PANDOC_STYLESHEET   := $(addprefix $(BASEURL)/_/css/, \
-	bootstrap-3.4.1.min.css \
-	bootstrap-theme-3.4.1.min.css \
-	style.css)
+	bootstrap-5.0.0.min.css \
+	style.css \
+    )
 
 # The list of Makebakery modules to employ when building this site. Order is
 # unimportant as they will be sorted alphanumerically before application. This
