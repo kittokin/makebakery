@@ -18,9 +18,9 @@ With the `executable` module enabled, makebakery renders scripts by executing th
 This site map script and link generation Javascript is not considered a "core" feature of makebakery.
 But they are included as Free Software, so if you like them and their license, feel free to begin your static site by modifying a copy of this site.
 
-[source-features]: https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site/examples
-[a Javascript function]: https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/_/js/functions.js#L74
-[small shell script]: https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/pages.json.run
+[source-features]: https://github.com/datagrok/makebakery/tree/main/examples/makebakery-site/examples
+[a Javascript function]: https://github.com/datagrok/makebakery/blob/main/examples/makebakery-site/_/js/functions.js#L74
+[small shell script]: https://github.com/datagrok/makebakery/blob/main/examples/makebakery-site/pages.json.run
 
 # Design Goals
 

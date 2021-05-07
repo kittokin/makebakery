@@ -5,8 +5,8 @@
 # Sites included with makebakery
 
 - [This website](https://datagrok.github.io/makebakery/).
-  [Source](https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site),
-  [Makefile](https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile)
+  [Source](https://github.com/datagrok/makebakery/tree/main/examples/makebakery-site),
+  [Makefile](https://github.com/datagrok/makebakery/blob/main/examples/makebakery-site/Makefile)
 
 - A "minimal" site
 

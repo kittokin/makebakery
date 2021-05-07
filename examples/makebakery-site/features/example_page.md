@@ -17,4 +17,4 @@ dashes---to demonstrate pandoc's 'smart quotes' feature."
 
 Here's [the source for this page][src]
 
-[src]: https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/features/example_page.md
+[src]: https://github.com/datagrok/makebakery/blob/main/examples/makebakery-site/features/example_page.md

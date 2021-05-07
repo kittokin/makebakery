@@ -50,13 +50,13 @@ When you run `make`, this will copy source files from the current directory to t
 └── README.md
 ```
 
-This is included as [the "minimal" example](https://github.com/datagrok/makebakery/tree/master/examples/minimal) in makebakery's source code repository.
+This is included as [the "minimal" example](https://github.com/datagrok/makebakery/tree/main/examples/minimal) in makebakery's source code repository.
 
 You might then add to the compilation pipeline a template engine like [Jinja][], a CSS compiler like [Sass][], image processing using [ImageMagick][], and any other custom scripts you please.
 
 To enable a module, add its name to the `MODULES` variable and define any configuration variables it needs.
 
-For a slightly more advanced example, examine the [Makefile](https://github.com/datagrok/makebakery/blob/master/examples/makebakery-site/Makefile) and associated [source files used to build this site](https://github.com/datagrok/makebakery/tree/master/examples/makebakery-site) (that you are reading).
+For a slightly more advanced example, examine the [Makefile](https://github.com/datagrok/makebakery/blob/main/examples/makebakery-site/Makefile) and associated [source files used to build this site](https://github.com/datagrok/makebakery/tree/main/examples/makebakery-site) (that you are reading).
 
 ---
 
@@ -67,7 +67,7 @@ See [COPYING][] for more information.
 [image]: bakery.jpg {.rounded}
 [AGPL3]: https://www.gnu.org/licenses/agpl-3.0.html
 [CC-BY-SA 2.0]: https://creativecommons.org/licenses/by-sa/2.0/
-[COPYING]: https://github.com/datagrok/makebakery/blob/master/COPYING.md
+[COPYING]: https://github.com/datagrok/makebakery/blob/main/COPYING.md
 [GNU Make]: https://www.gnu.org/software/make/
 [ImageMagick]: https://imagemagick.org
 [Jinja]: https://jinja.jinja.palletsprojects.com

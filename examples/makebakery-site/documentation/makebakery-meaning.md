@@ -28,7 +28,7 @@ This references [the documentation for WebMake][concepts][^2], an old perl-based
 [GNU m4]: https://www.gnu.org/software/m4/
 [Using M4 to write HTML]: https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html
 [Bob Hepple]: http://bhepple.freeshell.org/
-[m4-module]: https://github.com/datagrok/makebakery/tree/master/modules/_m4
+[m4-module]: https://github.com/datagrok/makebakery/tree/main/modules/_m4
 [Aaron Swartz]: https://en.wikipedia.org/wiki/Aaron_Swartz
 [Ian Kallen]: https://twitter.com/spidaman
 [webmake]: http://webmake.taint.org/
