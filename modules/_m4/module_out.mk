@@ -1,10 +1,10 @@
 #
 # m4 module: process targets with GNU m4
 #
-# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+# Copyright 2021 Michael F. Lamb <https://datagrok.org>
 #
 # This program is part of Makebakery.
-# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# License: AGPLv3+ https://www.gnu.org/licenses/agpl.html
 # See COPYING for details.
 #
 

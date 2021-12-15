@@ -1,6 +1,6 @@
 # a minimal example
 
-This directory uses a short [Makefile](Makefile) to render a simple example site:
+This directory uses a short [Makefile](Makefile) to render a small example site:
 
 ```makefile
 SRC      = .

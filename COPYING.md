@@ -1,6 +1,6 @@
 # License: AGPL-3.0+ with additional permissions
 
-This software is released under the terms of the [GNU Affero General Public License, Version 3](http://www.gnu.org/licenses/agpl-3.0.html) (or at your option, any later version.)
+This software is released under the terms of the [GNU Affero General Public License, Version 3](https://www.gnu.org/licenses/agpl-3.0.html) (or at your option, any later version.)
 
 ## Grant of Additional Permission
 
@@ -18,11 +18,11 @@ The included templates are covered by the AGPL too. If you modify those for use 
 
 You could, for example, use this software to create a tech blog where all the code you publish is permissively-licensed or even kept proprietary "all rights reserved."
 
-Given those rules, someone might consider a clever loophole: modifying this software to output all of itself as a "template," thereby creating a version of itself not covered by the AGPL. So the license tediously states that no, you are not allowed to do that nasty thing.
+Given those rules, someone might consider a clever loophole: if you create a template which embeds all of this software in its output, then this software would generate a copy of itself not covered by the AGPL. So, the license tediously states that no, you are not allowed to do that nasty thing.
 
 The `demo-src` part of this repository includes template code from compatibly-licensed projects:
 
-- [Modernizr](http://modernizr.com/), original license: Expat ("MIT")
-- [jQuery](http://jquery.org), original license: Expat ("MIT")
+- [Modernizr](https://modernizr.com/), original license: Expat ("MIT")
+- [jQuery](https://jquery.com), original license: Expat ("MIT")
 
 The availability of this Exception does not release you from the requirements of those licenses: regardless of the terms you choose, you must include original authors' copyright notices and license text.

@@ -2,10 +2,10 @@
 #
 # atom.xml.run: generate an Atom-format feed of pages in this website
 #
-# Copyright 2018 Michael F. Lamb <http://datagrok.org>
+# Copyright 2021 Michael F. Lamb <https://datagrok.org>
 #
 # This program is part of Makebakery.
-# License: AGPLv3+ http://www.gnu.org/licenses/agpl.html
+# License: AGPLv3+ https://www.gnu.org/licenses/agpl.html
 # See COPYING for details.
 #
 
@@ -13,7 +13,7 @@ updated="$(date -u -r "$0" '+%Y-%m-%dT%H:%M:%S%:z')"
 
 cat <<- EOF
 	<?xml version="1.0" encoding="utf-8"?>
-	<feed xmlns="http://www.w3.org/2005/Atom">
+	<feed xmlns="https://www.w3.org/2005/Atom">
 	  <title><![CDATA[${SITENAME}]]></title>
 	  <link href="${BASEURL}/atom.xml" rel="self"/>
 	  <link href="${BASEURL}/"/>

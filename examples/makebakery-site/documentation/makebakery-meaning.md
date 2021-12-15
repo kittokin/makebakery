@@ -7,6 +7,7 @@ _Makebakery_ used to be "m4-bakery," because it grew out of a simpler first iter
 The article [Using M4 to write HTML][] (1997)[^4] was my original inspiration to build it that way.
 
 However, the learning curve for `m4` is very steep and the resulting code can be quite ugly, especially for nontrivial tasks.
+
 Now, all the `m4`-related logic is [relegated to a module][m4-module] and not enabled by default, so you can easily avoid it in favor of more modern template mechanisms, or none at all.
 
 The "bakery" in _Makebakery_ references a 2002 blog post by the late Aaron Swartz[^1]:
@@ -23,11 +24,11 @@ This references [the documentation for WebMake][concepts][^2], an old perl-based
 [Bake, Don't Fry]: http://www.aaronsw.com/weblog/000404
 [concepts]: http://webmake.taint.org/dist/doc/concepts.html
 [Baking Versus Frying]: http://www.arachna.com/edu/talks/iswp/slides/baking_versus_frying.html
-[GNU Make]: http://www.gnu.org/software/make/
-[GNU m4]: http://www.gnu.org/software/m4/
-[Using M4 to write HTML]: http://web.archive.org/web/19980529230944/http://www.linuxgazette.com/issue22/using_m4.html
+[GNU Make]: https://www.gnu.org/software/make/
+[GNU m4]: https://www.gnu.org/software/m4/
+[Using M4 to write HTML]: https://web.archive.org/web/19980529230944/https://www.linuxgazette.com/issue22/using_m4.html
 [Bob Hepple]: http://bhepple.freeshell.org/
-[m4-module]: https://github.com/datagrok/makebakery/tree/master/modules/_m4
+[m4-module]: https://github.com/datagrok/makebakery/tree/main/modules/_m4
 [Aaron Swartz]: https://en.wikipedia.org/wiki/Aaron_Swartz
 [Ian Kallen]: https://twitter.com/spidaman
 [webmake]: http://webmake.taint.org/

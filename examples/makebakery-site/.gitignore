@@ -1,0 +1,13 @@
+# Keeping these files locally will avoid unnecessary downloads, but I don't
+# want them in the repo.
+_/css/bootstrap-3.2.0.min.css
+_/css/bootstrap-theme-3.2.0.min.css
+_/fonts/glyphicons-halflings-regular.eot
+_/fonts/glyphicons-halflings-regular.svg
+_/fonts/glyphicons-halflings-regular.ttf
+_/fonts/glyphicons-halflings-regular.woff
+_/img/forkme_right_darkblue_121621.png
+_/js/bootstrap-3.2.0.min.js
+_/js/html5shiv-3.7.2.min.js
+_/js/jquery-2.1.1.min.js
+_/js/respond-1.4.2.min.js

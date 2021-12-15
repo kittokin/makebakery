@@ -1,34 +1,33 @@
 % About static sites
 
-Static websites are those whose content is pre-rendered and require only simple software to serve to visitors.
+Static websites are those whose server-side resources are pre-computed (or _"pre-rendered"_ or _"pre-generated"_), so that web servers do not need to perform this activity for each request.
 
-Static websites are useful because they're effortlessly fast, scalable, and cache-able. Compared to dynamic sites, static sites are much easier to secure, and can be served from the very cheapest of hosting services.
+Static websites are useful because they can be hosted without complex server architecture, which reduces the cost and effort to make them secure, fast, scalable, resilient, and portable.
 
-This technique of pre-rendering static pages websites [has been called *baking*][baking] a website, as opposed to a short-order server *frying* up each page upon each request.
+- **Secure**: Static resources may be hosted read-only, defeating many vectors for attack.
 
-- have fewer vectors for break-ins, 
-- easily scale to handle massive amounts of traffic, and 
-- may be hosted on commodity hardware or the cheapest of web hosting services.
+- **Fast**:
+  Static resources are cache-friendly, making them easy to serve from memory both at the server and in the browser, or serve from distributed caches like Content Delivery Networks.
+  In addition, static resources do not incur computation time for database queries or template rendering so even uncached requests are fast.
 
-Of course, with no processing occurring on the server end, it's not possible to host user-interactive features like comments sections, authentication, or e-commerce systems. These days however, many people use third-party tools like [Disqus](http://disqus.com) to implement these features anyway, or rely on third-party forums like to provide discussion areas for their content.
+- **Scalable**: "Fast" means you can serve the same pages to more people, but it also means you can serve the same people using fewer resources. (Simpler software, cheaper hardware, and less power.)
 
-In short, if you're not using any of the dynamic features of your web hosting service, you might as well make the whole site static. If you _are_ using those features on some areas of your site, you're better off making the static parts simple static files.
+  You can "build out" to geographically distributed content delivery networks, or you can "build in" to lower-cost hosting services, or self-hosting on recycled or low-power computers.
 
-# Similar projects
+  [LOW←TECH MAGAZINE's solar-powered website](https://solar.lowtechmagazine.com/about.html) is a great example of what a static site can enable.
 
-It has been said that every programmer, at some point, writes a blog/website publishing engine.
-If Makebakery isn't for you, here are some other such projects you might prefer.
-(Note: not all of these are static site generators.)
+- **Resilient**:
+  When sites are fast, they are less likely to become unavailable due to heavy traffic.
+  When sites do not rely on complex infrastructure, they are less likely to "crash" due to software bugs.
 
-- <http://staticsitegenerators.net> contains a crowdsourced database of a myriad of different static site generators.
-- [Phil "technomancy" Hagelberg](https://technomancy.us/colophon) uses a minimalist approach including a 12-line Makefile and GNU M4.
-- [David Thompson](https://dthompson.us)'s Guile Scheme-based [Haunt](https://dthompson.us/projects/haunt.html)
-- [Pelican](http://getpelican.com) is a popular Python-based static site generator that some friends enjoy.
-- [ironfroggy](https://github.com/ironfroggy)'s [jules](https://github.com/ironfroggy/jules)
-- [nathanielksmith](https://github.com/nathanielksmith)'s [Cadigan](https://github.com/nathanielksmith/cadigan)
-- [redline6561](https://github.com/redline6561)'s Common Lisp-based [Coleslaw](https://github.com/redline6561/coleslaw)
-- Brandon Invergo's [m4-bloggery](https://gitorious.org/bi-websites/m4-bloggery) is based on an early version of this project but takes some slightly different approaches.
-- davatron5000's [crowdsourced recommendations gist](https://gist.github.com/davatron5000/2254924) (2012-03-30)
-- <https://www.staticgen.com/> contains a database of static site generators compatible with something called "JAMstack"
+- **Portable**: Static site hosting is the simplest of hosting mechanisms, so there are a wide variety of options and service providers to choose from or move between.
+
+However, with no processing occurring on the server end, it's not possible to host user-interactive features like comments sections, authentication, or e-commerce systems.
+Instead, many sites rely on browser JavaScript and third-party services to add dynamic features.
+[Netlify](https://netlify.com) calls that approach [Jamstack](https://jamstack.org).
+
+Most of [the benefits heralded by Jamstack](https://jamstack.org/why-jamstack) come from its reliance on static hosting ("_pre-generated files_").
+
+This technique of pre-rendering static pages for websites has also be called [*baking* a website][baking], as opposed to a short-order server *frying* up each page upon each request.
 
 [baking]: ../makebakery-meaning/

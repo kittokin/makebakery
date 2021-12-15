@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cat <<- EOF
+<link rel="icon" href="${BASEURL}/favicon.ico">
+<link rel="icon" type="image/png" href="${BASEURL}/image.png">
+EOF
